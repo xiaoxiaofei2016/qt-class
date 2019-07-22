@@ -1,0 +1,121 @@
+*{
+    padding: 0;margin: 0;
+}
+html,body{
+    width: 100%;
+}
+ul li{
+    list-style: none;
+}
+.main{
+    width: 100%;
+}
+.header{
+    text-align: center;
+    background-color: rgb(238, 170, 212);
+    padding: 10px 5px;
+}
+.header p{
+    font-weight: 1000;
+}
+.search{
+    width: 100%;
+}
+.search input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    outline: none;
+    /* outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围 */
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    margin-top: 15px;
+}
+.content{
+    width: 100%;
+
+}
+.content-items{
+    width: 100%;
+}
+.content-item{
+    display: flex;
+    padding: 10px 0 16px 4px;
+    align-items: top;/* 上下对齐 */
+    overflow: hidden;
+
+}
+.left-pic{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.left-pic img{
+    width: 100%;
+}
+.message{
+    flex: 1;
+    /* 让所有弹性盒模型对象的子元素都有相同的长度，且忽略它们内部的内容 */
+    margin-left:10px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.message::after{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    background: #aaa;
+    bottom: 0px;
+    left: 0;
+}
+.name{
+    font-style: 16px;
+    font-weight: bold;/* 加粗 */
+    margin-bottom: 8px;
+}
+.detail{
+    font-style: 12px;
+    color: #555;
+
+}
+.time{
+    font-style: 12px;
+    color: #555;
+    padding-top: 5px;
+}
+
+
+
+
+
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #eee;
+    padding: 5px 0;
+    border-top: 1px solid #aaa;
+}
+.ft-items{
+    width: 100%;
+    display: flex;
+}
+.item{
+    flex:1;
+    text-align: center;
+
+}
+.item img{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+}
+.item-name{
+    font-style: 12px;
+    color: #555;
+}

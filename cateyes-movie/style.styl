@@ -1,0 +1,246 @@
+$hdbg_color = #e54847
+$font_color_block=#fff
+$bd_color = #e5e5e5
+html,body 
+    width 100%
+.flex
+    display flex
+.flex1
+    flex 1
+.section-title
+    font-size 17px
+    color #000
+.action-list.section-title
+    padding-left 0.4rem
+.nav
+    height 1.067rem
+    font-size 18px
+    text-align center
+    background-color $hdbg_color
+    padding 6px
+    box-sizing border-box
+    color #fff
+.arrow-left
+    float left
+    height 100%
+    position relative
+    &:after
+        content ''
+        width 12px
+        height 12px
+        position absolute
+        top 50%
+        left 16px
+        border 2px solid #fff
+        border-width 0 0 2px 2px
+        transform rotate(45deg) translateY(-50%)
+    span 
+        color $font_color_block
+        display inline-block
+.page
+    background #f4f4f4
+    position relative
+    z-index 1
+    color #555555
+    min-width 3.1rem
+    -webkit-tap-highlight-color rgba(255,255,255,0)
+    font 14px/1.5 Arial,Helvetica,sans-serif
+section 
+    background-color #fff
+    border-bottom 1px solid #e5e5e5
+.movie-header
+    padding 0
+    background #f8f8f8
+    border-bottom none
+    .movie
+        color #ffffff
+        padding 0.4rem
+        line-height 1
+        position relative
+        box-sizing border-box
+        filter blur(0)//变得模糊
+        &-background,
+        &-filter
+            position absolute
+            top 0
+            left 0
+            bottom 0
+            right 0
+        &-background
+            z-index 0
+            filter blur(0.6rem)
+            -webkit-filter blur(0.6rem)
+            background-image url(./images/header-bg.jpg)
+            background-size cover
+            background-repeat no-repeat
+            background-position-y 40%
+        &-filter
+            background #40454d
+            opacity 0.5
+        &-container
+            position relative
+            z-index 1
+            //取消脱离文档流的影响  dfc    在父容器中设置overflow hidden，会导致子容器变成dfc容器
+            overflow hidden
+            .movie-cover
+                float left
+                width 2.854rem
+                height 4rem
+                border 1px solid #f0f2f3
+                position relative
+                .img
+                    width 100%
+                &:after
+                    content ''
+                    display block
+                    width 1.8rem
+                    height 1.8rem
+                    position absolute
+                    left 50%
+                    top 50%
+                    z-index 2
+                    transform translate(-50%,-50%)
+                    background-image url(./images/bofang.png)
+                    background-size 100% auto
+                    opacity 0.7
+            .movie-content
+                overflow hidden
+                padding-left 0.4rem
+                .movie-name
+                    font-size 17px
+                    margin 0.08rem 0
+                .movie-ename
+                    font-size 12px
+                    margin-bottom 0.3rem
+                .movie-score
+                    font-size 12px
+                    margin-bottom .3rem
+                    .rating
+                        .img
+                            width 0.48rem
+                            height 0.48rem
+                            margin-right 2px
+                            .rating-score
+                                font-size 0.48rem
+                                color #ffc600
+                .movie-detail
+                    font-size 12px
+                    margin-bottom 0.16rem
+                    opacity .7
+                    div,p
+                        margin-bottom .14rem
+        .opreating
+            margin-top 0.5rem
+            div
+                border 1px solid rgba(255,255,255,.4)
+                background-color rgba(255,255,255,.4)
+                font-size 14px
+                color #fff
+                position relative
+                z-index 2
+                text-align center
+                padding 0.25rem 0
+                border-radius 4px
+                img 
+                    vertical-align middle
+                span 
+                    vertical-align middle
+            .movie-watch
+                margin-right 0.3rem
+                img 
+                    width 14px
+                    height 14px
+            .movie-mark
+                img 
+                    width 18px
+                    height 18px
+.section-seperate
+    padding-top .4rem
+    margin-bottom .3rem
+    border-top 1px solid $bd_color
+.section-expander
+    padding-left 0.4rem
+    padding-right 0.4rem
+    .text-expander
+        &_content.close
+            min-height 65px
+            display -webkit-box
+            overflow hidden
+            text-overflow ellipsis//超出打点
+            word-break break-all//自动换行
+            -webkit-box-orient vertical
+            -webkit-line-clamp 3//设置行数
+        &_button
+            height 0.7rem
+            text-align center
+            .icon-chevron_down
+                width 10px
+                height 10px
+                display inline-block
+                border 1px solid #000
+                border-width 0 1px 1px 0
+                transform rotateZ(45deg)
+                box-sizing border-box
+                transition transform .5s
+            .icon_chevron_down.up
+                transform rotateZ(-135deg)
+.section-sperate
+    .movie-celebrities
+        width 100%
+        padding 0.3rem 0.3rem 0.1rem 0.3rem
+        overflow-x scroll
+        white-space nowrap  
+        box-sizing border-box
+        li
+            text-align center
+            display inline-block
+            padding 0.04rem
+            .link
+                color #000000
+                .movie-celebrities_pic
+                    width 1.7334rem
+                    height 2.4rem
+                    margin 0.05rem
+                    img 
+                        width 100%
+                span 
+                    display block
+                    font-size 0.2rem
+                    text-overflow ellipsis//超出打点
+                    overflow hidden
+                    white-space nowrap
+                .movei-celebrities-roles
+                    color #999
+                
+.movie-booking
+    padding-bottom 0.2rem
+    .weui-flex
+        text-align center
+        .placeholder
+            span 
+                font-size 24px
+                color #d96a3d
+            p
+                color #bababa
+                margin-top 0.1rem
+
+
+
+
+
+
+
+#toast
+    display none
+.active
+    display block !important
+                
+        
+
+
+
+
+
+
+
+

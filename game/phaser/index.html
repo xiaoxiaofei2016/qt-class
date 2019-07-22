@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phaser</title>
+</head>
+<body>
+    <div class="game"></div>
+    <script src="https://cdn.bootcss.com/phaser/2.6.2/phaser.min.js"></script>
+    <script>
+        const width = 800,
+        height = 600;
+        let back,//背景
+            mummy,//僵尸
+            anim,//运动对象
+            loopText;//文本
+       
+        //游戏对象
+        var game = new Phaser.Game(width,height,Phaser.AUTO,'#game',{preload:preload,create:create,update:update})
+        function preload(){
+            //预加载
+            game.load.image('lazur','./thorn_lazur.png');//背景图片
+            game.load.spritesheet('mummy','./metalslug_mummy37x45.png',37,45,18)//精灵
+        }
+
+        // 1.游戏对象
+        // 2.背景等资源
+        // 3.player，enemy
+        function create(){
+            //scene
+            back = game.add.image(0,-400,'lazur');//位置（0，-400）
+            back.scale.set(2);//放大2倍
+            back.smoothed = false;
+
+            mummy = game.add.sprite(200,360,'mummy',10);
+            mummy.scale.set(4);//放大4倍
+            mummy.smoothed = false;
+
+            anim = mummy.animations.add('walk');
+            anim.play(10,true);
+        }
+        function update(){}
+    </script>
+</body>
+</html>

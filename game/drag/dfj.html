@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 动态的添加canvas 800x600 callbacks -->
+    <div id="game"></div>
+    <script>
+    ;var DFJ = {};//命名空间 libs
+    /*
+    *Game类，游戏实例
+    *@parmas w：number 游戏区域宽度
+    *@parmas h：number 游戏区域高度
+    *@parmas selector：string  游戏区域选择
+    *@parmas callback：object  游戏回调集合
+    */
+    DFJ.Game = function(w,h,selector,callback){
+        this.width = w;
+        this.height = h;
+        this.ele = document.querySelector(selector);
+        this.callback = callback;
+        this.init();
+    }//类
+    DFJ.Game.prototype.init = function(){
+        this.ele.style.width = this.width +'px';
+        this.ele.style.height = this.height +'px';
+        this.ele.style.backgroundColor = 'green';
+        this.createCanvas();
+    }
+    DFJ.Game.prototype.createCanvas = function(){
+        
+    }
+    new DFJ.Game(800,600,'#game',{})
+    </script>
+</body>
+</html>

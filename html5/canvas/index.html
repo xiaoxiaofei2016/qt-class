@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style>
+       *{
+           padding: 0;
+           margin: 0;
+       }
+       body{
+            text-align:center;
+
+        }
+        #draw{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- 画布 -->
+    <canvas id="draw"></canvas>
+    <script>
+        const canvas=
+            document.querySelector('#draw')
+        // console.log(canvas);
+        //canvas 步骤
+        const ctx=
+            canvas.getContext('2d');
+        //绘画环境
+        // BOM Browser Object Model
+        // DOM Document Object Model
+        // window(js 的宙斯)
+        // document（地面的王）
+        canvas.width=window.innerWidth-50;
+        canvas.height=window.innerHeight-50;
+        // 设置canvas宽高与window宽高的关系
+
+        ctx.strokeStyle='red';//描边颜色
+        ctx.lineWidth=30;
+        ctx.lineJoin='round';//当两条线条交汇时，创建圆形边角
+        ctx.lineCap='round';//绘制圆形的结束线帽
+        //全局变量
+        let lastX=0,
+            lastY=0,
+            isDrawing=false,
+            hue=0,
+            direction=false;
+        // ctx.moveTo(100,100);把窗口的左上角移动到一个指定的坐标
+        // ctx.lineTo(200,400);开始一条路径，移动到位置 100,100。创建到达位置 200,400 的一条线：
+        // ctx.stroke();
+        function draw(event){
+            // console.log(event.offsetX,event.offsetY);
+            if (!isDrawing) return;
+            console.log(event);
+            ctx.strokeStyle='hsl('+hue +',100%,50%)';
+            ctx.beginPath();
+            ctx.moveTo(lastX,lastY);
+            ctx.lineTo(event.offsetX,event.offsetY);
+            ctx.stroke();
+            lastX=event.offsetX;
+            lastY=event.offsetY;
+
+            hue+=50;
+            if(hue >= 360){
+                hue=0;
+            } 
+            // HSL颜色值指定：HSL（色相，饱和度，明度）。色相是在色轮上的程度（从0到360）
+            if(ctx.linerWidth >=100 ||ctx.lineWidth <=1){
+                direction=!direction;
+            }
+            if(direction){
+                ctx.lineWidth++;
+            } 
+            else{
+                ctx.lineWidth--;
+            }
+
+        }
+        canvas.addEventListener('mousedown',
+        function(event){
+            // console.log(event.offsetX,event.offsetY);
+            isDrawing=true;
+            // boolean mousemove  要画
+            lastX=event.offsetX;
+            lastY=event.offsetY;
+        });
+        //画定
+        canvas.addEventListener('mousemove',draw);  
+        // canvas.addEventListener('mouseup', function(event){
+        //     isDrawing=false;
+        // }); 
+        canvas.addEventListener('mouseup',() =>isDrawing=false)
+        canvas.addEventListener('mouseout',() =>isDrawing=false)     
+    </script>
+</body>
+</html>
