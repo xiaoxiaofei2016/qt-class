@@ -9,8 +9,11 @@ html,body
     flex 1
 .section-title
     font-size 17px
+    font-weight bold
     color #000
 .action-list.section-title
+    padding-left 0.4rem
+.mv-list.section-title
     padding-left 0.4rem
 .nav
     height 1.067rem
@@ -224,11 +227,88 @@ section
                 color #bababa
                 margin-top 0.1rem
 
+.section-sperate
+    .mv
+        width 100%
+        padding 0.3rem 0.3rem 0.2rem 0.3rem
+        overflow-x scroll
+        white-space nowrap  
+        box-sizing border-box
+        li
+            margin-right 0.13333rem
+            display inline-block
+            height 1.867rem
+            .movie-celebrities_pic
+                width 100%
+                height 100%
+                img 
+                    width 100%
+                    height 100%
+                &:first-child
+                    width 3.33334rem
+                    height 1.867rem
+                &:last-child
+                    margin-right 0
+    .pos_r
+        position relative
+        .join-comment
+            color $font_color_block
+            background-color #e54847
+            border-radius 20px
+            font-size 14px
+            font-weight normal 
+            position absolute
+            top 50%
+            right 0
+            transform translateY(-50%)
+            padding 0.1rem 0.3rem
+    .movie-comment
+        padding 0.2rem 0 .4rem 0
+        overflow hidden
+        .comment-item
+            float left
+            padding .1rem .25rem
+            border 1px solid #aaaaaa    
+            border-radius 20px
+            margin-top .2rem
+            margin-right .5rem
+            .comment-item_sort
+                font-size 14px
+.section-seperate
+    .chosen-comment
+        .chosen-comment__item
+            position relative
+            .item-avatal
+                position absolute
+                top 0px
+                left 0px
+                width 40px
+                
+                img 
+                    border-radius 50%
+                    width 100%
+            .item-detail
+                position absolute
+                top 0px
+                left 50px
+                    // .item-detail__hd
+                    //     display flex
+                //         .nick-name
+                //         .level
+                //             img
+                //     .item-score__desc
+
+
+
+            
+            
+        
+        
 
 
 
 
-
+            
 
 #toast
     display none

@@ -118,6 +118,96 @@
             </div>
 
         </section>
+        <!-- section5 -->
+        <section class="movie-photo section-sperate">
+            <p class="action-list section-title">视频和剧照</p>
+            <ul class="mv">
+                <!-- <li>
+                    <a href="#" class="link">
+                        <div class="movie-celebrities_pic">
+                            <img src="./images/header-bg.jpg/" alt="">
+                        </div>
+                    </a>
+                </li> -->
+            </ul>
+        </section>
+        <!-- section6 -->
+        <section class="section-sperate section-expander">
+            <p class="section-title pos_r">讨论
+                <span class="join-comment">参加讨论</span>
+            </p>
+            <ul class="movie-comment">
+                <li class="comment-item">
+                    <div class="comment-item_sort">
+                        <span>全部</span>
+                        <span class="comment-item_num"></span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item_sort">
+                        <span>好评</span>
+                        <span class="comment-item_num">23323</span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item_sort">
+                        <span>差评</span>
+                        <span class="comment-item_num">43443</span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item_sort">
+                        <span>点映</span>
+                        <span class="comment-item_num">343</span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item_sort">
+                        <span>购票</span>
+                        <span class="comment-item_num">5454</span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item_sort">
+                        <span>认证作者</span>
+                        <span class="comment-item_num">54</span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item_sort">
+                        <span>同城  </span>
+                        <span class="comment-item_num">65</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- section7 -->
+        <section class="section-seperate section-expander">
+            <p class="section-title">精选</p>
+            <ul class="chosen-comment" id="chosen-comment">
+              <!-- <li class="chosen-comment__item">
+                <div class="item-avatal">
+                  <img src="http://img5.duitang.com/uploads/item/201409/23/20140923094045_BNYji.thumb.700_0.png" alt="">
+                </div>
+                <div class="item-detail">
+                  <div class="item-detail__hd">
+                    <div>
+                      <span class="nick-name">额问我</span>
+                      <span class="level">
+                        <img src="http://p0.meituan.net/moviemachine/83a90e3a7dda4463963fbc7fb8c02ee32335.png" alt="" >
+                      </span>
+                    </div>
+                    <p class="item-score__desc">给这部电影打了<span>10</span>分</p>
+                    <p class="comment-detail">可以说本片是今年至今为止，我看过的最好看的影片，没有之一！片子特别温情，除了开始有几个点比较搞笑外，我几乎事含着泪看完全场的—为师生间深刻的情感、为同学间真挚的友谊、为青春时美好的爱恋……总之，如果用一个词概括—"纯粹"，对，特别纯粹！我觉得凡70后、上过高中的人都应该走进影院，我想你会找到自己的影子(比如你曾就读是青岛三十九中😏 )。为于谦老师的演绎打CALL，老年的他一出现，我就泪崩了！特别想念我人生中对我影响至深的几位老师，深深地为你们祝福！</p>
+                  </div>
+                </div>
+              </li> -->
+            </ul>
+          </section>
+        <div class="buy">
+            <a href="#">特惠购票</a>
+        </div>
+      
         <!-- toast -->
         <div id="toast">
                 <div class="weui-mask_transparent"></div>
@@ -147,7 +237,8 @@
                     $('.text-expander_content p').html(res.data.desc)
                     celebrity(res.data.person)
                     booking(res.data.booking)
-
+                    mv(res.data.pictures)
+                    comment(res.data.comment)
                 }
             })
             function star(e){
@@ -211,14 +302,48 @@
                     )
                 }
             }
+            function mv(e){
+                for(let m of e){
+                    $('.mv').append(
+                        `<li>
+                            <a href="#" class="link">
+                                <div class="movie-celebrities_pic">
+                                    <img src="${m}" alt="">
+                                </div>
+                            </a>
+                        </li>`
+                    )
+                }
+            }
+            function comment(e){
+                for(let p of e){
+                    $('.chosen-comment').append(
+                        `<li class="chosen-comment__item">
+                            <div class="item-avatal">
+                                <img src="${p.avatal}" alt="">
+                            </div>
+                            <div class="item-detail">
+                                <div class="item-detail__hd">
+                                    <div>
+                                        <span class="nick-name">${p.nickName}</span>
+                                        <span class="level">
+                                            <img src="${p.level}" alt="" >
+                                        </span>
+                                    </div>
+                                        <p class="item-score__desc">给这部电影打了<span>${p.grade}</span>分</p>
+                                        <p class="comment-detail">${p.detail}</p>
+                                </div>
+                            </div>
+                        </li>`
+                    )
+                }
+            }
 
             //票房
             function booking(e){
                 $('#ranking').html(e.ranking)
                 $('#bookingWeek').html(e.bookingWeek)
                 $('#bookingTotal').html(e.bookingTotal)
-                
-
             }
         })()
 

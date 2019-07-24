@@ -10,11 +10,13 @@ body {
 }
 .section-title {
   font-size: 17px;
+  font-weight: bold;
   color: #000;
 }
 .action-list.section-title {
   padding-left: 0.4rem;
 }
+
 .nav {
   height: 1.067rem;
   font-size: 18px;
@@ -267,6 +269,131 @@ section {
   color: #bababa;
   margin-top: 0.1rem;
 }
+.section-sperate .mv {
+  width: 100%;
+  padding: 0.3rem 0.3rem 0.2rem 0.3rem;
+  overflow-x: scroll;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.section-sperate .mv li {
+  margin-right: 0.13333rem;
+  display: inline-block;
+  height: 1.867rem;
+}
+.section-sperate .mv li .movie-celebrities_pic {
+  width: 100%;
+  height: 100%;
+}
+.section-sperate .mv li .movie-celebrities_pic img {
+  width: 100%;
+  height: 100%;
+}
+.section-sperate .mv li .movie-celebrities_pic:first-child {
+  width: 3.33334rem;
+  height: 1.867rem;
+}
+.section-sperate .mv li .movie-celebrities_pic:last-child {
+  margin-right: 0;
+}
+.section-sperate .pos_r {
+  position: relative;
+}
+.section-sperate .pos_r .join-comment {
+  color: #fff;
+  background-color: #e54847;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0.1rem 0.3rem;
+}
+.section-sperate .movie-comment {
+  padding: 0.2rem 0 0.4rem 0;
+  overflow: hidden;
+}
+.section-sperate .movie-comment .comment-item {
+  float: left;
+  padding: 0.1rem 0.25rem;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+}
+.section-sperate .movie-comment .comment-item .comment-item_sort {
+  font-size: 14px;
+}
+/* .chosen-comment{
+  height: 100%;
+  padding: 0.3rem 0.3rem 0.1rem 0.3rem;
+  overflow-y: scroll;
+  white-space: nowrap;
+  box-sizing: border-box;
+} */
+.section-seperate .chosen-comment .chosen-comment__item {
+  position: relative;
+}
+.section-seperate .chosen-comment .chosen-comment__item .item-avatal {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 40px;
+}
+.section-seperate .chosen-comment .chosen-comment__item .item-avatal img {
+  border-radius: 50%;
+  width: 100%;
+}
+.section-seperate .chosen-comment .chosen-comment__item .item-detail {
+  position: absolute;
+  top: 0px;
+  left: 60px;
+}
+.item-detail__hd{
+  display: flex;
+  flex-direction: column;
+}
+.nick-name{
+  display: inline-block;
+}
+.level{
+  width: 20px;
+  margin-left: 10px;
+}
+.level img{
+  height: 17px;
+  width: 30.5px;
+  transform: translateY(5px)
+}
+.item-score__desc{
+  margin-top: 2px;
+}
+.comment-detail{
+/*   
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; */
+ 
+}
+.buy{
+  width: 100%;
+  background: red;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 0;
+}
+.buy a{
+  text-decoration: none;
+  color: #fff;
+}
+
 #toast {
   display: none;
 }

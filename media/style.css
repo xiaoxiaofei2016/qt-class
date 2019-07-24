@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  background-color: #000;
+  line-height: 1.5;
+  font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 27px;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.center {
+  text-align: center;
+}
+.very {
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  #mainbody .container {
+    padding: 0 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #mainbody .container .thumbnails {
+    margin-left: 0px;
+  }
+  #mainbody .container .thumbnails li {
+    float: none;
+    margin-left: jl30;
+  }
+  #mainbody .container .thumbnails .span4 {
+    width: 100% !important;
+  }
+}
+@media (min-width: max-width 980px) {
+  #mainbody .container {
+    width: 724px;
+  }
+  #mainbody .container .thumbnails {
+    margin-left: -20px;
+  }
+  #mainbody .container .thumbnails li {
+    margin-left: jl30;
+  }
+  #mainbody .container .thumbnails .span4 {
+    width: 100% !important;
+  }
+}
+@media (max-width: 1200px) {
+  #mainbody .container {
+    width: 940px;
+  }
+  #mainbody .container .thumbnails {
+    margin-left: -20px;
+  }
+  #mainbody .container .thumbnails li {
+    margin-left: jl30;
+  }
+  #mainbody .container .thumbnails .span4 {
+    width: 300px !important;
+  }
+}
+@media (min-width: 1200px) {
+  #mainbody .container {
+    width: 1170px;
+  }
+  #mainbody .container .thumbnails {
+    margin-left: -30px;
+  }
+  #mainbody .container .thumbnails li {
+    margin-left: jl30;
+  }
+}
+#mainbody {
+  background: #f8f8f8;
+}
+#mainbody .noise {
+  background: url("./white-noise.png");
+}
+#mainbody .noise .tag-menu {
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+  overflow: visible;
+}
+#mainbody .noise .tag-menu li {
+  width: 24.5%;
+  text-align: center;
+  margin-right: 0;
+  display: inline-block;
+  padding-top: 5px;
+}
+#mainbody .noise .tag-menu li a {
+  display: block;
+  color: #808080;
+  padding: 7px 23px;
+  line-height: 1.9;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+#mainbody .noise .tag-menu li .active {
+  color: #000;
+}
+.very.relaxed {
+  padding: 60px 0 120px 0;
+}
+.very.relaxed .container {
+  margin: 0 auto;
+}
+.very.relaxed .maincontent {
+  padding: 20px 0;
+  position: relative;
+}
+.very.relaxed .maincontent .thumbnails {
+  margin-top: 48px;
+  overflow: hidden;
+}
+.very.relaxed .maincontent .thumbnails li {
+  float: left;
+  margin-bottom: 30px;
+  margin-left: $jl30;
+}
+.very.relaxed .maincontent .thumbnails .span4 {
+  width: 370px;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail {
+  display: block;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 0;
+  border-radius: 2px;
+  line-height: 20px;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail a {
+  color: #333;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail a div {
+  text-align: center;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail a div .p20 {
+  padding: 20px;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail a div .p20 img {
+  width: 163px;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail a div .p20 p {
+  font-size: 16px;
+  opacity: 0.75;
+  margin: 0 0 20px;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail a div .p20 .meta {
+  border-top: 1px solid #f1f1f1;
+  text-align: left;
+  background: #fff;
+  padding: 10px;
+  color: #838383;
+}
+.very.relaxed .maincontent .thumbnails .span4 .thumbnail a div .p20 .meta .pull-right {
+  float: right;
+}
