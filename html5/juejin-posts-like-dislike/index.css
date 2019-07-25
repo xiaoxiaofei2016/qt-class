@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    font-size: 12px;
+}
+li{
+    list-style: none;
+    margin-bottom: 1px;
+    border-bottom: 1px solid rgba(178,186,194,.15);
+}
+.thumb{
+    width: 5rem;
+    height: 5rem;
+    margin-left: 2rem;
+    border-radius: 2px;
+}
+.content-box{
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+.info-box{
+    flex: 1;
+}
