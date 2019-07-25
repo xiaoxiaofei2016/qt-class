@@ -89,6 +89,7 @@ section {
   background-repeat: no-repeat;
   background-position-y: 40%;
 }
+
 .movie-header .movie-filter {
   background: #40454d;
   opacity: 0.5;
@@ -122,6 +123,7 @@ section {
   background-size: 100% auto;
   opacity: 0.7;
 }
+
 .movie-header .movie-container .movie-content {
   overflow: hidden;
   padding-left: 0.4rem;
@@ -200,9 +202,9 @@ section {
   min-height: 65px;
   display: -webkit-box;
   overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;/* 超出打点 */
+  word-break: break-all;/* 允许单词内换行 */
+  -webkit-box-orient: vertical;/* 从顶部向底部垂直布置子元素 */
   -webkit-line-clamp: 3;
 }
 .section-expander .text-expander_button {
@@ -222,37 +224,37 @@ section {
 .section-expander .text-expander_button .icon_chevron_down.up {
   transform: rotateZ(-135deg);
 }
-.section-sperate .movie-celebrities {
+.section-seperate .movie-celebrities {
   width: 100%;
   padding: 0.3rem 0.3rem 0.1rem 0.3rem;
   overflow-x: scroll;
   white-space: nowrap;
   box-sizing: border-box;
 }
-.section-sperate .movie-celebrities li {
+.section-seperate .movie-celebrities li {
   text-align: center;
   display: inline-block;
   padding: 0.04rem;
 }
-.section-sperate .movie-celebrities li .link {
+.section-seperate .movie-celebrities li .link {
   color: #000;
 }
-.section-sperate .movie-celebrities li .link .movie-celebrities_pic {
+.section-seperate .movie-celebrities li .link .movie-celebrities_pic {
   width: 1.7334rem;
   height: 2.4rem;
   margin: 0.05rem;
 }
-.section-sperate .movie-celebrities li .link .movie-celebrities_pic img {
+.section-seperate .movie-celebrities li .link .movie-celebrities_pic img {
   width: 100%;
 }
-.section-sperate .movie-celebrities li .link span {
+.section-seperate .movie-celebrities li .link span {
   display: block;
   font-size: 0.2rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.section-sperate .movie-celebrities li .link .movei-celebrities-roles {
+.section-seperate .movie-celebrities li .link .movei-celebrities-roles {
   color: #999;
 }
 .movie-booking {
@@ -269,37 +271,37 @@ section {
   color: #bababa;
   margin-top: 0.1rem;
 }
-.section-sperate .mv {
+.section-seperate .mv {
   width: 100%;
   padding: 0.3rem 0.3rem 0.2rem 0.3rem;
   overflow-x: scroll;
   white-space: nowrap;
   box-sizing: border-box;
 }
-.section-sperate .mv li {
+.section-seperate .mv li {
   margin-right: 0.13333rem;
   display: inline-block;
   height: 1.867rem;
 }
-.section-sperate .mv li .movie-celebrities_pic {
+.section-seperate .mv li .movie-celebrities_pic {
   width: 100%;
   height: 100%;
 }
-.section-sperate .mv li .movie-celebrities_pic img {
+.section-seperate .mv li .movie-celebrities_pic img {
   width: 100%;
   height: 100%;
 }
-.section-sperate .mv li .movie-celebrities_pic:first-child {
+.section-seperate .mv li .movie-celebrities_pic:first-child {
   width: 3.33334rem;
   height: 1.867rem;
 }
-.section-sperate .mv li .movie-celebrities_pic:last-child {
+.section-seperate .mv li .movie-celebrities_pic:last-child {
   margin-right: 0;
 }
-.section-sperate .pos_r {
+.section-seperate .pos_r {
   position: relative;
 }
-.section-sperate .pos_r .join-comment {
+.section-seperate .pos_r .join-comment {
   color: #fff;
   background-color: #e54847;
   border-radius: 20px;
@@ -311,11 +313,11 @@ section {
   transform: translateY(-50%);
   padding: 0.1rem 0.3rem;
 }
-.section-sperate .movie-comment {
+.section-seperate .movie-comment {
   padding: 0.2rem 0 0.4rem 0;
   overflow: hidden;
 }
-.section-sperate .movie-comment .comment-item {
+.section-seperate .movie-comment .comment-item {
   float: left;
   padding: 0.1rem 0.25rem;
   border: 1px solid #aaa;
@@ -323,33 +325,32 @@ section {
   margin-top: 0.2rem;
   margin-right: 0.5rem;
 }
-.section-sperate .movie-comment .comment-item .comment-item_sort {
+.section-seperate .movie-comment .comment-item .comment-item_sort {
   font-size: 14px;
 }
-/* .chosen-comment{
-  height: 100%;
-  padding: 0.3rem 0.3rem 0.1rem 0.3rem;
-  overflow-y: scroll;
-  white-space: nowrap;
-  box-sizing: border-box;
-} */
+.chosen-comment{
+  /* border-bottom: 1px solid #000; */
+ 
+}
 .section-seperate .chosen-comment .chosen-comment__item {
   position: relative;
+  /* height: 200px; */
 }
 .section-seperate .chosen-comment .chosen-comment__item .item-avatal {
   position: absolute;
   top: 5px;
   left: 0px;
   width: 40px;
+ 
 }
 .section-seperate .chosen-comment .chosen-comment__item .item-avatal img {
   border-radius: 50%;
   width: 100%;
 }
 .section-seperate .chosen-comment .chosen-comment__item .item-detail {
-  position: absolute;
-  top: 0px;
-  left: 60px;
+  margin:0 10px 20px 50px;
+ padding-bottom: 10px;
+  border-bottom: 1px solid #aaa;
 }
 .item-detail__hd{
   display: flex;
@@ -358,27 +359,30 @@ section {
 .nick-name{
   display: inline-block;
 }
-.level{
+.lever{
   width: 20px;
   margin-left: 10px;
 }
-.level img{
+.lever img{
   height: 17px;
   width: 30.5px;
-  transform: translateY(5px)
+  transform: translateY(5px);
 }
 .item-score__desc{
   margin-top: 2px;
+  color: #A4A4A3;
 }
+
 .comment-detail{
-/*   
-  display: -webkit-box;
+  
+  /* display: -webkit-box;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
   word-break: break-all;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; */
- 
+  /* -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow-y: scroll; */
+  padding-top: 10px;
 }
 .buy{
   width: 100%;
@@ -392,6 +396,37 @@ section {
 .buy a{
   text-decoration: none;
   color: #fff;
+}
+.bottom{
+  display: flex;
+  position: relative;
+}
+.time{
+  margin:0.3rem 0;
+  color: #A4A4A3;
+}
+
+
+.note{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  
+}
+.like{
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 0.1rem 0.25rem;
+  margin: 0.2rem 0.5rem 0.2rem 0;
+  color: #A4A4A3;
+}
+.reply{
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 0.1rem 0.25rem;
+  margin:0.2rem 0.5rem 0.2rem 0;
+  color: #A4A4A3;
 }
 
 #toast {

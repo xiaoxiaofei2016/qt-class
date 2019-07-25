@@ -86,7 +86,7 @@
             </div>
         </section>
         <!-- section3 -->
-        <section class="section-sperate">
+        <section class="section-seperate">
             <p class="action-list section-title">演职人员</p>
             <ul class="movie-celebrities">
                 <!-- <li>
@@ -119,7 +119,7 @@
 
         </section>
         <!-- section5 -->
-        <section class="movie-photo section-sperate">
+        <section class="movie-photo section-seperate">
             <p class="action-list section-title">视频和剧照</p>
             <ul class="mv">
                 <!-- <li>
@@ -132,7 +132,7 @@
             </ul>
         </section>
         <!-- section6 -->
-        <section class="section-sperate section-expander">
+        <section class="section-seperate section-expander">
             <p class="section-title pos_r">讨论
                 <span class="join-comment">参加讨论</span>
             </p>
@@ -193,12 +193,25 @@
                   <div class="item-detail__hd">
                     <div>
                       <span class="nick-name">额问我</span>
-                      <span class="level">
+                      <span class="lever">
                         <img src="http://p0.meituan.net/moviemachine/83a90e3a7dda4463963fbc7fb8c02ee32335.png" alt="" >
                       </span>
                     </div>
                     <p class="item-score__desc">给这部电影打了<span>10</span>分</p>
                     <p class="comment-detail">可以说本片是今年至今为止，我看过的最好看的影片，没有之一！片子特别温情，除了开始有几个点比较搞笑外，我几乎事含着泪看完全场的—为师生间深刻的情感、为同学间真挚的友谊、为青春时美好的爱恋……总之，如果用一个词概括—"纯粹"，对，特别纯粹！我觉得凡70后、上过高中的人都应该走进影院，我想你会找到自己的影子(比如你曾就读是青岛三十九中😏 )。为于谦老师的演绎打CALL，老年的他一出现，我就泪崩了！特别想念我人生中对我影响至深的几位老师，深深地为你们祝福！</p>
+                    <div class="bottom">
+                        <div class="time">
+                            <span>7.21</span>
+                        </div>
+                        <div class="note">
+                            <div class="like">
+                                <span>5228</span>
+                            </div>
+                            <div class="reply">
+                                <span>261</span>
+                            </div>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </li> -->
@@ -326,12 +339,25 @@
                                 <div class="item-detail__hd">
                                     <div>
                                         <span class="nick-name">${p.nickName}</span>
-                                        <span class="level">
-                                            <img src="${p.level}" alt="" >
+                                        <span class="lever">
+                                            <img src="${p.lever}" alt="" >
                                         </span>
                                     </div>
                                         <p class="item-score__desc">给这部电影打了<span>${p.grade}</span>分</p>
                                         <p class="comment-detail">${p.detail}</p>
+                                        <div class="bottom">
+                                            <div class="time">
+                                                <span>${p.date}</span>
+                                            </div>
+                                        <div class="note">
+                                            <div class="like">
+                                                <span>${p.like}</span>
+                                            </div>
+                                            <div class="reply">
+                                                <span>${p.reply}</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </li>`
