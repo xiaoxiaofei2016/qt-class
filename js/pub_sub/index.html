@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>买房卖房</title>
+</head>
+<body>
+    <script>
+        // 事件监听
+        // dom.addEventListener(event_type,callback)
+        // 事件 点击(事件触发)才会执行？ 注册  submit
+        //发生时，body 广播出去，订阅了的事件的回调函数去执行
+        // 买房
+        // 售楼部 body  房子可以卖了
+        // 买房的人
+        var saleOffice = {
+            name:'万达'
+        }
+        
+        saleOffice.clientList =[];//购房者
+        // saleOffice.clientList.push()//增加购房者
+        //参数 fn 到时给我打个电话哦 fn
+        saleOffice.listen = function(fn) {
+            saleOffice.clientList.push(fn);
+        }
+        saleOffice.trigger = function() {
+            for (var i = 0;i<saleOffice.clientList.length;i++) {
+                typeof saleOffice.clientList[i] == 'function'?saleOffice.clientList[i](20000,112):null;
+            }
+        }
+
+        saleOffice.listen(function(price,squareMeter){
+            console.log(price,squareMeter);
+            if(price > 15000){
+                console.log('房价超过娶媳妇...');
+            }
+        });
+        saleOffice.listen(function(price,squareMeter){
+            if(squareMeter < 100){
+                console.log('面积太小了');
+            }else{
+                console.log('正合我意！')
+            }
+        })
+        //买房？
+    </script>
+</body>
+</html>
