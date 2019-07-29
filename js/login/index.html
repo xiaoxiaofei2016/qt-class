@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            text-align: center;
+            padding: 25px 0;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        cnskcmz.ks
+        <p class="inner">dhkncnjk</p>
+    </div>
+    <!-- 登录  评论 loginForm-->
+    <a href="/login" id="login_a">login</a>
+    <!-- href="javascript:;"   可以干掉a标签的默认行为 -->
+    <!-- <button id="loginBth">登录</button> -->
+    <script>
+        const box = document.querySelector('.box');
+        const inner = document.querySelector('.inner');
+
+        document.getElementById('login_a').addEventListener('click',function(event){
+            //阻止a标签的href=""
+            event.preventDefault();//preventDefault()
+            alert('打开弹窗');
+        });
+        document.querySelector('.box').addEventListener('click',() =>{
+            alert('I am a box');
+        },false)
+        document.querySelector('.inner').addEventListener('click',(event) =>{
+            // event.stopPropagation();//停止冒泡
+            alert('I am inner');
+        },false)//false默认执行顺序，true为相反的顺序
+    </script>
+</body>
+</html>
