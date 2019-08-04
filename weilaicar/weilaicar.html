@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./weilaicar.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <title>蔚来汽车</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="./image/NIO.png" alt="NIO" style="height: 36px;">
+            </a>
+        </div>
+        <div class="nav-list">
+            <ul class="nav">
+                <li class="nav-list-menu  " id="nav-list-menu">
+                    <span>车</span>
+                    <!-- 箭头用i标签实现 -->
+                    <i class="jiantou up" id="jiantou"></i>
+                    <!-- 下拉框ul -->
+                    <ul class="menu clearfix menu--level-1" id="menu">
+                        <li class="menu_item menu_item-link">
+                            <span>量产车</span>
+                        </li>
+                        <li class="menu_item">
+                            <a href="">ES6
+                                <!-- 用一个盒子实现下边框出现 -->
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item">
+                            <a href="">ES8
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item">
+                            <a href="">EP9
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item menu_item-link underline">
+                            <span>概念车</span>
+                        </li>
+                        <li class="menu_item">
+                            <a href="">EVE
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-list-menu  " id="nav-list-menu">
+                    <span>服务</span>
+                    <i class="jiantou" id="jiantou"></i>
+                    <ul class="menu clearfix menu--level-2" id="menu">
+                        <li class="menu_item">
+                            <a href="">NIO House
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item">
+                            <a href="">NIO Power
+                                <div class="borders" id="borders"></div>   
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item">
+                            <a href="">NIO Service
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-list-menu-dikuan ">
+                    <a href="#">NIO Life</a>
+                    <div class="border" id="border"></div>
+                </li>
+                <li class=" nav-list-menu-dikuan">
+                    <a href="#">电动方程式</a>
+                    <div class="border" id="border"></div>
+                </li>
+                <li class="nav-list-menu  " id="nav-list-menu">
+                    <span>蔚来</span>
+                    <i class="jiantou" id="jiantou"></i>
+                    <ul class="menu clearfix menu--level-3" id="menu">  
+                        <li class="menu_item">
+                            <a href="">新闻
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item">
+                            <a href="">关于蔚来
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item">
+                            <a href="">加入我们
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                        <li class="menu_item">
+                            <a href="">投资者关系
+                                <div class="borders" id="borders"></div>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-btn">
+            <input type="botton" value="预约试驾">
+        </div>
+    </header>
+    <div class="container">
+        <div class="items">
+            <div class="item">
+                <div class="context">
+                    <div class="inner-box">
+                        <div class="wl-logo">
+                            <img src="./image/a.png" class="bgp logo" alt="">
+                            <p class="p p1">全国试驾开启</p>
+                        </div>
+                        <div class="btn-box2">
+                            <a class="bat" href="#">报名试驾</a>
+                            <a class="bat" href="#">探索ES6</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img class="bgp" src="./image/b.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="context">
+                    <div class="inner-box">
+                        <div class="wl-logo">
+                            <img src="./image/b.png" class="bgp logo" alt="">
+                            <p class="p p1">星云紫开启预定</p>
+                            <p class="p p3" style="font-size: 16px">84kWh电池包同步开放选装</p>
+                        </div>
+                        <div class="btn-box2">
+                            <a class="bat"  href="#">试驾ES8</a>
+                            <a class="bat"  href="#">探索ES8</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img  class="bgp" src="./image/c.jpg" alt="">
+                </div>
+            </div>
+            <div class="spit2" style="padding: 20px 20px 0 20px">
+                <div class="item flex1" style="padding-right:20px ">
+                    <div class="context">
+                        <div class="inner-box">
+                            <div class="wl-logo">
+                                <img src="./image/c.png" class="bgp logo" alt="">
+                                <p class="p p2" style="font-size: 16px">极致易用的界面，个性化的系统</p>
+                                <p class="p p2" style="font-size: 16px">更多的情感体验功能</p>
+                            </div>
+                            <div class="btn-box ">
+                                <a class="bat "  href="#">观看介绍视频</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pic">
+                        <img  class="bgp" src="./image/a.jpg" alt="">
+                    </div>
+                </div>
+                <div class="item flex1">
+                    <div class="context">
+                        <div class="inner-box">
+                            <div class="wl-logo">
+                                <img src="./image/d.png" class="bgp logo" alt="">
+                                <p class="p p2">蔚来自动辅助驾驶系统</p>
+                                <p class="p p2" style="font-size: 16px">主要功能现已释放</p>
+                            </div>
+                            <div class="btn-box">
+                                <a class="bat "  href="#">了解主要功能</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pic">
+                        <img  class="bgp" src="./image/f.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="spit2" style="padding: 20px">
+                <div class="item flex1" style="padding-right:20px ">
+                    <div class="context">
+                        <div class="inner-box">
+                            <div class=" wl-logo wl-logo2">
+                                <img src="./image/e.png" class="bgp logo" alt="">
+                                <p class="p p2">全感官愉悦体验</p>
+                            </div>
+                            <div class="btn-box">
+                                <a class="bat "  href="#">附近用户中心</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pic">
+                        <img  class="bgp" src="./image/d.jpg" alt="">
+                    </div>
+                </div>
+                <div class="item flex1">
+                    <div class="context">
+                        <div class="inner-box">
+                            <div class="wl-logo wl-logo2">
+                                <img src="./image/f.png" class="bgp logo" alt="">
+                                <p class="p p2">加电比加油更方便</p>
+                            </div>
+                            <div class="btn-box">
+                                <a class="bat "  href="#">了解更多</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pic">
+                        <img  class="bgp" src="./image/e.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- 轮播图 -->
+            <div class="lunbo-content">
+                <div class="list">
+                 <img src="image/App-1-D.jpg">
+                 <img src="image/App-2-D.jpg">
+                 <img src="image/App-3-D.jpg">
+                 <img src="image/App-4-D.jpg">
+                </div>
+                <div class="center">
+                    <div class="bottom-logo wl-logo">
+                        <img src="./image/white.png" class="bgp1" style="height:56px;animation-delay: 0.2s" alt="">
+                        <h3 class="p p4" style="animation-delay: 0.4s">发现</h3>
+                    </div>
+                    <p class="p p5" style="animation-delay: 0.6s">每一天，这里都有新的惊喜</p>
+                    <p class="p p5" style="animation-delay: 0.6s">高颜值且高品质的心水好物</p>
+                    <p class="p p5" style="animation-delay: 0.6s">还有朋友们分享的使用体验</p>
+                    <div class="btn-box ">
+                        <a class="bat "  href="#">APP精选</a>
+                    </div>
+                </div>
+                <ul class="dots">
+                 <li index=1 class="active dot"></li>
+                 <li index=2 class="dot"></li>
+                 <li index=3 class="dot"></li>
+                 <li index=4 class="dot"></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-title">
+            <p>即刻下载<i>NIO</i>App</p>
+        </div>
+        <div class="footer-img">
+            <a href="">
+                <img src="./image/qr-code-lg.png" alt="" style="width:117px; padding-right:25px">
+            </a>
+            <a href="">
+                <img src="./image/ios-app.png" alt="" style="width:160px; padding-top:30px">
+            </a>
+        </div>
+        <div class="footer-nav">
+            <div class="footer-left">
+                <strong>© NIO 2019</strong>
+            </div>
+            <div class="footer-menu">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <span>上海蔚来汽车有限公司</span>    
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">隐私&amp;法律</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">网络合作申请</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">购车指南</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="img-list">
+                <div class="img">
+                    <a href="">
+                        <img src="./image/black-wechat.svg" alt="">
+                    </a>
+                </div>
+                <div class="img">
+                    <a href="">
+                        <img src="./image/black-weibo.svg" alt="">
+                    </a>
+                </div>
+                <div class="img">
+                    <a href="">
+                        <img src="./image/black-phone.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="China">
+                <div class="blank"></div>
+                <a href="#">
+                    <span>CN</span>
+                    <img src="./image/guoqi.png" alt="" width="30px">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="./weilaicar.js"></script>
+
+</body>
+</html>
