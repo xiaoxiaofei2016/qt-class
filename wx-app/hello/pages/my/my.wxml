@@ -1,0 +1,59 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+    <scroll-view>
+        <view class="header">
+            <view class="header_hd">
+                <text>{{city}}</text>
+                <view class="downtips"></view>
+            </view>
+            <view class="header_bd">
+                <view class="header_bd-hot header_bd-btn">正在上映</view>
+                <view class="header_bd-wating header_bd-btn">即将上映</view>
+            </view>
+            <view class="header_ft">
+                <image src="../../imgs/shouye.png" alt=""></image>
+            </view>
+        </view>
+        <swiper indicator-dots="true" indicator-active-color="red" autoplay="true" circular="true" interval="3000" duration="1000">
+            <block wx:for="{{imgUrls}}">
+                <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150"/>
+                </swiper-item>
+            </block>
+</swiper>
+
+<!-- 电影列表 -->
+<view class="movie-lists" wx:for="{{items}}" wx:key="{{index}}">
+    <view class="flex item">
+        <view class="item_left">
+            <image src="{{item.imgUrl}}" />
+        </view>
+        <view class="item_middle">
+            <view class="flex_auto">
+                <text class="title" >{{item.name}}</text>
+            </view>
+            <view>
+                <view class="item_grade">
+                    <text class="score" wx:if="{{item.isShow == 0}}">{{item.wantSee}}<text style="font-size:12px">人想看</text>
+                    </text>
+                    <text class="score" wx:else>
+                        {{item.grade}}<text style="font-size:12px">分</text>
+                    </text>
+                </view>
+            </view>
+            <view >
+                <text class="actor font-desc">主演:{{item.actor}}</text>
+            </view>
+            <view >
+                <text class="desc font-desc">今天{{item.showInfo.cinema}}家影院放映{{item.showInfo.times}}场</text>
+            </view>
+        </view>
+        <view class="item_right">
+            <view>
+                <text class="buy" style="background-color:{{item.isShow == 0 ? '#52b0eb' : '#ef4238'}}">{{item.isShow == 0 ? '预售' : '购票'}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+    </scroll-view>
+</view>
