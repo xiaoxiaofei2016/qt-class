@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+</head>
+<body>
+    <script src="./edit_in_place.js"></script>
+    <form action="/login" method="POST" id="userForm">
+        <fieldset>昵称</fieldset>
+        <input type="text" name="nickname" />
+        <button type="submit">确定</button>
+    </form>
+    <script>
+        const oForm = document.getElementById('userForm');
+        document.forms['userForm'];
+        oForm.addEventListener('submit',function(event) {
+            event.preventDefault();
+            let nickname = oForm['nickname'].value;
+            if(!nickname) {
+                alert('请输入昵称');
+                return;
+            } 
+            this.submit();
+        })
+       
+       
+    </script>
+</body>
+</html>
