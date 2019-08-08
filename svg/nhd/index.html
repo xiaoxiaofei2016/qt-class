@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>霓虹灯</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .text{
+            font-size: 64px;
+            font-weight: bold;
+            text-transform: uppercase;
+            fill: none; /* 填充色 */
+            stroke: #3498db;
+            stroke-width: 2px;
+            stroke-dasharray: 90 310;
+            animation: stroke 6s infinite linear;
+            
+        }
+        @keyframes stroke{
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+        
+        .text-1 {
+            animation-delay: -1.5s;
+            stroke: #3498db;
+            text-shadow: 0 0 5px #3498db;
+        }
+        .text-2 {
+            animation-delay: -4.5s;
+            stroke: #f39c13;
+            text-shadow: 0 0 5px #f39c13;
+        }
+        .text-3 {
+            animation-delay: -6s;
+            stroke: #e74c3c;
+            text-shadow: 0 0 5px #e74c3c;
+        }
+        .text-4 {
+            animation-delay: -3s;
+            stroke: #9b59b6;
+            text-shadow: 0 0 5px #9b59b6;
+        }
+    </style>
+</head>
+<body>
+    <svg width="100%" height="400" xmlns="http://www.w3.org/2000/svg">
+        <text text-anchor="middle" x="50%" y="50%" class="text text-1">segmentfault.com</text>
+        <text text-anchor="middle" x="50%" y="50%" class="text text-2">segmentfault.com</text>
+        <text text-anchor="middle" x="50%" y="50%" class="text text-3">segmentfault.com</text>
+        <text text-anchor="middle" x="50%" y="50%" class="text text-4">segmentfault.com</text>
+        
+    </svg>
+</body>
+</html>
