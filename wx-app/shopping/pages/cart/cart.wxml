@@ -1,2 +1,38 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="main">
+    <view wx:if="{{hasList == true}}">
+        <view class="cart-box" >
+            <view class="cart-list" wx:for="{{carts}}" wx:key="index">
+                <icon class="cart-pro-select" type="success" color="red" wx:if="{{item.selected}}" bindtap="selectList" data-index="{{index}}"/>
+                <icon class="cart-pro-select" type="circle" color="red" wx:else bindtap="selectList" data-index="{{index}}"/>
+                <navigator class="cart-pro-goods" url="../details/details?id={{item.id}}">
+                    <image class="cart-thumb" src="{{item.image}}" />
+                </navigator>
+                <text class="cart-pro-name">{{item.title}}</text>
+                <text class="cart-pro-price">{{item.price}}</text>
+
+                <view class="cart-count-box">
+                    <text class="cart-count-down" bindtap="reduceCount" data-index="{{index}}">-</text>
+                    <text class="cart-count-num">{{item.num}}</text>
+                    <text class="cart-count-add" bindtap="addCount" data-index="{{index}}">+</text>
+                </view>
+                <text class="cart-del" bindtap="deleteList" data-index="{{index}}">x</text>
+            </view>
+        </view>
+        <view class="cart-footer">
+            <icon class="total-select" type="success_circle" color="#fff" wx:if="{{selectAllStatus}}" bindtap="selectAll"/>
+            <icon class="total-select" type="circle" color="#fff" wx:else bindtap="selectAll"/>
+            <text >全选</text>
+            <text class="cart-total-price">￥{{totalPrice}}</text>
+            <navigator url="../orders/orders">
+                <view class="order-icon">
+                    <image src="../../image/icon3.png" />
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+    <view wx:else>
+        <view class="cart-no-data">购物车是空的哦~</view>
+    </view>
+</view>
