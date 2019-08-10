@@ -34,6 +34,20 @@ Page({
     })
     this.getTotalPrice()//再次计算价格
     this.setSelectAll()
+    // 方法二：
+    // let carts = this.data.carts
+    // for(let n of carts) {
+    //   if(!n.selected) {
+    //     this.setData({
+    //       selectAllStatus : false
+    //     })
+    //     return
+    //   }else {
+    //     this.setData({
+    //       selectAllStatus : true
+    //     })
+    //   }
+    // }
   },
 
   setSelectAll() {//当出现商品选框有一个未选中则全选框为false
@@ -137,7 +151,7 @@ Page({
         ]
       })
       this.getTotalPrice()
-    },1000)
+    },500)
   },
 
   /**
