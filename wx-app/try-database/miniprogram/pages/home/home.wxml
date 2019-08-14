@@ -1,0 +1,6 @@
+<!--miniprogram/pages/home/home.wxml-->
+
+<vant-button square type="primary" block bind:click="navigateToAdd">新增数据
+</vant-button>
+<vant-button square type="primary" block plain bind:click="navigateToIndex">数据列表
+</vant-button>

@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<!-- 指令 block 不会输出标签，承载指令 -->
+<block wx:for="{{products}}" wx:key="index">
+  <vant-card price="{{item.view}}" desc="{{item.color}}" title="{{item.title}}" thumb="{{item.image}}" data-id="{{item._id}}" bindtap="doItemClick" />
+</block>
+<block wx:if="{{products.length == 0}}">
+  <text>当前没有数据</text>
+</block>

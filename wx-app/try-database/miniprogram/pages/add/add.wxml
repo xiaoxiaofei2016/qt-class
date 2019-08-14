@@ -1,0 +1,2 @@
+<!--miniprogram/pages/add/add.wxml-->
+<vant-button block bind:click="addData">新增数据</vant-button>
