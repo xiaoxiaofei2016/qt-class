@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>proxy</title>
+</head>
+<body>
+    <script>
+        let target = {
+            name:'Tom',
+            age:24
+        }
+        let handler = {
+            get(target,key) {//target为一个对象，key为target属性
+                console.log('getting' + key)
+                return target[key]//获取属性key的值
+            },
+            set(target,key,value) {
+                console.log('setting' + key)
+                target[key] = value
+            }
+        } 
+
+        let proxy = new Proxy(target,handler)
+        console.log(proxy.name)
+        proxy.age = 25
+        console.log(proxy.age)
+
+       
+    </script>
+</body>
+</html>

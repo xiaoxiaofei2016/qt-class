@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>proxy</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="txt">
+        <p id="show-txt"></p>
+    </div>
+
+    <script>
+        var  obj = {}
+        Object.defineProperty(obj,'txt',{
+            get() {
+                return obj
+            },
+            set(newValue) {
+                document.getElementById('show-txt').innerHTML = newValue
+            }
+        })
+
+        document.addEventListener('keyup',function(e) {//key可以换成input，change
+            obj.txt = e.target.value//e代表event事件，事件都有一个默认event参数e
+        })
+    </script>
+</body>
+</html>
