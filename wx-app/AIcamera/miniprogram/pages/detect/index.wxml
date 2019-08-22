@@ -1,0 +1,12 @@
+<!--miniprogram/pages/detect/index.wxml-->
+<!-- 本地没有AI能力 -->
+<!-- 小程序 client 客户端 -->
+<!-- server 买服务器，云开发 wx.cloud.database  sdk -->
+<!-- 上传一张照片  选择 上传 -->
+<import src="../common/head.wxml"></import>
+<view class="container">
+    <!-- 如何让多个页面共享部分的模板 -->
+    <template is="head" data="{{title}}"></template>
+    <view class="head"></view>
+    <view class="foot"></view>
+</view>
