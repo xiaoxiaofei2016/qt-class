@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class EventEmitter {
+            constructor() {
+                this._events = {}
+            }
+            on(type, fn) {
+                if (typeof fn !== 'function') return null;
+                const handler = this._events[type];
+                if (!handler) {
+                    this._events[type] = fn;
+                } else if (handler) {
+                    this._events[type] = [].concat(this._events[type], fn)
+                }
+                return this;
+            }
+            emit(type,...args) {
+                const handler = this._events[type];
+                if (!handler) return false;
+                if (Array.isArray(handler)) {
+                    for (let i = 0; i < handler.length; i++) {
+                        handler[i].call(this,...args)
+                    }
+                }
+                else {
+                    handler.call(this,...args);
+                }
+            }
+        }
+        const ev = new EventEmitter();
+        ev.on('ev1', function (a,b) {
+            console.log(1);
+        })
+        ev.on('ev2', function (a,b) {
+            console.log(2,a,b);
+        })
+        ev.on('ev2', function (a,b) {
+            console.log(3,a,b);
+        })
+        ev.on('ev3', function (a,b) {
+            console.log(this);
+            console.log(this === ev);
+        })
+        ev.emit('ev2',5,6);
+        ev.emit('ev3')
+    </script>
+</body>
+
+</html>
