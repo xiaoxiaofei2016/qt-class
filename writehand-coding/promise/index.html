@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>promise</title>
+</head>
+<body>
+    <script>
+        function xq() {
+          return new Promise((resolve,reject) => {
+            setTimeout(() => {
+                console.log('相亲');
+                resolve('相亲顺利');//异步操作成功
+                reject('相亲失败');//异步操作失败
+            },500)
+          })
+        }    
+        function marry() {
+            setTimeout(() => {
+                console.log('结婚');
+            },300)
+        }
+        function baby() {
+            console.log('有孩子了');
+        }
+        // xq().then(marry);
+
+        // xq()
+        // .catch((e) => {
+        //     console.log(e);
+        //     marry();
+        // })
+        // .then(baby)
+
+        // xq().then((e) => {
+        //     console.log(e);
+        // });
+
+        // Promise.all([xq(), marry()]).then(baby);//方法表示baby函数执行前xq，marry都要执行完
+        Promise.race([xq(),marry()]).then(baby);
+ 
+
+    </script>
+</body>
+</html>
