@@ -14,7 +14,7 @@
       </div>
       <div class="foods-wrapper" ref="foodsWrapper">
         <ul>
-          <li v-for="(item, index) in goods" :key="index" class="food-list" >
+          <li v-for="(item, index) in goods" :key="index" class="food-list" ref="foodList">
             <h1 class="title">{{item.name}}</h1>
             <ul>
               <li v-for="(food, index) in item.foods" :key="index" class="food-item border-1px">
@@ -33,7 +33,7 @@
                     <div class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</div>
                   </div>
                   <div class="cartcontrol-wrapper">
-                    +
+                    <cartcontrol></cartcontrol>
                   </div>
                 </div>
               </li>
@@ -48,36 +48,71 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import cartcontrol from '@/components/cartcontrol/cartcontrol'
 export default {
   data () {
     return {
       goods: [],
       classMap: [],
-      currentIndex: 0
+      listHeight: [],
+      scrollY: 0
     }
+  },
+  components: {
+    cartcontrol
   },
   created () {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 
-    this.$http.get('http://localhost:8081/static/goods.json')
+    this.$http.get('http://localhost:8080/static/goods.json')
     .then(res => {
       console.log(res)
       if (res.data.errno === 0) {
         this.goods = res.data.data
         this.$nextTick(() => { // 页面渲染完成才会执行 vue内置方法
           this._initScroll()
+          this._caculateHeight()
         })
       }
     })
   },
+  computed: {
+    currentIndex () {
+      for (let i = 0; i < this.listHeight.length; i++) {
+        let height1 = this.listHeight[i] //前一个li的高度
+        let height2 = this.listHeight[i+1]
+        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+          return i
+        }
+      }
+      return 0
+    }
+  },
   methods: {
     _initScroll() {
       this.menuScroll = new Bscroll(this.$refs.menuWrapper, {click: true})
-      this.foodsScroll = new Bscroll(this.$refs.foodsWrapper, {click: true})
+      this.foodsScroll = new Bscroll(this.$refs.foodsWrapper, {click: true, probeType: 3})
+      this.foodsScroll.on('scroll', pos => {
+        console.log(pos)
+        this.scrollY = Math.abs(Math.round(pos.y)) //绝对值并取整
+      })
     },
     selectMenu (index, event) {
       // console.log(event)
       this.currentIndex = index
+      let foodList = this.$refs.foodList // 数组
+      let el = foodList[index] // 左边菜单和右边对应
+      this.foodsScroll.scrollToElement(el, 300)
+    },
+    _caculateHeight() {
+      let foodList = this.$refs.foodList //数组
+      let height = 0
+      this.listHeight.push(height) // 热销榜不需要滚动
+      for (let i = 0; i < foodList.length; i++) { //长度为9
+        let item = foodList[i]
+        height += item.clientHeight
+        this.listHeight.push(height)
+      }
     }
   }
 }

@@ -30,7 +30,7 @@ export default {
   },
   created () {
     // this.$http.get('https://www.easy-mock.com/mock/5d6e06a56ebb2c4da999c45d/example/vue-element-app')
-    this.$http.get('http://localhost:8081/static/seller.json')
+    this.$http.get('http://localhost:8080/static/seller.json')
       .then(res => {
         console.log(res)
         if (res.data.errno === 0) {
