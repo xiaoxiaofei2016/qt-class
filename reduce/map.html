@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>map/reduce</title>
+</head>
+<body>
+  <script>
+    var money = [10, 11, 13];
+    var mapMoney = money.map(item => {
+      return item * 10;
+    })
+    console.log(mapMoney); //[100, 110, 130]
+
+
+    var count = money.reduce((pre, next) => {
+      console.log(pre, next)
+      return pre + next;
+    })
+    console.log(count); // 34
+  </script>
+</body>
+</html>
