@@ -1,17 +1,45 @@
 <template>
   <div class="cartcontrol">
     <transition name="move">
-      <div class="cart-decrease">
+      <div class="cart-decrease" v-show="food.count > 0"  @click.stop.prevent="decreaseCart">
         <span class="inner icon-remove_circle_outline"></span>
       </div>
     </transition>
-    <div class="cart-count">1</div>
-    <div class="cart-add icon-add_circle"></div>
+    <div class="cart-count" v-show="food.count > 0">{{food.count}}</div>
+    <div class="cart-add icon-add_circle" @click.stop.prevent="addCart"></div>
+    <!--  @click.stop.prevent阻止冒泡 -->
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'cartcontrol',
+  props: {
+    food: {
+      type: Object
+    }
+  },
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+    addCart (event) {
+      if (this.food.count) {
+        this.food.count ++
+      } else {
+        this.$set(this.food, 'count', 1)//$set()方法给数据源设置数据
+      }
+      this.$emit('add', event.target)// 抛出方法 goods.vue接收
+    },
+    decreaseCart () {
+      if (this.food.count) {
+        this.food.count --
+      }
+    }
+  }
+}
 </script>
 
 <style scoped lang="stylus">
@@ -43,7 +71,7 @@ export default {}
     padding-top 6px
     line-height 24px
     text-align center
-    font-size 10px
+    font-size 12px
     color rgb(147, 153, 159)
   .cart-add 
     display inline-block

@@ -38,6 +38,13 @@
             <h1 class="name">{{seller.name}}</h1>
             <div class="star-wrapper">
               <!-- 星星 -->
+              <div class="star star-48">
+                <span class="star-item on"></span>
+                <span class="star-item on"></span>
+                <span class="star-item on"></span>
+                <span class="star-item on"></span>
+                <span class="star-item off"></span>
+              </div>
             </div>
             <div class="title">
               <div class="line"></div>
@@ -250,6 +257,18 @@ export default {
           margin-top 18px
           padding 2px 0
           text-align center
+          .star-item
+            width 20px
+            height 20px
+            margin-right 22px
+            background-size 20px 20px
+            display inline-block
+            background-repeat no-repeat
+            &.on
+              background-image url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568179318474&di=48030ee46d498c6118e947761f0c0714&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201410%2F15%2F20141015142052_aJUBr.png')
+            &.off
+              background-image url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568179465508&di=92f336fc12e5a88cecfddfdb189a5857&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F01%2F35%2F49%2F32573be6dddd5cb.jpg')
+            
         .title
           display flex
           width 80%

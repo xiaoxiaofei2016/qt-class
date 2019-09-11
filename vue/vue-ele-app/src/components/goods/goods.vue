@@ -33,7 +33,7 @@
                     <div class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</div>
                   </div>
                   <div class="cartcontrol-wrapper">
-                    <cartcontrol></cartcontrol>
+                    <cartcontrol :food="food" @add="addFood"></cartcontrol>
                   </div>
                 </div>
               </li>
@@ -42,6 +42,7 @@
         </ul>
       </div>
       <!-- 购物车 -->
+      <shopcart :selectFoods="selectfoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
     </div>
   </div>
 </template>
@@ -49,7 +50,13 @@
 <script>
 import Bscroll from 'better-scroll'
 import cartcontrol from '@/components/cartcontrol/cartcontrol'
+import shopcart from '@/components/shopcart/shopcart'
 export default {
+  props: {
+    seller: {
+      type: Object
+    }
+  },
   data () {
     return {
       goods: [],
@@ -59,7 +66,8 @@ export default {
     }
   },
   components: {
-    cartcontrol
+    cartcontrol,
+    shopcart
   },
   created () {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
@@ -86,23 +94,35 @@ export default {
         }
       }
       return 0
+    },
+    selectfoods () {
+      let foods = []
+      this.goods.forEach((good) => {
+        good.foods.forEach((food) => {
+          if (food.count) {
+            foods.push(food)
+          }
+        })
+      })
+      return foods
     }
   },
   methods: {
     _initScroll() {
       this.menuScroll = new Bscroll(this.$refs.menuWrapper, {click: true})
       this.foodsScroll = new Bscroll(this.$refs.foodsWrapper, {click: true, probeType: 3})
+      //当 probeType 为 3 的时候，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件
       this.foodsScroll.on('scroll', pos => {
         console.log(pos)
         this.scrollY = Math.abs(Math.round(pos.y)) //绝对值并取整
       })
     },
     selectMenu (index, event) {
-      // console.log(event)
-      this.currentIndex = index
+      console.log(event)
+      // this.currentIndex = index
       let foodList = this.$refs.foodList // 数组
       let el = foodList[index] // 左边菜单和右边对应
-      this.foodsScroll.scrollToElement(el, 300)
+      this.foodsScroll.scrollToElement(el, 300) // 点击左边菜单右边实现跳转相应的商品，300毫秒跳转时间
     },
     _caculateHeight() {
       let foodList = this.$refs.foodList //数组
@@ -113,6 +133,10 @@ export default {
         height += item.clientHeight
         this.listHeight.push(height)
       }
+    },
+    addFood () {
+      // console.log(123)
+
     }
   }
 }
