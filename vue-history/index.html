@@ -39,7 +39,7 @@
         router.registerNotFound(() => {
             container.innerHTML = '页面未找到'
         })
-        router.registerError(() => {
+        router.registerError((e) => {
             container.innerHTML = `页面出错异常，错误消息:<br/>${e.message}`;
         })
     </script>

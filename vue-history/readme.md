@@ -27,3 +27,20 @@
   bind this 一样 返回一个新的函数, 适合事件监听时候用
 
 
+VUE React SPA Single Page Application 应用体验更好，页面会白一点
+传统的网页 链接把网站组织起来 重新加载一个新的页面，新的http请求
+/about  req, res 过程
+req /about
+时间 网路传输时间 01二进制， 电频信号  光速 + node/java/python后端代码，查询数据库执行的时间，把HTML返回回去 = 白屏时间
+1.5s 用户就会离开， 0.1s 1000W
+res /about about.html
+路由是独立的
+- 网站MVC  => 应用(Vue App)体验产生路由   解决了白屏问题
+VueRouter 来了
+- hashRouter
+  #/shop  #/
+  优点是ie8以上都支持
+  缺点是： 路由不纯粹，
+  HistoryRouter history历史的 /shop  访问历史
+  VUERouter 两种实现方式 = hashRouter（兼容性）+ historyRouter（长得好，移动端兼容性还是没有问题）
+
