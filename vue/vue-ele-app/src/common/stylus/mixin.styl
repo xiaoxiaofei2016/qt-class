@@ -1,6 +1,6 @@
 border-1px($color)
   position relative
-  &:after
+  &::after
       display block
       position absolute
       bottom 0
@@ -9,7 +9,7 @@ border-1px($color)
       border-top 1px solid $color
 
 border-none()
-  &:after
+  &::after
     display none
 
 bg-image($url)
