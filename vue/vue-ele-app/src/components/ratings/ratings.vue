@@ -3,9 +3,9 @@
     <div class="rating-content">
       <div class="overview">
         <div class="avg-rating">
-          <h1 class="avg-rating-num">4.2</h1>
+          <h1 class="avg-rating-num">{{seller.score}}</h1>
           <div class="text">综合评分</div>
-          <div class="compare">高于周边商家69.2%</div>
+          <div class="compare">高于周边商家{{seller.rankRate}}%</div>
         </div>
         <div class="allscore">
           <div class="serviceScore Score">
@@ -17,7 +17,7 @@
               <span class="star-item on"></span>
               <span class="star-item off"></span>
             </div>
-            <span class="score">4.1</span>
+            <span class="score">{{seller.serviceScore}}</span>
           </div>
           <div class="goodsScore Score">
             <div class="text">商品评分</div>
@@ -28,28 +28,28 @@
               <span class="star-item on"></span>
               <span class="star-item off"></span>
             </div>
-            <span class="score">4.3</span>
+            <span class="score">{{seller.foodScore}}</span>
           </div>
           <div class="deliveryTime">
             <span class="text">送达时间</span>
-            <span class="time">38分钟</span>
+            <span class="time">{{seller.deliveryTime}}分钟</span>
           </div>
         </div>
       </div>
       <div class="split"></div>
       <div class="ratingselect">
         <div class="rating-type">
-          <div class="block positive" :class="{'active': active1 === true}" @click="act1" >
+          <div class="block positive" @click="all">
             全部
-            <span class="count">24</span>
+            <span class="count">{{seller.ratingCount}}</span>
           </div>
-          <div class="block positive" :class="{'active': active2 === true}" @click="act2" > 
+          <div class="block positive" @click="positive"> 
             满意
-            <span class="count">18</span>
+            <span class="count">{{goodscore}}</span>
           </div>
-          <div class="block negative" :class="{'active': active3 === true}" @click="act3" >
+          <div class="block negative" @click="negative">
             不满意
-            <span class="count">6</span>
+            <span class="count">{{seller.ratingCount-goodscore}}</span>
           </div>
         </div>
         <div class="switch on">
@@ -59,32 +59,28 @@
       </div>
       <div class="rating-wrapper">
         <ul>
-          <li class="rating-item">
+          <li class="rating-item" v-for="(item, index) in ratings" :key="index">
             <div class="avatar">
-              <img src="" alt="" width="28" height="28">
+              <img :src="item.avatar" alt="" width="28" height="28">
             </div>
             <div class="content">
-              <h1 class="name">3******c</h1>
+              <h1 class="name">{{item.username}}</h1>
               <div class="star-wrapper">
-                <div class="star star-24">
-                  <span class="star-item on"></span>
-                  <span class="star-item on"></span>
-                  <span class="star-item on"></span>
-                  <span class="star-item on"></span>
-                  <span class="star-item on"></span>
+                <div class="star star-24" >
+                  <span class="star-item " ref="star24" @star24="star24"></span>
+                  <span class="star-item " ></span>
+                  <span class="star-item " ></span>
+                  <span class="star-item " ></span>
+                  <span class="star-item " ></span>
                 </div>
-                <span class="delivery">30</span>
+                <span class="delivery">{{item.deliveryTime}}</span>
               </div>
-              <p class="text">不错,粥很好喝,我经常吃这一家,非常赞,以后也会常来吃,强烈推荐.</p>
-              <div class="recommend">
-                <span class="icon-thumb_up"></span>
-                <span class="item">南瓜粥</span>
-                <span class="item">皮蛋瘦肉粥</span>
-                <span class="item">扁豆焖面</span>
-                <span class="item">娃娃菜炖豆腐</span>
-                <span class="item">牛肉馅饼</span>
+              <p class="text">{{item.text}}</p>
+              <div class="recommend" v-if="item.recommend">
+                <span :class="{'icon-thumb_up': item.recommend}"></span>
+                <span class="item" v-for="(foods, index) in item.recommend" :key="index">{{item.recommend[index]}}</span>
               </div>
-              <div class="time">2016-07-23 21:52</div>
+              <div class="time">{{item.rateTime}}</div>
             </div>
           </li>
         </ul>
@@ -95,28 +91,57 @@
 
 <script>
 export default {
-  data () {
-    return {
-      active1: false,
-      active2: false,
-      active3: false
+  props: {
+    seller: {
+      type: Object
     }
   },
+  data () {
+    return {
+      ratings: [],
+      goodscore: 0
+    }
+  },
+  computed: {
+    
+  },
+  created () {
+    this.$http.get('http://localhost:8080/static/ratings.json')
+    .then(res => {
+      console.log(res)
+      if (res.data.errno === 0) {
+        this.ratings = res.data.data
+        this.$nextTick(() => {
+          this.goodScore()
+          this.star24()
+        })
+      }
+    })
+  },
   methods: {
-    act1 () {
-     this.active1 = !this.active1
-     this.active2= false
-     this.active3 = false
+    goodScore () {
+      for (let i = 0;i < this.ratings.length; i++) {
+        if (this.ratings[i].score >=4 ) {
+          this.goodscore++
+        }
+      }
+      console.log(this.goodscore)
+      return this.goodscore
     },
-    act2 () {
-     this.active2 = !this.active2
-     this.active1 = false
-     this.active3 = false
+    star24 () {
+      let star24 = this.$refs.star24
+      console.log(star24)
     },
-    act3 () {
-      this.active3 = !this.active3
-      this.active1 = false
-      this.active2 = false
+    all () {
+      for (let i = 0; i < this.ratings; i ++) {
+
+      }
+    },
+    positive () {
+
+    },
+    negative () {
+
     }
   }
 
@@ -179,10 +204,11 @@ export default {
               margin-right 6px
               background-size 15px 15px
               background-repeat no-repeat
+              background-image url('')
               &.on
-                background-image url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568179318474&di=48030ee46d498c6118e947761f0c0714&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201410%2F15%2F20141015142052_aJUBr.png')
-              &.off
-                background-image url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568179465508&di=92f336fc12e5a88cecfddfdb189a5857&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F01%2F35%2F49%2F32573be6dddd5cb.jpg')
+                background-image url('')
+              // &.off
+              //   background-image url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568179465508&di=92f336fc12e5a88cecfddfdb189a5857&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F01%2F35%2F49%2F32573be6dddd5cb.jpg')
           .score
             display inline-block
             font-size 12px
@@ -288,6 +314,10 @@ export default {
                 background-size 10px 10px
                 background-repeat no-repeat
                 display inline-block
+              &.on
+                background-image url('./starw16.png')
+              &.off
+                background-image url('./stary16.png')
           .text
             margin-bottom 8px
             line-height 18px
