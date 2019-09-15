@@ -168,14 +168,12 @@ export default {
         background #ffffff
         font-weight 700
       .text
-        // border-none()
+        border-none()
         display table-cell
         width 56px
-        vertical-align middle
-        
-        font-size 12px
-      .border-1px
+        vertical-align middle 
         border-1px(rgba(7,17,27,0.1))
+        font-size 12px
         .icon
           display inline-block
           vertical-align top 

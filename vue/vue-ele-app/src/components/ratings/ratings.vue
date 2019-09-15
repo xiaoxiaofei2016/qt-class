@@ -43,23 +43,23 @@
             全部
             <span class="count">{{seller.ratingCount}}</span>
           </div>
-          <div class="block positive" @click="positive"> 
+          <div class="block positive" @click="filterClick(0)"> 
             满意
             <span class="count">{{goodscore}}</span>
           </div>
-          <div class="block negative" @click="negative">
+          <div class="block negative" @click="filterClick(1)">
             不满意
             <span class="count">{{seller.ratingCount-goodscore}}</span>
           </div>
         </div>
-        <div class="switch on">
-          <span class="icon-check_circle"></span>
+        <div class="switch on" @click="content">
+          <span class="icon-check_circle" :class="{'highlight': option}"></span>
           <span class="text">只看有内容的评价</span>
         </div>
       </div>
-      <div class="rating-wrapper">
+      <div class="rating-wrapper" ref="ratingsPart">
         <ul>
-          <li class="rating-item" v-for="(item, index) in ratings" :key="index">
+          <li class="rating-item" v-for="(item, index) in displayComments" :key="index">
             <div class="avatar">
               <img :src="item.avatar" alt="" width="28" height="28">
             </div>
@@ -67,7 +67,7 @@
               <h1 class="name">{{item.username}}</h1>
               <div class="star-wrapper">
                 <div class="star star-24" >
-                  <span class="star-item " ref="star24" @star24="star24"></span>
+                  <span class="star-item " ref="star24" ></span>
                   <span class="star-item " ></span>
                   <span class="star-item " ></span>
                   <span class="star-item " ></span>
@@ -90,6 +90,7 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 export default {
   props: {
     seller: {
@@ -99,11 +100,15 @@ export default {
   data () {
     return {
       ratings: [],
-      goodscore: 0
+      goodscore: 0,
+      displayComm: [],
+      option: false
     }
   },
   computed: {
-    
+    displayComments () {
+      return this.displayComm
+    }
   },
   created () {
     this.$http.get('http://localhost:8080/static/ratings.json')
@@ -111,41 +116,61 @@ export default {
       console.log(res)
       if (res.data.errno === 0) {
         this.ratings = res.data.data
+        this.displayComm = this.ratings
         this.$nextTick(() => {
           this.goodScore()
-          this.star24()
+          this.initScroll()
         })
       }
     })
   },
   methods: {
+    initScroll () {
+      this.commScroll = new BScroll(this.$refs.ratingsPart, {
+        click: true
+      })
+    },
     goodScore () {
       for (let i = 0;i < this.ratings.length; i++) {
         if (this.ratings[i].score >=4 ) {
-          this.goodscore++
+          this.goodscore ++
         }
       }
-      console.log(this.goodscore)
+      console.log(this.goodscore) // 18
       return this.goodscore
     },
-    star24 () {
-      let star24 = this.$refs.star24
-      console.log(star24)
-    },
+    // star24 () {
+    //   let star24 = this.$refs.star24
+    //   console.log(star24)
+    // },
     all () {
-      for (let i = 0; i < this.ratings; i ++) {
-
+      this.displayComm = this.ratings
+    },
+    filterClick (condition) {
+      let retArr = []
+      for (let rating of this.ratings) {
+        if (condition === rating.rateType) {
+          retArr.push(rating)
+        }
       }
+      this.displayComm = retArr
     },
-    positive () {
-
-    },
-    negative () {
-
+    content () {
+      let retArr = []
+      for (let rating of this.displayComm) {
+        if (rating.text && rating.text !== '') {
+          retArr.push(rating)
+        }
+      }
+      this.option = !this.option
+      if (this.option) {
+        this.displayComm = retArr
+      }else {
+        this.displayComm = this.ratings
+      }
     }
   }
-
-};
+}
 </script>
 
 <style scoped lang="stylus">
@@ -270,11 +295,13 @@ export default {
         color #93999f
         font-size 0
         .icon-check_circle
-          color #00c850
+          color #93999f
           display inline-block
           vertical-align top
           margin-right 4px
           font-size 24px
+        .icon-check_circle.highlight
+          color #00c850
         .text
           display inline-block
           vertical-align top
@@ -347,5 +374,4 @@ export default {
             line-height 12px
             font-size 10px
             color #93999f
-
 </style>
