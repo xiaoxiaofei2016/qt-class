@@ -17,6 +17,9 @@ export default {
       console.log(param)
     })
   },
+  beforeDestroy () { //销毁
+    this.$bus.$off('toChild3')
+  },
   methods: {
     change () {
       this.$emit('fromChild', this.msg)
