@@ -1,6 +1,6 @@
 <template>
-  <div class="rating">
-    <div class="rating-content">
+  <div class="rating" ref="ratings">
+    <div class="rating-content" >
       <div class="overview">
         <div class="avg-rating">
           <h1 class="avg-rating-num">{{seller.score}}</h1>
@@ -10,24 +10,12 @@
         <div class="allscore">
           <div class="serviceScore Score">
             <div class="text">服务态度</div>
-            <div class="star star-36">
-              <span class="star-item on"></span>
-              <span class="star-item on"></span>
-              <span class="star-item on"></span>
-              <span class="star-item on"></span>
-              <span class="star-item off"></span>
-            </div>
+            <star :size="36" :score="seller.serviceScore"></star>
             <span class="score">{{seller.serviceScore}}</span>
           </div>
           <div class="goodsScore Score">
             <div class="text">商品评分</div>
-            <div class="star star-36">
-              <span class="star-item on"></span>
-              <span class="star-item on"></span>
-              <span class="star-item on"></span>
-              <span class="star-item on"></span>
-              <span class="star-item off"></span>
-            </div>
+            <star :size="36" :score="seller.foodScore"></star>
             <span class="score">{{seller.foodScore}}</span>
           </div>
           <div class="deliveryTime">
@@ -39,15 +27,15 @@
       <div class="split"></div>
       <div class="ratingselect">
         <div class="rating-type">
-          <div class="block positive" @click="all">
+          <div class="block all active" @click="all">
             全部
             <span class="count">{{seller.ratingCount}}</span>
           </div>
-          <div class="block positive" @click="filterClick(0)"> 
+          <div class="block positive active" @click="filterClick(0)"> 
             满意
             <span class="count">{{goodscore}}</span>
           </div>
-          <div class="block negative" @click="filterClick(1)">
+          <div class="block negative active" @click="filterClick(1)">
             不满意
             <span class="count">{{seller.ratingCount-goodscore}}</span>
           </div>
@@ -57,7 +45,7 @@
           <span class="text">只看有内容的评价</span>
         </div>
       </div>
-      <div class="rating-wrapper" ref="ratingsPart">
+      <div class="rating-wrapper" >
         <ul>
           <li class="rating-item" v-for="(item, index) in displayComments" :key="index">
             <div class="avatar">
@@ -66,13 +54,7 @@
             <div class="content">
               <h1 class="name">{{item.username}}</h1>
               <div class="star-wrapper">
-                <div class="star star-24" >
-                  <span class="star-item " ref="star24" ></span>
-                  <span class="star-item " ></span>
-                  <span class="star-item " ></span>
-                  <span class="star-item " ></span>
-                  <span class="star-item " ></span>
-                </div>
+                <star :size="24" :score="item.score"></star>
                 <span class="delivery">{{item.deliveryTime}}</span>
               </div>
               <p class="text">{{item.text}}</p>
@@ -91,7 +73,11 @@
 
 <script>
 import BScroll from 'better-scroll'
+import star from '@/components/star/star'
 export default {
+  components: {
+    star
+  },
   props: {
     seller: {
       type: Object
@@ -126,14 +112,15 @@ export default {
   },
   methods: {
     initScroll () {
-      this.commScroll = new BScroll(this.$refs.ratingsPart, {
+      this.commScroll = new BScroll(this.$refs.ratings, {
         click: true
       })
+      console.log(this.commScroll)
     },
     goodScore () {
       for (let i = 0;i < this.ratings.length; i++) {
-        if (this.ratings[i].score >=4 ) {
-          this.goodscore ++
+        if (this.ratings[i].score >=4 || this.ratings[i].rateType == 0) {
+          this.goodscore++
         }
       }
       console.log(this.goodscore) // 18
@@ -176,7 +163,7 @@ export default {
 <style scoped lang="stylus">
 @import '../../common/stylus/mixin'
 .rating 
-  width: 100%;
+  width 100%
   position absolute
   top 174px
   bottom 0
@@ -218,22 +205,6 @@ export default {
             font-size 12px
             color #07111b
             vertical-align top
-          .star
-            margin 0 12px
-            display inline-block
-            vertical-align top
-            .star-item
-              display inline-block
-              width 15px
-              height 15px
-              margin-right 6px
-              background-size 15px 15px
-              background-repeat no-repeat
-              background-image url('')
-              &.on
-                background-image url('')
-              // &.off
-              //   background-image url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568179465508&di=92f336fc12e5a88cecfddfdb189a5857&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F01%2F35%2F49%2F32573be6dddd5cb.jpg')
           .score
             display inline-block
             font-size 12px
@@ -278,10 +249,15 @@ export default {
             display inline-block
             margin-left 2px
             font-size 8px
+        .all
+          background #CCECF8
         .positive
           background #CCECF8
         .negative
           background #DBDDDF
+        .all.active
+          background #00a0dc
+          color #ffffff
         .positive.active
           background #00a0dc
           color #ffffff
@@ -330,21 +306,9 @@ export default {
           .star-wrapper
             margin-bottom 6px
             font-size 0
-            .star
-              display inline-block
-              margin-right 6px
-              vertical-align top
-              &-item 
-                width 10px
-                height 10px
-                margin-right 3px
-                background-size 10px 10px
-                background-repeat no-repeat
-                display inline-block
-              &.on
-                background-image url('./starw16.png')
-              &.off
-                background-image url('./stary16.png')
+            .delivery
+              font-size 12px
+            
           .text
             margin-bottom 8px
             line-height 18px

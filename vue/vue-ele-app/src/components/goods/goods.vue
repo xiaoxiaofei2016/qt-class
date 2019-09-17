@@ -42,7 +42,7 @@
         </ul>
       </div>
       <!-- 购物车 -->
-      <shopcart :selectFoods="selectfoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
+      <shopcart ref="shopcart" :selectFoods="selectfoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
     </div>
   </div>
 </template>
@@ -134,9 +134,15 @@ export default {
         this.listHeight.push(height)
       }
     },
-    addFood () {
-      // console.log(123)
+    addFood (target) {
+      console.log(target)
+      this._drop(target)
 
+    },
+    _drop (target) {
+      this.$nextTick(() => {
+        this.$refs.shopcart.drop(target) //drop()在shopcart.vue内定义
+      })
     }
   }
 }
