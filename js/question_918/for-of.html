@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>for-of</title>
+</head>
+<body>
+  <script>
+    // for of 可以用来遍历可迭代对象
+    // 1.有iterator属性
+    // 2.Symbol.iterator的值是一个方法
+      const arr = [0, 1, 2];
+      const str = '12345'
+      //Symbol.iterator 是一个值
+      console.log(arr[Symbol.iterator]);
+      console.log(str[Symbol.iterator]);
+  </script>
+</body>
+</html>
