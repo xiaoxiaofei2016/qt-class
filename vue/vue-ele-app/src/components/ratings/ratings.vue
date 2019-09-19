@@ -27,15 +27,15 @@
       <div class="split"></div>
       <div class="ratingselect">
         <div class="rating-type">
-          <div class="block all active" @click="all">
+          <div class="block positive" :class="{'active': isActive}" @click="all">
             全部
             <span class="count">{{seller.ratingCount}}</span>
           </div>
-          <div class="block positive active" @click="filterClick(0)"> 
+          <div class="block positive" :class="{'active': isActive}" @click="filterClick(0)"> 
             满意
             <span class="count">{{goodscore}}</span>
           </div>
-          <div class="block negative active" @click="filterClick(1)">
+          <div class="block negative" :class="{'active': isActive}" @click="filterClick(1)">
             不满意
             <span class="count">{{seller.ratingCount-goodscore}}</span>
           </div>
@@ -59,7 +59,7 @@
               </div>
               <p class="text">{{item.text}}</p>
               <div class="recommend" v-if="item.recommend">
-                <span :class="{'icon-thumb_up': item.recommend}"></span>
+                <span :class="{'icon-thumb_up': item.recommend != ''}"></span>
                 <span class="item" v-for="(foods, index) in item.recommend" :key="index">{{item.recommend[index]}}</span>
               </div>
               <div class="time">{{item.rateTime}}</div>
@@ -88,7 +88,8 @@ export default {
       ratings: [],
       goodscore: 0,
       displayComm: [],
-      option: false
+      option: false,
+      isActive: false
     }
   },
   computed: {
@@ -126,12 +127,8 @@ export default {
       console.log(this.goodscore) // 18
       return this.goodscore
     },
-    // star24 () {
-    //   let star24 = this.$refs.star24
-    //   console.log(star24)
-    // },
     all () {
-      this.displayComm = this.ratings
+      this.displayComm = this.ratings 
     },
     filterClick (condition) {
       let retArr = []
