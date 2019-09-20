@@ -53,6 +53,8 @@
     function compose2(...fns) {
       // fns是一个数组
       // [fn1, fn2, fn3 ,...]
+      // fn1 fn2 => fn1(fn2())
+      // fn1(fn2()) fn3 => fn1(fn2(fn3()))
       return fns.reduce((f1, f2) => {
         return function() {
           return f1(f2(str))
