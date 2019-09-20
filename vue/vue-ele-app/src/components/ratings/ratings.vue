@@ -27,15 +27,15 @@
       <div class="split"></div>
       <div class="ratingselect">
         <div class="rating-type">
-          <div class="block positive" :class="{'active': isActive}" @click="all">
+          <div class="block positive" :class="{'active': isActive === 2}" @click.stop.prevent="all(2)">
             全部
             <span class="count">{{seller.ratingCount}}</span>
           </div>
-          <div class="block positive" :class="{'active': isActive}" @click="filterClick(0)"> 
+          <div class="block positive" :class="{'active': isActive === 0}" @click.stop.prevent="filterClick(0)"> 
             满意
             <span class="count">{{goodscore}}</span>
           </div>
-          <div class="block negative" :class="{'active': isActive}" @click="filterClick(1)">
+          <div class="block negative" :class="{'active': isActive === 1}" @click.stop.prevent="filterClick(1)">
             不满意
             <span class="count">{{seller.ratingCount-goodscore}}</span>
           </div>
@@ -62,7 +62,7 @@
                 <span :class="{'icon-thumb_up': item.recommend != ''}"></span>
                 <span class="item" v-for="(foods, index) in item.recommend" :key="index">{{item.recommend[index]}}</span>
               </div>
-              <div class="time">{{item.rateTime}}</div>
+              <div class="time">{{item.rateTime|time}}</div>
             </div>
           </li>
         </ul>
@@ -89,7 +89,7 @@ export default {
       goodscore: 0,
       displayComm: [],
       option: false,
-      isActive: false
+      isActive: 2
     }
   },
   computed: {
@@ -111,6 +111,17 @@ export default {
       }
     })
   },
+  filters: {
+    time: function time (value) {
+      let a = new Date(value)
+      var b = a.getFullYear()
+      var c = (a.getMonth() + 1) > 9? a.getMonth() + 1 : '0' + (a.getMonth() + 1)
+      var d = a.getDate() > 9? a.getDate() : '0' + a.getDate()
+      var e = a.getHours() > 9? a.getHours() : '0' + a.getHours()
+      var f = a.getMinutes() > 9? a.getMinutes() : '0' + a.getMinutes()
+      return b + '-' + c + '-' + d + ' ' + e + ':' + f
+    }
+  },
   methods: {
     initScroll () {
       this.commScroll = new BScroll(this.$refs.ratings, {
@@ -127,8 +138,9 @@ export default {
       console.log(this.goodscore) // 18
       return this.goodscore
     },
-    all () {
+    all (num) {
       this.displayComm = this.ratings 
+      this.isActive = num // 通过改变isActive的值，从而实现类名active的添加或删除
     },
     filterClick (condition) {
       let retArr = []
@@ -138,6 +150,7 @@ export default {
         }
       }
       this.displayComm = retArr
+      this.isActive = condition // 通过改变condition的值改变isActive的值，从而实现类名active的添加或删除
     },
     content () {
       let retArr = []
