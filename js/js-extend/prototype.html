@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Go() {
+      this.a = 1;
+    }  
+    Go.prototype.a = 2;
+    var obj = new Go();
+    // obj = {
+    //   a: 1,
+    //   __proto__: {
+    //     a: 2
+    //   }
+    // }
+    // 先构造出一个对象，然后处理一下属性 protoytpe，最后返回这个对象
+    console.log(obj); // 1,找到了就不会往原型链上查找
+    function Child1() {}
+    Child1.prototype = new Go(); // Child1.prototype.__proto__ = Go.prototype
+    console.log(new Child1());
+
+    // Child1.prototype = {
+    //   a: 1,
+    //   __proto__: {
+    //     a: 2
+    //   }
+    // }
+    // new Child1 = {
+    //   __proto__: {
+    //     a: 1,
+    //     __proto__: {
+    //       a: 2
+    //     }
+    //   }
+    // }
+    function Child2 () {};
+    Child2.prototype = new Go();
+    var child1 = new Child1();
+    var child2 = new Child2();
+    child1.a = 100;
+    console.log(child2.a);
+
+
+    console.log('--------------------------------------------------------------')
+
+    function P() {
+      this.a = [];
+    }
+    P.prototype.change = function () {
+      this.a.push(1);
+    }
+    function C() {};
+    C.prototype = new P();
+    var c1 = new C();
+    c1.change();
+    var c2 = new C();
+    console.log(c2.a);
+    // {
+    //   __proto__: {
+    //     a: [],
+    //     __proto__: {}
+    //   }
+    // }
+    console.log(new C())
+  </script>
+</body>
+</html>
