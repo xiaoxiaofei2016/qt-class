@@ -111,15 +111,15 @@ export default {
       }
     })
   },
-  filters: {
+  filters: { //日期过滤器,将时间戳转换为标准格式
     time: function time (value) {
-      let a = new Date(value)
-      var b = a.getFullYear()
-      var c = (a.getMonth() + 1) > 9? a.getMonth() + 1 : '0' + (a.getMonth() + 1)
-      var d = a.getDate() > 9? a.getDate() : '0' + a.getDate()
-      var e = a.getHours() > 9? a.getHours() : '0' + a.getHours()
-      var f = a.getMinutes() > 9? a.getMinutes() : '0' + a.getMinutes()
-      return b + '-' + c + '-' + d + ' ' + e + ':' + f
+      let tm = new Date(value)
+      var year = tm.getFullYear()
+      var mouth = (tm.getMonth() + 1) > 9? tm.getMonth() + 1 : '0' + (tm.getMonth() + 1)
+      var date = tm.getDate() > 9? tm.getDate() : '0' + tm.getDate()
+      var hours = tm.getHours() > 9? tm.getHours() : '0' + tm.getHours()
+      var minutes = tm.getMinutes() > 9? tm.getMinutes() : '0' + tm.getMinutes()
+      return year + '-' + mouth + '-' + date + ' ' + hours + ':' + minutes
     }
   },
   methods: {
