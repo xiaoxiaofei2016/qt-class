@@ -15,7 +15,7 @@ checkEmail('2695647975@qq.com.cn')
 - 返回的函数运行，闭包，最初参数的数量，最后的参数时，运行完成，否则继续返回函数
 
 - 分函数收集参数的过程
-    return function() {}闭包  fn.length  fn 闭合
+    return function() {}闭包  fn.length  fn 闭
 - 收集参数的过程
 
 - require + module.exports es5 模块化方案
