@@ -8,14 +8,44 @@
 </head>
 <body>
   <script>
+    // function的 声明和赋值都会提升
+    // 普通的声明提前，赋值不会提前
     console.log(a);
     var a = 10;  
-    function a() {
+    function a() { 
       console.log(123);
     }
-    // var a           1
-    // console.log(a); 2  
-    // a = 10
+    // var a            1
+    // function a() {   2
+    // console.log(123);
+    // }
+    // console.log(a);  3 
+    // a = 10           4
+
+
+    console.log('--------------------------')
+    var x = 1,
+        y = 0,
+        z = 0;
+    function add(x) {
+      return (x = x + 1);
+    }
+    y = add(x); 
+    console.log(y) //4
+    function add(x) {
+      return (x = x + 3);
+    }
+    z = add(x); 
+    console.log(z) //4
+
+    // 执行顺序：var x,y,z ,function add(x) {return (x = x + 3);}(覆盖了前一个函数) , x=1,y=0,z=0,add(x)=y ,add(x)=z
+
+    // 函数声明
+    foo1();
+    function foo1() {}
+    // 函数表达式
+    foo2();
+    var foo2 = function foo2() {}
   </script>
 </body>
 </html>
