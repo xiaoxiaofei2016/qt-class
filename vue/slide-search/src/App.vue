@@ -1,6 +1,48 @@
 <template>
-  <div id="app">
-    <SlideSearch></SlideSearch>
+  <div>
+    <SlideSearch :showSearchPage="showSearchPage"></SlideSearch>
+    <ul class="main">
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+      <li>11</li>
+    </ul>
   </div>
 </template>
 
@@ -10,20 +52,41 @@ import HelloWorld from './components/HelloWorld'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      showSearchPage: false
+    }
+  },
   components: {
     HelloWorld,
     SlideSearch
+  },
+  // mounted已经转化为真正的 dom
+  mounted: function() {
+    const ul = document.querySelector('.main')
+    ul.addEventListener('scroll', () => {
+      if (ul.scrollTop === 0) {
+        this.showSearchPage = false
+      }
+      if (ul.scrollTop > 10) {
+        this.showSearchPage = true
+      }
+    })
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
 }
+ul {
+  height: calc(100vh - 94px);
+  overflow: scroll;
+}
+li {
+  margin-top: 20px;
+}
+
 </style>
