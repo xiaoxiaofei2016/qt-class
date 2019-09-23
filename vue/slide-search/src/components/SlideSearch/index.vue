@@ -31,11 +31,18 @@ export default {
   height: 42px;
   text-align: center;
 }
-.title-wrap div{
+.title-wrap div {
   position: absolute;
   height: 100%;
   right: 0;
   top: 0;
   padding-right: 10px;
+}
+.icon-back {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  z-index: 110;
+  height: 42px;
 }
 </style>
