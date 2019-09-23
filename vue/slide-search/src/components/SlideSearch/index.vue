@@ -31,4 +31,11 @@ export default {
   height: 42px;
   text-align: center;
 }
+.title-wrap div{
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding-right: 10px;
+}
 </style>
