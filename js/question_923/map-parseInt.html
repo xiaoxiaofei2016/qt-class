@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const res = ['1', '2', '3'].map(parseInt);
+    // '1' 0 parseInt('1', 0) 0 -> 10  1
+    // '2' 1 parseInt('2', 1) NaN
+    // '3' 2 parseInt('3', 2) NaN
+    console.log(res);   //[1, NaN ,NaN]
+    // 函数是一等公民: 他和其他的变量有同等的地位
+
+    
+    ['1', '2', '3'].map((a, b, c) => {
+      console.log(a, b, c);
+    });
+
+    ['1', '2', '3'].map(bar123);
+    function bar123(d) {
+      console.log(d);
+    }
+
+    var str = '11';
+    var str1 = '0x123'
+    console.log(parseInt(str, 2)); // 3 第二个参数为进制  parseInt返回的值都是十进制的 
+    console.log(parseInt(str, 10));  //11
+    console.log(parseInt(str1))
+  </script>
+</body>
+</html>
