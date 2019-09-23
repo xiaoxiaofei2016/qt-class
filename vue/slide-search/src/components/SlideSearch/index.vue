@@ -45,4 +45,14 @@ export default {
   z-index: 110;
   height: 42px;
 }
+.search-input {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
 </style>
