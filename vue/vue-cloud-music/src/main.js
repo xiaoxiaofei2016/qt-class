@@ -6,6 +6,7 @@ import router from './router'
 import fastclick from 'fastclick'
 import VueLazyload from 'vue-lazyload'
 import defLazyImg from '../static/img/loading.gif'
+import store from './vuex/store'
 
 Vue.use(VueLazyload, {
   loading: defLazyImg
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
