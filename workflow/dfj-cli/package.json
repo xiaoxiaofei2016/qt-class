@@ -1,0 +1,26 @@
+{
+  "name": "dfj-cli",
+  "version": "1.0.0",
+  "description": "手写一个vue-cli\r - npm install -g vue-cli 安装？ 发布到npm 应用市场\r - vue init webpack \r   vue 是一个npm包，\r   -cli 注册到 npm config ls -l prefix\r   vue 全局的npm 包 init command\r   webpack 参数1 process.env[3] process.env[4] 项目名\r - 脚手架\r   github 模板拉下来 npm包可以做 \r   在下载中。。。\r   进度条。。。\r   完成\r   异步  Promise async await 来解决",
+  "main": "index.js",
+  "bin": {
+    "dfj-cli": "./bin/www"
+  },
+  "scripts": {
+    "compile": "babel src -d dist",
+    "watch": "npm run compile -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "commander": "^3.0.1",
+    "download-git-repo": "^2.0.0",
+    "inquirer": "^7.0.0",
+    "ora": "^4.0.1"
+  }
+}
