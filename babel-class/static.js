@@ -30,7 +30,7 @@ console.log(Person.sayHello())
 // ES5
 function Person() {}
 Person.sayHello = function () {
-  return 'hello'
+  return 'hell'
 }
 
 // 静态属性
