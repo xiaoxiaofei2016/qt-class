@@ -1,14 +1,14 @@
 <template>
   <div>
-    <subChild></subChild>
+    <grandson></grandson>
   </div>
 </template>
 
 <script>
-import subChild from './SubChild'
+import grandson from './grandson'
 export default {
   components: {
-    subChild
+    grandson
   }
 }
 </script>
