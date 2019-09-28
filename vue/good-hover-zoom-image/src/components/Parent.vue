@@ -10,7 +10,7 @@ export default {
   components: {
     MyChild
   },
-  provide() {
+  provide() { // 跨多个组件通信
     return {
       theme: 'red'
     }
