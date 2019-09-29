@@ -31,7 +31,7 @@
     </div>
     <!-- 搜索结果 -->
     <div class="search-result" v-show="query" ref="searchResult">
-      <v-suggest></v-suggest>
+      <v-suggest :query="query"></v-suggest>
     </div>
   </div>
 </template>
@@ -62,8 +62,8 @@ export default {
     'v-suggest': suggest
   },
   methods: {
-    onQueryChange () {
-
+    onQueryChange (e) {
+      this.query = e
     },
     addQuery () {}
   }
