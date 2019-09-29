@@ -330,13 +330,13 @@ export default {
         transform translate3d(-50%, 0, 0)
         overflow hidden
         z-index -1
-        &after
+        &::after
           content ''
           width 100%
           height 100%
           background #ea2448
           position absolute
-          clip rect(0 px2rem(600px) px2rem(1200px) 0)
+          clip rect(0 px2rem(600px) px2rem(1200px) 0) /*裁剪绝对定位元素 */
           transform rotate(90deg)
           border-radius 50%
 
