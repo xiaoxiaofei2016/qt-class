@@ -25,10 +25,10 @@
         </div>
       </div>
       <div class="split"></div>
-      <RatingSelect :ratings="ratings" :isActive="isActive" :option="option" :seller="seller"></RatingSelect>
+      <RatingSelect :ratings="ratings" :isActive="isActive" :option="option" :seller="seller" @displayComm="givedata"></RatingSelect>
       <div class="rating-wrapper" >
         <ul>
-          <li class="rating-item" @displayComm="data" v-for="(item, index) in displayComms" :key="index">
+          <li class="rating-item" v-for="(item, index) in displayComms" :key="index">
             <div class="avatar">
               <img :src="item.avatar" alt="" width="28" height="28">
             </div>
@@ -80,6 +80,7 @@ export default {
       console.log(res)
       if (res.data.errno === 0) {
         this.ratings = res.data.data
+        // console.log(this.ratings)
         // this.displayComm = this.ratings
         this.$nextTick(() => {
           this.initScroll()
@@ -105,7 +106,7 @@ export default {
       })
       // console.log(this.commScroll)
     },
-    data (displayComm) {
+    givedata (displayComm) {
       this.displayComms = displayComm
     }
   }

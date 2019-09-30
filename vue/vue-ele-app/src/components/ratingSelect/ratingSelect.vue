@@ -52,8 +52,22 @@ export default {
       displayComm: []
     }
   },
+  watch: {
+    ratings: {
+      handler(newValue, oldValue) {
+        this.goodScore()
+      },
+      deep: true
+    }
+  },
+  created () {
+    this.goodScore()
+    // console.log(this.ratings)
+  },
+
   methods: {
     goodScore () {
+      // console.log(this.ratings)
       for (let i = 0;i < this.ratings.length; i++) {
         if (this.ratings[i].score >=4 || this.ratings[i].rateType == 0) {
           this.goodscore++
@@ -62,9 +76,9 @@ export default {
       console.log(this.goodscore) // 18
       return this.goodscore
     },
-    
     all (num) {
       this.displayComm = this.ratings 
+      this.$emit('displayComm', this.displayComm)
       this.isActive = num // 通过改变isActive的值，从而实现类名active的添加或删除
     },
     filterClick (condition) {
@@ -75,6 +89,7 @@ export default {
         }
       }
       this.displayComm = retArr
+      this.$emit('displayComm', this.displayComm)
       this.isActive = condition // 通过改变condition的值改变isActive的值，从而实现类名active的添加或删除
     },
     content () {
@@ -90,9 +105,6 @@ export default {
       }else {
         this.displayComm = this.ratings
       }
-    },
-    data () {
-      this.$emit('displayComm', this.displayComm)
     }
   }
 };

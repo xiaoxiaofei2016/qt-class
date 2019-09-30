@@ -1,5 +1,5 @@
 <template>
-  <div class="seller" ref="seller">
+  <div class="seller">
     <div class="seller-content">
       <div class="overview">
         <h1 class="title">{{seller.name}}</h1>
@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import BScroll from 'better-scroll'
+// import BScroll from 'better-scroll'
 export default {
   props: {
     seller: {
@@ -94,15 +94,15 @@ export default {
   created () {
     this.classMap = ['decrease', 'discount', 'guarantee', 'invoice', 'special']
     this.$nextTick(() => {
-      this.initScroll()
+      // this.initScroll()
     })
   },
   methods: {
-    initScroll () {
-      this.sellerScroll = new BScroll(this.$refs.seller, {
-        click: true
-      })
-    },
+    // initScroll () {
+    //   this.sellerScroll = new BScroll(this.$refs.seller, {
+    //     click: true
+    //   })
+    // },
     search () {
       let text = this.$refs.text
       if (this.shoucang === false) {
@@ -125,7 +125,7 @@ export default {
   bottom 0
   left 0
   width 100%
-  overflow hidden
+  // overflow hidden
   .seller-content
     .overview
       position relative
@@ -259,11 +259,11 @@ export default {
         color #07111b
         font-size 14px
       .pic-wrapper
-        width 100%
-        overflow hidden
-        white-space nowrap
+
         .pic-list
           font-size 0
+          white-space nowrap
+          overflow-x scroll
           .pic-item
             display inline-block
             margin-right 6px
