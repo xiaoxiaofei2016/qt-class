@@ -125,7 +125,7 @@ export default {
   bottom 0
   left 0
   width 100%
-  // overflow hidden
+  overflow hidden
   .seller-content
     .overview
       position relative
