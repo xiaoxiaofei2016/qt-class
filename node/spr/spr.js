@@ -3,7 +3,7 @@
 //   input IO
 //   process 进程 程序的总管
 
-var playerAction = process.argv[2];
+var playerAction = process.argv[2]; // Process.argv的用法是 第一个是node 第二个是脚本文件 第三个是打印的任意参数 如：node spr.js rock
 // console.log(playerAction);
 if (playerAction != 'rock' && playerAction != 'paper' && playerAction != 'sicssor') {
   console.log('请输入rock或paper或scissor');
