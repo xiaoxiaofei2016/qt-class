@@ -8,7 +8,7 @@ let util = {
     },
     alert(title = '提示', content = config.defaultAlertMessage ) {
         if ('object' === typeof content) {
-            content = this.isDEV && JSON.stringify(content) || config.defaultAlertMessage //转换成字符串
+          content = this.isDEV && JSON.stringify(content) || config.defaultAlertMessage //JSON.stringify()转换成字符串
         }
         wx.showModal({
             title: title,

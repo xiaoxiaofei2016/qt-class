@@ -21,9 +21,29 @@
   margin-top: 38rpx;
   overflow: visible;
 }
+.wrapper .group-title:after,.wrapper .group-title:before {
+  content: '';
+  top: 18rpx;
+  position: absolute;
+  width: 32rpx;
+  height: 1rpx;
+  transform: scaleY(.5);
+  border-bottom: solid 1px #efefef
+}
+
+.wrapper .group-title:before {
+  left: -56rpx
+}
+
+.wrapper .group-title:after {
+  right: -56rpx
+}
 .group-title.on{
   border: 1px solid #ffc60e;
   color: #ffc60e;
+}
+.wrapper .group-title.on:after,.wrapper .group-title.on:before {
+  border-bottom: solid 1px #ffc60e
 }
 .wrapper .group-content-item {
   position: relative;
