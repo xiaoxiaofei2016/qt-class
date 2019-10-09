@@ -3,7 +3,7 @@
     <div class="logo df-c">
       <img src="../../assets/images/logo.png" alt="LOGO" />
     </div>
-    <div class="searc">
+    <div class="search">
       <Icon name="2fangdajing" class="search-icon"></Icon>
       <input type="text" placeholder="搜索些啥呢..." @click="skipSearch" readonly />
     </div>
