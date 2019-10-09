@@ -14,3 +14,16 @@
   this.$store.products.items
   this.$store.cart.items
   namespace: true
+
+前后端分离
+- 传统vue
+mounted()
+  axios /api/products/:1
+  this.products = 
+- vuex
+  products数据不在vuex里
+  组件 mounted()
+      actions 异步
+      axios /api/products/:1
+      mutation
+      products.all
