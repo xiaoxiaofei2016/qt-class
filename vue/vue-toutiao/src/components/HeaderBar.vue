@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrapper df-sb">
     <div class="logo df-c">
-      <img src="../assets/logo.png" alt="LOGO" />
+      <img src="../assets/toutiao.png" alt="LOGO" />
     </div>
     <div class="search">
       <Icon name="2fangdajing" class="search-icon"></Icon>
@@ -15,6 +15,7 @@ export default {};
 </script>
 
 <style scoped lang="less">
+@import '../styles/main.less';
 .header-wrapper {
   height: 0.5rem;
   background: @theme-bg-red;

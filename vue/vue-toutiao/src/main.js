@@ -5,8 +5,11 @@ import App from './App'
 import router from './router'
 
 import './styles/index.css'
+
 import HeaderBar from './components/HeaderBar'
 import FooterBar from './components/FooterBar'
+import './rem.js'
+import store from './store/index'
 
 Vue.config.productionTip = false
 // function () => {}
@@ -21,6 +24,7 @@ Vue.use((foo) => {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

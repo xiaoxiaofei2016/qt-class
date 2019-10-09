@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
+// html {
+//   font-size: calc(100vm / 3.75);
+// }
 </style>
