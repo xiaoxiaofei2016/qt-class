@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<loading hidden="{{ hiddenLoading }}">数据加载中</loading>
+<!-- <loading hidden="{{ hiddenLoading }}">数据加载中</loading> -->
 <view class="wrapper">
   <view class="group" wx:for="{{articleList}}" wx:key="{{group.date}}" wx:for-item="group">
     <view class="group-bar">

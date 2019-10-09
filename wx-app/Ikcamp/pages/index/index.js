@@ -152,7 +152,7 @@ let handler = {
     let item = dataset && dataset.item
     let contentId = item.contentId || 0
     wx.navigateTo({
-      url: `../detail/detail?contentId=${contentId}`
+      url: `../datail/detail?contentId=${contentId}`
     })
   },
   resetArticles() {
