@@ -98,11 +98,12 @@
 
 <script>
 import scroll from '@/components/scroll'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
+import api from '@/api'
 export default {
   data () {
     return {
-      playList: [1],
+      // playList: [1],
       currentTime: 0,
       duration: 0,
       playingLyric: '我叹服你的技巧',
@@ -123,7 +124,10 @@ export default {
     },
     disableCls () {
       return this.songReady ? '' : 'disable'
-    }
+    },
+    ...mapGetters([
+      'playList'
+    ])
   },
   methods: {
     back () {
