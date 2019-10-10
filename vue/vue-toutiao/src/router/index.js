@@ -10,7 +10,7 @@ export default new Router({
     {
       path: '/',
       name: '首页',
-      component: () => import ('../views/Layout/index') 
+      component: () => import ('../views/Layout/index.vue') 
     }
   ]
 })

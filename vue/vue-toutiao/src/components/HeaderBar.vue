@@ -4,14 +4,18 @@
       <img src="../assets/toutiao.png" alt="LOGO" />
     </div>
     <div class="search">
-      <Icon name="2fangdajing" class="search-icon"></Icon>
+      <!-- <Icon name="2fangdajing" class="search-icon"></Icon> -->
       <input type="text" placeholder="搜索些啥呢..." @click="skipSearch" readonly />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    skipSearch () {}
+  }
+};
 </script>
 
 <style scoped lang="less">
