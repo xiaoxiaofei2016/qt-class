@@ -17,6 +17,12 @@ export default {
       console.log(this.$store)
       return this.$store.state.count
     }
+  },
+  created() { // 不可直接修改
+    // this.$store.state = {
+    //   count: 2
+    // }
+    console.log('打印出this.$store.getters.getStatePlusOne的结果', this.$store.getters.getStatePlusOne)
   }
 }
 </script>

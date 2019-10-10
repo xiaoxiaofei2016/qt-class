@@ -10,8 +10,13 @@ Vue.config.productionTip = false
 let store = new MyVuex.Store({
   state: {
     count: 0
+  },
+  getters: {
+    getStatePlusOne(state) {
+      return state.count + 1
+    }
   }
-})
+}, Vue)
 
 /* eslint-disable no-new */
 new Vue({
