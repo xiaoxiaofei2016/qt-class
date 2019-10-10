@@ -112,7 +112,7 @@ export default {
       currentLyric: null,
       currentLineNum: 0,
       currentShow: 'cd',
-      playing: true
+      // playing: true
     }
   },
   components: {
@@ -126,7 +126,8 @@ export default {
       return this.songReady ? '' : 'disable'
     },
     ...mapGetters([
-      'playList'
+      'playList',
+      'playing'
     ])
   },
   methods: {
@@ -154,6 +155,17 @@ export default {
     ...mapMutations({
       setFullScreen: 'SET_FULL_SCREEN'
     })
+  },
+  watch: {
+    playing (newPlaying) {
+      if (!this.songReady) {
+        return
+      }
+      const audio = this.$refs.audio
+      this.$nextTick(() => {
+        newPlaying ? audio.play() : audio.pause()
+      })
+    }
   }
 }
 </script>

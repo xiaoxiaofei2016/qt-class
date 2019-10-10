@@ -3,7 +3,9 @@ import { findIndex } from '@/common/util'
 
 const state = {
   playList: [],
-  currentIndex: -1 // 当前播放的歌
+  currentIndex: -1, // 当前播放的歌
+  playing: false,
+  currentSong: ''
 }
 
 const mutations = {
@@ -12,6 +14,9 @@ const mutations = {
   },
   [types.SET_CURRENT_INDEX] (state, index) {
     state.currentIndex = index
+  },
+  [types.SET_PLAYING] (state, status) {
+    state.playing = status
   }
 }
 
@@ -31,6 +36,7 @@ const actions = {
 
     commit(types.SET_PLAY_LIST, playList)
     commit(types.SET_CURRENT_INDEX, currentIndex)
+    commit(types.SET_PLAYING, true)
   },
   addPlayList ({commit, state}, song) { // 加入播放列表
     let playlist = [...state.playList.slice(), song]
@@ -38,13 +44,15 @@ const actions = {
       let currentIndex = state.currentIndex
       currentIndex++
       commit(types.SET_CURRENT_INDEX, currentIndex)
+      commit(types.SET_PLAYING, true)
     }
     commit(types.SET_PLAY_LIST, playlist)
   }
 }
 
 const getters = {
-  playList: state => state.playList
+  playList: state => state.playList,
+  playing: state => state.playing
 }
 
 export default {

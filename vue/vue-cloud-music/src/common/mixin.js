@@ -20,3 +20,11 @@ export const searchMixin = {
     ])
   }
 }
+
+export const playerMixin = {
+  computed: {
+    ...mapGetters([
+      'currentSong'
+    ])
+  }
+}
