@@ -98,6 +98,7 @@
 
 <script>
 import scroll from '@/components/scroll'
+import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -125,12 +126,14 @@ export default {
     }
   },
   methods: {
+    back () {
+      this.setFullScreen(false)
+    },
     enter () {},
     afterEnter () {},
     Leave () {},
     afterLeave () {},
     currentSong () {},
-    back () {},
     middleTouchEnd () {},
     changeMode () {},
     prev () {},
@@ -143,7 +146,10 @@ export default {
     end () {},
     pause () {},
     timeupdateTime () {},
-    ended () {}
+    ended () {},
+    ...mapMutations({
+      setFullScreen: 'SET_FULL_SCREEN'
+    })
   }
 }
 </script>
