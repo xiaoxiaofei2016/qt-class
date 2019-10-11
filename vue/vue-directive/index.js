@@ -35,5 +35,5 @@ plugin.install = function(argVue) {
 if (typeof exports === 'object') {
   module.exports = plugin
 } else if (window) {
-  window.Vue.use
+  window.Vue.use(plugin)
 }
