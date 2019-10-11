@@ -23,6 +23,7 @@ export default {
     //   count: 2
     // }
     console.log('打印出this.$store.getters.getStatePlusOne的结果', this.$store.getters.getStatePlusOne)
+    console.log('打印出this.$store.getters.getStatePlusTwo的结果', this.$store.getters.getStatePlusTwo)
   }
 }
 </script>

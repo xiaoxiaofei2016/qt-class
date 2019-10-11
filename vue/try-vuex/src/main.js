@@ -14,6 +14,9 @@ let store = new MyVuex.Store({
   getters: {
     getStatePlusOne(state) {
       return state.count + 1
+    },
+    getStatePlusTwo(state) {
+      return state.count - 1
     }
   }
 }, Vue)
