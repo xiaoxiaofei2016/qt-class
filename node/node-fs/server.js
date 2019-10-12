@@ -28,5 +28,5 @@ server.on('request', (req, res) => {
 })
 
 server.listen(3000, () => {
-  console.log('服务器已启动，可以访问了')
+  console.log('服务器已启动，可以访问')
 })
