@@ -50,7 +50,7 @@
                   <img class="navigation_avatar_img" :src="user_info.avatar_url"
                   title="Avatar">
               </router-link>
-          </li>
+            </li>
           </div>
         </ul>
       </div>
@@ -66,6 +66,11 @@ export default {
       login_state: state => state.loginState.sing_on,
       user_info: state => state.loginState.user_info
     })
+  },
+  methods: {
+    change_show_state(onOrUp) {
+      this.$store.dispatch('loginState/change_show_state', onOrUp)
+    }
   }
 }
 </script>

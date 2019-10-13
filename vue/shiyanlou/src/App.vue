@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Login></Login>
     <transition name="tab_router_view">
       <router-view/>
     </transition>
@@ -7,8 +8,12 @@
 </template>
 
 <script>
+import Login from '@/components/common_components/sign_on_up/login.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Login
+  }
 }
 </script>
 
@@ -34,7 +39,7 @@ img {
     border: 0;
     vertical-align: middle;
 }
-ul {
+ul,li {
     list-style-type: none;
     padding: 0;
     margin: 0;
