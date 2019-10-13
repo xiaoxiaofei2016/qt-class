@@ -15,4 +15,7 @@
   可复用的组件 /components
     - 全栈常用的公共组件，跟业务无关 iview /components/common
   容器型组件
-    PC 页面量 切页面的工作交给组件化 html section概念来做
+    PC 页面量 切页面的工作交给组件化 html section概念来做 
+
+- App.vue 根组件， reset 工作 通用样式
+- 界面 + 状态 == 完成开发

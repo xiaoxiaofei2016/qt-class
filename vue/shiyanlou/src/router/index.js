@@ -14,6 +14,14 @@ export default new Router({
       meta: {
         title: '在线做实验，高效学编程 -实验楼'
       }
+    },
+    {
+      path: '/user/:id',
+      name: 'user',
+      component: __import__('user/user'),
+      meta: {
+        title: '实验楼'
+      }
     }
   ]
 })
