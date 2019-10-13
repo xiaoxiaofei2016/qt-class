@@ -9,3 +9,10 @@
 
 - 路由
   懒加载 
+- page 组件化
+- 页面由组件构成
+  页面级组件 /pages
+  可复用的组件 /components
+    - 全栈常用的公共组件，跟业务无关 iview /components/common
+  容器型组件
+    PC 页面量 切页面的工作交给组件化 html section概念来做
