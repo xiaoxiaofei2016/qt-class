@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import randomStr from '../../utils/random_str'
 export default {
   props: {
     code: {
@@ -18,6 +20,9 @@ export default {
       css: '',
       js: ''
     }
+  },
+  methods: {
+    
   }
 }
 </script>
