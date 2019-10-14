@@ -4,6 +4,18 @@ cnpm i koa -S 安装koa的依赖
     ctx.body = 'hello world'
   }
 next把中间件连接起来
+
+## ctx
+ctx: {
+  req,
+  res
+}
+第三方的中间件都是对ctx继续增强 把要提供的方法放在ctx上
+koa-body
+ctx.req.files // 获取文件信息
+koa-view
+ctx.res.render() //
+
 ## http
 
 中台
