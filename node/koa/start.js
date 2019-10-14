@@ -5,7 +5,7 @@ const student = new Koa();
 student.use(async (ctx, next) => { // 中间件 函数
   console.log(ctx.path, ctx.query);
   ctx.body = 'hello world'
-  await next();
+  await next(); // 等下一个执行完再执行 await用于等待异步完成
   console.log('middleWare1');
 })
 student.use(async (ctx, next) => { // 中间件 函数
