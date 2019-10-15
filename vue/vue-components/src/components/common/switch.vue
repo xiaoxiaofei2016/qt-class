@@ -15,7 +15,7 @@ export default {
     }
   },
   mounted() {
-    this.$on('test', (text) => { // 接收子组件的this.$dispatch('test', )
+    this.$on('test', (text) => { // 接收子组件的this.$dispatch('test', ) 
       console.log(text)
     })
   },
