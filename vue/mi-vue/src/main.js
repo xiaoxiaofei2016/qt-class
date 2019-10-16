@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
-import './style/css/reset.css'
+import './style/css/reset.styl'
+import './style/css/font.styl'
+import './style/css/common.styl'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
