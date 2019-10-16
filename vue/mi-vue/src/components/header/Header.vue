@@ -1,14 +1,14 @@
 <template>
   <div>
-    <v-header></v-header>
+    <v-siteTopBar></v-siteTopBar>
   </div>
 </template>
 
 <script>
-import Header from '@/components/header/Header.vue'
+import siteTopBar from './siteTopBar.vue'
 export default {
   components: {
-    'v-header': Header
+    'v-siteTopBar': siteTopBar
   }
 }
 </script>

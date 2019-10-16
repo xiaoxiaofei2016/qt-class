@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: __import__('home')
+      component: __import__('Home')
     }
   ]
 })
