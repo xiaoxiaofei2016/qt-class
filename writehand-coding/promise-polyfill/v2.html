@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>第一个版本Promise</title>
+</head>
+<body>
+  <script>
+    function MyPromise(cb) {
+      var self = this;
+      this.status = 'pending';
+      self.onResolve = null;
+      cb(resolve, reject);
+      function resolve(val) {
+        // console.log(val);
+        self.status = 'resolved';
+        self.data = val;
+        self.onResolve && self.onResolve(val);
+      }
+      function reject() {}
+    }
+    MyPromise.prototype.then = function(onResolve) {
+      var self = this;
+      if (self.status === 'resolved') {
+        onResolve(self.data);
+      }
+      else if (self.status === 'pending') {
+        self.onResolve = onResolve;
+      }
+    }
+
+
+    var p = new MyPromise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(12345);
+      }, 3000)
+    });
+    p.then(res => {
+      console.log(res);
+    })
+
+    // 原生Promise
+    // var p1 = new Promise((resolve, reject) => {
+    //   resolve('123')
+    // }).then(res => {
+    //   console.log(res);
+    //   return res;
+    // }).then(data => {
+    //   console.log(data);
+    // })
+  </script>
+</body>
+</html>
