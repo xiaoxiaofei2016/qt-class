@@ -24,7 +24,7 @@
         <span class="sep">|</span>
         <a href="/" class="topbar-download">下载app
           <span class="appcode">
-            <img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" alt="小米商城" width="90" height="90">小米商城
+            <img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" alt="小米商城" width="90" height="90">小米商城APP
           </span>
         </a>
         <span class="sep">|</span>
@@ -50,12 +50,12 @@
         </div>
       </div>
       <div class="topbar-info">
-        <a href="">登录</a>
+        <a href="/" class="link">登录</a>
         <span class="sep">|</span>
-        <a href="">注册</a>
+        <a href="/" class="link">注册</a>
         <span class="sep">|</span>
         <span class="message">
-          <a href="">
+          <a href="/" class="needmessage">
             消息通知
           </a>
         </span>
@@ -79,8 +79,7 @@ export default {
   z-index 30
   .container
     width 1226px
-    margin-right auto
-    margin-left auto
+    margin 0 auto
     display inline-block
     .topbar-nav
       float left
@@ -110,6 +109,9 @@ export default {
           line-height 1
           overflow hidden
           transition height 0.3s
+          img
+            display block
+            margin 18px auto 12px
 
     .topbar-cart
       position relative
@@ -158,4 +160,22 @@ export default {
               background #fafafa
             .msg
               padding 20px 0 20px
+
+    .topbar-info
+      position relative
+      float right
+      height 40px
+      line-height 40px
+      a
+        color $font_color
+        line-height 40px
+        display inline-block
+      .link
+        padding 0 5px
+        text-align center
+      .sep
+        margin 0
+      .message
+        padding 0 10px
+
 </style>
