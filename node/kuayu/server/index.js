@@ -10,8 +10,15 @@ app.listen(3000, () => {
   console.log('Server is running http://localhost:3000');
 })
 
-router.get('/api/books', (ctx, next) => {
+app.use(async (ctx, next) => {
+  ctx.set('Access-Control-Allow-Origin', '*') // *表示所有源都可以访问
+  ctx.set('Access-Control-Allow-Headers', 'X-custume, Content-Type') //头
+  ctx.set('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE,OPTIONS') //方法
+  await next();
+})
+router.post('/api/books', (ctx, next) => {
   // ctx.router available
+  
   ctx.body = [
     { bookName: 'php入门到精通' },
     { bookName: 'node入门到精通' }

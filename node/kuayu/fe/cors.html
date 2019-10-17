@@ -8,7 +8,14 @@
 </head>
 <body>
   <script>
-    fetch('http://localhost:3000/api/books')  
+    let myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+    myHeaders.append('X-custume', 'abc'); // X-custume人为定义
+    fetch('http://localhost:3000/api/books', { // 请求头，请求体
+      method: 'POST', // 'POST'传数据 'GET'拿数据
+      headers: myHeaders,
+      body: { a: 1 }
+    })  
       .then(res => res.json())
       .then(data => {
         console.log(data);
