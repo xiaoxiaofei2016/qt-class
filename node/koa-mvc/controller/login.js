@@ -2,7 +2,7 @@ const md5 = require('md5');
 const userModel = require('../model/user-info.js');
 module.exports = async (ctx) => {
   const { name, password } = ctx.request.body;
-  const userInfo = userModel.queryByName(name);
+  const userInfo = await userModel.queryByName(name);
   // [{}]
   if (userInfo.length > 0) {
     if (md5(password) === userInfo[0]['password']) {

@@ -12,8 +12,12 @@ const insertData = function(val) {
   return query(sql, [val.name, md5(val.password)]);
 }
 
-const queryByName = function() {}
+const queryByName = async (name) => {
+  let sql = 'select * from user_info where name = ?';
+  return query(sql, [ name ]);
+}
 
 module.exports = {
-  insertData
+  insertData,
+  queryByName
 }
