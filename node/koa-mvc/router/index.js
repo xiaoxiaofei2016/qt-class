@@ -1,10 +1,10 @@
 const KoaRouter = require('koa-router');
 const router = new KoaRouter();
 const registerController = require('../controller/register.js');
+const loginController = require('../controller/login.js');
 
-router.get('/login', async (ctx) => { // 注册路由
-
-});
+router.prefix('api/v1')
+router.get('/login', loginController);
 router.get('/register', registerController);
 
 module.exports = router;

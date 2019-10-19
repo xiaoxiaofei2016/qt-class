@@ -16,6 +16,14 @@ export default {
   },
   methods: {
     login () {
+      // restful 风格的api
+      axios.post('/api/v1/login', {
+        name: this.name,
+        password: this.password
+      })
+      .then(res => {
+        console.log(res)
+      })
 
     }
   }

@@ -11,6 +11,9 @@ const insertData = function(val) {
   // zhaoeng16 -> 哈希算法 -> 123452
   return query(sql, [val.name, md5(val.password)]);
 }
+
+const queryByName = function() {}
+
 module.exports = {
   insertData
 }
