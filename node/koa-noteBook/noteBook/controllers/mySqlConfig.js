@@ -12,9 +12,9 @@ var pool = mysql.createPool({
 
 // 统一连接数据库的方法
 let allServies = {
-  query: function(sql, values) {
+  query: function (sql, values) {
     return new Promise((resolve, reject) => {
-      pool.getConnection(function(err, connection) {
+      pool.getConnection(function (err, connection) {
         if (err) {
           reject(err)
         } else {
@@ -33,7 +33,7 @@ let allServies = {
 }
 
 // 读取所有user表数据，测试数据连接
-let getAllUsers = function() {
+let getAllUsers = function () {
   let _sql = `select * from users`
   return allServies.query(_sql)
 }
