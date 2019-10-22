@@ -41,6 +41,7 @@
         };
       },
       methods: {
+        // defindProperty 不能够监测 后来的属性 限制只有 get set
         addProperty() {
           this.msg = this.msg + '1';
           this.person[this.msg] = this.msg;
@@ -48,6 +49,7 @@
         deleteProperty() {
           delete this.person.age;
         },
+        // defindProperty不能监测数组
         addArrayItemProperty() {
           this.array[0].enname = 'abc';
         },
