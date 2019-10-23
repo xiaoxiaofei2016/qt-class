@@ -30,6 +30,37 @@ router.get('/login', async (ctx) => {
   await ctx.render('login')
 })
 
+router.get('/401', async (ctx) => {
+  await ctx.render('401')
+})
+
+router.get('/userCenter', async (ctx) => {
+  await ctx.render('userInfo')
+})
+
+router.get('/userInfo', async (ctx, next) => {
+  // 同步验证
+	const auth = ctx.request.headers['authorization'];
+  const token = auth.split(' ')[1];
+  try {
+		//解码取出之前存在payload的user_id 和 name
+    const payload = jwt.verify(token, 'secret');
+    console.log('payload———', payload);
+		ctx.user_id = payload.id;
+		await next()
+	} catch (err) {
+    ctx.body = {
+      code: 300
+    }
+	}
+}, async (ctx) => {
+  ctx.body = {
+    code: 200,
+    name: 123,
+    id: 1
+  }
+})
+
 router.post('/login', async (ctx) => {// 处理业务
   const data = ctx.request.body
   console.log(data)
