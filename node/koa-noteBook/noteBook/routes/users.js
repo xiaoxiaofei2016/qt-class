@@ -41,6 +41,11 @@ router.post('/userRegister', async (ctx, next) => {
         } catch (error) {
           console.log(error)
         }
+        ctx.body = {
+          code: '800003',
+          data: 'err',
+          mess: '用户名已存在'
+        }
       }
     })
   }
