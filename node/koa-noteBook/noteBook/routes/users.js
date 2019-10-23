@@ -46,6 +46,18 @@ router.post('/userRegister', async (ctx, next) => {
           data: 'err',
           mess: '用户名已存在'
         }
+      } else {
+        await userService.insertUser([user.username, user.userpwd, user.nickname]).then((res) => {
+          let r = ''
+          if (res.affectedRows != 0) {
+            r = 'ok'
+            ctx.body = {
+              code: '800000',
+              data: r,
+              mess: '注册成功'
+            }
+          }
+        })
       }
     })
   }
