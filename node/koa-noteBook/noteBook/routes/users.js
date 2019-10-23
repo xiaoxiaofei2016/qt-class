@@ -56,6 +56,13 @@ router.post('/userRegister', async (ctx, next) => {
               data: r,
               mess: '注册成功'
             }
+          } else {
+            r = 'error'
+            ctx.body = {
+              code: '800004',
+              data: r,
+              mess: '注册失败'
+            }
           }
         })
       }
