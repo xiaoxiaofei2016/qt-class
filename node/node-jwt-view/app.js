@@ -7,7 +7,7 @@ const KoaView = require('koa-views')
 const path = require('path')
 const router = KoaRouter()
 const bodyParser = require('koa-bodyparser')
-  
+const jwt = require('jsonwebtoken')
 
 const app = new Koa()
 app.use(bodyParser())
@@ -32,7 +32,24 @@ router.get('/login', async (ctx) => {
 
 router.post('/login', async (ctx) => {// 处理业务
   const data = ctx.request.body
-  if (data.useName === '123' && data.pwd === '456')
+  console.log(data)
+  if (data.userName === '123' && data.pwd === '456') {
+    // 生成token
+    // 保持 用户登录状态 每次请求 都传uid { uid: 000 }
+    // jwt 解决了 传递数据 加密的功能
+    // 加密的算法 payload(数据，时间) 签名
+    const token = jwt.sign({uid: 000}, 'secret', {
+      expiresIn: 60
+    })
+    ctx.body = {
+      code: 200,
+      token: token
+    }
+  } else {
+    ctx.body = {
+      code: 400
+    }
+  }
 })
 
 app.use(router.routes()).use(router.allowedMethods())
