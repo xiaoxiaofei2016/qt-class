@@ -18,4 +18,32 @@ router.get('/all', async (ctx, next) => {
   })
 })
 
+router.post('/userRegister', async (ctx, next) => {
+  let _username = ctx.request.body.username
+  let _userpwd = ctx.request.body.userpwd
+  let _nickname = ctx.request.body.nickname
+  if (!_username && !_userpwd && !_nickname) {
+    ctx.body = {
+      code: '800001',
+      mess: '用户名昵称密码不能为空'
+    }
+    return
+  } else {
+    let user = {
+      username: _username,
+      userpwd: _userpwd,
+      nickname: _nickname
+    }
+    await userService.findUser(user.username).then(async (res) => {
+      if (res.length) {
+        try {
+          throw Error('用户名已存在')
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    })
+  }
+})
+
 module.exports = router
