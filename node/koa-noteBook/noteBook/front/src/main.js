@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'amfe-flexible'
+import 'amfe-flexible' // 和meta有关
 import { Swipe, SwipeItem, Icon, Field, ActionSheet, Toast, Panel, Uploader } from 'vant'
 import 'vant/lib/index.css'
 import axios from 'axios'

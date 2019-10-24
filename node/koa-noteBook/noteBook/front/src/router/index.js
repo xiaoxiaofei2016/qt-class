@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import StarNotes from '@/components/starNotes'
 import StarBanner from '@/components/StarBanner/starBanner'
+import StarLogin from '@/components/login/starLogin'
 
 Vue.use(Router)
 
@@ -21,6 +22,14 @@ export default new Router({
       component: StarBanner,
       meta: {
         title: '欢迎'
+      }
+    },
+    {
+      path: '/StarLogin',
+      name: 'StarLogin',
+      component: StarLogin,
+      meta: {
+        title: '登录'
       }
     }
   ]
