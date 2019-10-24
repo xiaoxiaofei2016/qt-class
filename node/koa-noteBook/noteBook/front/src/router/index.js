@@ -31,6 +31,14 @@ export default new Router({
       meta: {
         title: '登录'
       }
+    },
+    {
+      path: '/noteClass',
+      name: 'noteClass',
+      // component: noteClass,
+      meta: {
+        title: 'noteClass'
+      }
     }
   ]
 })
