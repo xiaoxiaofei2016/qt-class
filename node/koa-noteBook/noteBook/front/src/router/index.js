@@ -36,9 +36,9 @@ export default new Router({
       path: '/noteClass',
       name: 'noteClass',
       // component: noteClass,
-      meta: {
-        title: 'noteClass'
-      }
+      // meta: {
+      //   title: 'noteClass'
+      // }
     }
   ]
 })
