@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>预编译</title>
+</head>
+<body>
+  <script>
+    //  变量 声明提升，赋值不提升
+    // 函数整体提升
+    function fn(a) {
+      console.log(a) // function() {}
+      var a = 123
+      console.log(a) // 123
+      function a() {}
+      console.log(a) // 123
+      var b = function() {}
+      console.log(b) // function() {}
+      function d() {}
+    }
+    fn(1)
+
+    // AO {
+    //   a: function() {}, -> 123
+    //   b: undefined, -> function() {}
+    //   d: function() {}
+    // }
+  </script>
+</body>
+</html>
