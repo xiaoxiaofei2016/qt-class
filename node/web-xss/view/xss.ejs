@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  XSS演示：
+  <a href="http://localhost:3000?xss=<script>alert(document.cookie)</script>">demo1</a>
+  <a href="http://localhost:3000?xss=<style>body{background-color:red;}</style>">demo2</a>
+  <a href="http://localhost:3000?xss=<iframe src='http://www.baidu.com' frameborder='0'></iframe>">百度</a>
+  
+  <!-- <img src="" alt="" onerror="alert(123)" />
+  <p onclick="">点我</p> -->
+  <!-- -表示不转义 =表示转义 -->
+  <%- xss %>
+</body>
+</html>
