@@ -13,6 +13,7 @@ const cors = require('koa2-cors')
 // error handler
 onerror(app)
 
+// 解决跨域、请求接口问题
 app.use(cors({
   origin:function(ctx){
     return '*'

@@ -1,8 +1,12 @@
 <template>
   <div class="star-login">
-    <h1>登录</h1>
+    <h1>注册</h1>
     <div class="login-wraper">
       <div class="avatar" :style="`background-image:url(${avatar})`"></div>
+      <div class="input-group">
+        <label for="">昵称</label>
+        <input type="text" id="nickname" v-model="nickname"/>
+      </div>
       <div class="input-group">
         <label for="">账号</label>
         <input type="text" id="username" v-model="username"/>
@@ -11,10 +15,10 @@
         <label for="">密码</label>
         <input type="password" id="password" v-model="password"/>
       </div>
-      <p class="forgot-pwd">忘记密码</p>
-      <div class="sign" @click="login">登录</div>
+      <div class="sign" @click="register">注册</div>
+      <span class="badge-img">+</span>
     </div>
-    <p class="register" @click="register">新用户?点击这里注册哦!</p>
+    <p class="register" @click="login">已有账号了?点击登录哦</p>
   </div>
 </template>
 
@@ -25,27 +29,29 @@ export default {
     return {
       username: '',
       password: '',
-      avatar: require('../../assets/img/raw_1512446140.jpeg')
+      nickname: '',
+      avatar: require('../../assets/img/raw_1512446162.png')
     }
   },
   methods: {
-    login () {
-      if (this.username.trim() === '' || this.password.trim() === '') { // trim()去空格
-        this.$toast('账号或密码不能为空')
+    register () {
+      if (this.username.trim() === '' || this.password.trim() === '' || this.nickname.trim() === '') { // trim()去空格
+        this.$toast('昵称账号或密码不能为空')
         return
       }
       this.$http({
-        url: 'http://localhost:3000/users/userLogin',
+        url: 'http://localhost:3000/users/userRegister',
         method: 'post',
         data: {
           username: this.username.trim(),
-          userpwd: this.password.trim()
+          userpwd: this.password.trim(),
+          nickname: this.nickname.trim()
         }
       }).then((res) => {
         if (res.data.code === '800000') {
-          console.log('登录成功', res)
-          sessionStorage.setItem('userInfo', JSON.stringify(res.data.data)) // 存到本地内存中
-          this.$router.push({path: '/NoteClass'})
+          this.$router.push({path: '/StarLogin'})
+          this.$toast(res.data.mess)
+          console.log('注册成功', res)
         } else {
           this.$toast(res.data.mess)
         }
@@ -53,8 +59,8 @@ export default {
         console.log(err)
       })
     },
-    register () {
-      this.$router.push({path: '/StarRegister'})
+    login () {
+      this.$router.push({path: '/StarLogin'})
     }
   }
 }
@@ -83,11 +89,12 @@ input {
   }
   .login-wraper {
     width: 7.44rem;
-    height: 10.773333rem;
+    height: 11.413333rem;
     margin-top: 1.706667rem;
     border-radius: 0.266667rem;
     box-shadow: 0 0 0.533333rem 0 rgba(170, 170, 170, 1);
     border: 1px solid rgba(187, 187, 187, 1);
+    position: relative;
     overflow: hidden;
     .avatar {
       width: 2.4rem;
@@ -97,6 +104,16 @@ input {
       background-position: center;
       background-repeat: no-repeat;
       background-size: 100% 100%;
+    }
+    .badge-img{
+      position: absolute;
+      width: 1.2rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      left: 4.266667rem;
+      top: 2.453333rem;
+      color: rgba(16, 16, 16, 0.5);
+      text-align: center;
     }
     .input-group {
       width: 5.546667rem;
@@ -128,17 +145,8 @@ input {
     .input-group-panel {
       margin-top: 10px;
     }
-    .forgot-pwd{
-        margin:10px auto .56rem 1.973333rem;
-        height: .613333rem;
-        line-height: .453333rem;
-        opacity: 0.3;
-        color: rgba(16, 16, 16, 1);
-        font-size: .32rem;
-        font-family: Arial;
-    }
     .sign{
-        margin: 0 auto;
+        margin: .8rem auto 0;
         width: 5.546667rem;
         height: 1.226667rem;
         line-height: 1.226667rem;
@@ -154,7 +162,7 @@ input {
   }
   .register {
     height: 0.613333rem;
-    margin-top: 2.16rem;
+    margin-top: 1.52rem;
     line-height: 0.613333rem;
     opacity: 0.3;
     color: rgba(16, 16, 16, 1);
