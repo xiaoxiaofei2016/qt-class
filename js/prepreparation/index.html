@@ -11,7 +11,7 @@
     //  变量 声明提升，赋值不提升
     // 函数整体提升
     function fn(a) {
-      console.log(a) // function() {}
+      console.log(a) // function a() {}
       var a = 123
       console.log(a) // 123
       function a() {}
@@ -23,8 +23,8 @@
     fn(1)
 
     // AO {
-    //   a: function() {}, -> 123
-    //   b: undefined, -> function() {}
+    //   a: function a() {},   -> 123
+    //   b: undefined, ->   function() {}
     //   d: function() {}
     // }
   </script>
