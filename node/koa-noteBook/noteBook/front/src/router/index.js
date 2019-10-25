@@ -4,7 +4,7 @@ import StarNotes from '@/components/starNotes'
 import StarBanner from '@/components/StarBanner/starBanner'
 import StarLogin from '@/components/login/starLogin'
 import StarRegister from '@/components/register/starRegister'
-import NoteClass from '@/components/noteCalss/noteClass'
+import NoteClass from '@/components/noteClass/noteClass'
 
 Vue.use(Router)
 
