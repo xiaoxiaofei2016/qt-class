@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>纯函数</title>
+</head>
+<body>
+  <script>
+    // 相同的输入会有相同的输出
+    // 不依赖任何外部环境
+    // 不会对外部造成影响
+    // Math.random()  new Date() DOM I/O
+    // 易于测试 结果缓存
+    const add = (a, b) => a + b
+    add(1, 2)
+
+    var b = 2
+    const add1 = (a) => {
+      return a + b
+    }
+
+    const memoryAdd = function(a, b) {
+      let cache = new Map()
+      const key = JSON.stringify(Array.from(arguments))
+      if (cache.has(key)) {
+        return cache.get(key)
+      }
+      let res = a + b
+      cache.set(key, res)
+      return res
+    }
+    console.log(memoryAdd(1, 2))
+
+    // 函数式编程
+    const memorize = function(fn) {
+      let cache = new Map()
+      return function(...args) {
+        let key = JSON.stringify(args)
+        if (cache.has(key)) {
+          return cache.get(key)
+        }
+        const res = fn(...args)
+        cache.set(key, res)
+        return res
+      }
+    }
+    const madd = memorize(add)
+    console.log(madd(1, 2))
+  </script>
+</body>
+</html>
