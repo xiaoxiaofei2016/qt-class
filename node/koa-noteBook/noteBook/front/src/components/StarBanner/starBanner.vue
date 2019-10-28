@@ -76,14 +76,12 @@ export default {
 .title{
     top: 10.746667rem;
     font-size: .64rem;
-    .comm-style 
 }
 .desc{
     position: absolute;
     top: 11.92rem;
     font-size: .373333rem;
     opacity: 0.5;
-    .comm-style 
 }
 .jump-over{
     position: fixed;

@@ -65,36 +65,36 @@
 
 <script>
 export default {
-  name: "NoteClass",
-  data() {
+  name: 'NoteClass',
+  data () {
     return {
       isClickMenu_note: false,
       isClickMenu_info: false,
-      avatar: require("../../assets/img/raw_1512446140.jpeg"),
-      username: "KiKa",
+      avatar: require('../../assets/img/raw_1512446140.jpeg'),
+      username: 'KiKa',
       noteClassList: [
         {
-          img: require("../../assets/img/raw_1512446214.jpeg"),
-          title: "美食"
+          img: require('../../assets/img/raw_1512446214.jpeg'),
+          title: '美食'
         },
         {
-          img: require("../../assets/img/raw_1512446225.jpeg"),
-          title: "旅行"
+          img: require('../../assets/img/raw_1512446225.jpeg'),
+          title: '旅行'
         },
         {
-          img: require("../../assets/img/raw_1512446234.jpeg"),
-          title: "汽车"
+          img: require('../../assets/img/raw_1512446234.jpeg'),
+          title: '汽车'
         },
         {
-          img: require("../../assets/img/raw_1512446243.jpeg"),
-          title: "时尚"
+          img: require('../../assets/img/raw_1512446243.jpeg'),
+          title: '时尚'
         },
         {
-          img: require("../../assets/img/raw_1512446251.jpeg"),
-          title: "科技"
+          img: require('../../assets/img/raw_1512446251.jpeg'),
+          title: '科技'
         }
       ]
-    };
+    }
   },
   methods: {
     menu () {
@@ -106,10 +106,10 @@ export default {
       this.isClickMenu_info = false
     },
     noteList (title) {
-      this.$router.push({path: '/noteList', query:{'title': title}}) // query传参会将参数拼接到路由上
+      this.$router.push({ path: '/noteList', query: { 'title': title } }) // query传参会将参数拼接到路由上
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
