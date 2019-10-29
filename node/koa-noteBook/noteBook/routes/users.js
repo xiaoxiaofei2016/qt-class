@@ -75,7 +75,7 @@ router.post('/userRegister', async (ctx, next) => {
 router.post('/userLogin', async (ctx, next) => {
   let _username = ctx.request.body.username
   let _userpwd = ctx.request.body.userpwd
-  
+
   await userService.userLogin(_username, _userpwd).then((res) => {
     let r = ''
     if (res.length) {
@@ -179,21 +179,21 @@ router.post('/insertNote', async (ctx, next) => {
   }
   await userService.insertNote([user.note_content, user.head_img, user.title, user.note_type, user.userId, user.nickname]).then((res) => {
     let r = ''
-      if (res.affectedRows != 0) {
-        r = 'ok'
-        ctx.body = {
-          code: '800000',
-          data: r,
-          mess: '成功'
-        }
-      } else {
-        r = 'error'
-        ctx.body = {
-          code: '800004',
-          data: r,
-          mess: '失败'
-        }
+    if (res.affectedRows != 0) {
+      r = 'ok'
+      ctx.body = {
+        code: '800000',
+        data: r,
+        mess: '成功'
       }
+    } else {
+      r = 'error'
+      ctx.body = {
+        code: '800004',
+        data: r,
+        mess: '失败'
+      }
+    }
   })
 })
 
