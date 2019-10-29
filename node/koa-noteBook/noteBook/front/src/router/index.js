@@ -7,6 +7,8 @@ import StarRegister from '@/components/register/starRegister'
 import NoteClass from '@/components/noteClass/noteClass'
 import noteList from '@/components/NoteList/noteList'
 import noteDetail from '@/components/noteDetail/noteDetail'
+import person from '@/components/person/person'
+import publishNote from '@/components/publishNote/publishNote'
 
 Vue.use(Router)
 
@@ -66,6 +68,22 @@ export default new Router({
       component: noteDetail,
       meta: {
         title: '笔记详情'
+      }
+    },
+    {
+      path: '/person',
+      name: 'person',
+      component: person,
+      meta: {
+        title: '作者信息'
+      }
+    },
+    {
+      path: '/publishNote',
+      name: 'publishNote',
+      component: publishNote,
+      meta: {
+        title: '写笔记'
       }
     }
   ]

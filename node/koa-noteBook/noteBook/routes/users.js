@@ -123,7 +123,7 @@ router.post('/findNoteListByType', async (ctx, next) => {
       ctx.body = {
         code: '800004',
         data: r,
-        mess: '查找失败'
+        mess: '列表为空'
       }
     }
   }).catch((err) => {
@@ -150,7 +150,7 @@ router.post('/findNoteListById', async (ctx, next) => {
       r = 'error'
       ctx.body = {
         code: '800004',
-        mess: '查找失败'
+        mess: '没有更多了哦'
       }
     }
   }).catch((err) => {
