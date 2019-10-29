@@ -161,4 +161,40 @@ router.post('/findNoteListById', async (ctx, next) => {
   })
 })
 
+// 新增笔记
+router.post('/insertNote', async (ctx, next) => {
+  let _noteContent = ctx.request.body.note_content
+  let _headImg = ctx.request.body.head_img
+  let _title = ctx.request.body.title
+  let _noteType = ctx.request.body.note_type
+  let _userId = ctx.request.body.userId
+  let _nickname = ctx.request.body.nickname
+  let user = {
+    note_content: _noteContent,
+    head_img: _headImg,
+    title: _title,
+    note_type: _noteType,
+    userId: _userId,
+    nickname: _nickname
+  }
+  await userService.insertNote([user.note_content, user.head_img, user.title, user.note_type, user.userId, user.nickname]).then((res) => {
+    let r = ''
+      if (res.affectedRows != 0) {
+        r = 'ok'
+        ctx.body = {
+          code: '800000',
+          data: r,
+          mess: '成功'
+        }
+      } else {
+        r = 'error'
+        ctx.body = {
+          code: '800004',
+          data: r,
+          mess: '失败'
+        }
+      }
+  })
+})
+
 module.exports = router

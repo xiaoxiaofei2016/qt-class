@@ -6,7 +6,7 @@
       :options="editorOption"
       @change="onEditorChange"
       @focus="onEditorFocus"
-      @blur="noEditorBlur"
+      @blur="onEditorBlur"
     ></quill-editor>
     <div class="note-wrap">
       <div class="note-title">

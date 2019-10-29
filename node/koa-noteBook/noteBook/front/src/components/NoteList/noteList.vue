@@ -27,12 +27,12 @@ export default {
   },
   methods: {
     initNoteClass () {
-      let note_type = this.$route.query.title
+      let noteType = this.$route.query.title
       this.$http({
         url: 'http://localhost:3000/users/findNoteListByType',
         method: 'post',
         data: {
-          note_type: note_type
+          note_type: noteType
         }
       }).then((res) => {
         console.log(res)
