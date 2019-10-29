@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a = 0
+    // async function test() {
+    //   let b = await 10
+    //   a = a + b
+    //   console.log(a) // 11
+    // }  
+    async function test() {
+      let c = a + await 10
+      console.log(c) // 10
+    }  
+    test()
+    a++
+    console.log(a) // 1
+  </script>
+</body>
+</html>
