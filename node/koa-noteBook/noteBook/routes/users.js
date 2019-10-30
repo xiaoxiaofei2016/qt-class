@@ -177,21 +177,22 @@ router.post('/insertNote', async (ctx, next) => {
     userId: _userId,
     nickname: _nickname
   }
-  await userService.insertNote([user.note_content, user.head_img, user.title, user.note_type, user.userId, user.nickname]).then((res) => {
+  await userService.insertNote([user.userId, user.title, user.note_type, user.note_content, user.head_img, user.nickname]).then((res) => {
+    console.log(res)
     let r = ''
     if (res.affectedRows != 0) {
       r = 'ok'
       ctx.body = {
         code: '800000',
         data: r,
-        mess: '成功'
+        mess: '添加笔记成功'
       }
     } else {
       r = 'error'
       ctx.body = {
         code: '800004',
         data: r,
-        mess: '失败'
+        mess: '添加笔记失败'
       }
     }
   })

@@ -145,7 +145,7 @@ export default {
         } else {
           this.$toast(res.data.mess)
         }
-      }).then((err) => {
+      }).catch((err) => {
         console.log(err)
       })
     }
