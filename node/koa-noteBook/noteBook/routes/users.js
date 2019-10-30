@@ -169,15 +169,19 @@ router.post('/insertNote', async (ctx, next) => {
   let _noteType = ctx.request.body.note_type
   let _userId = ctx.request.body.userId
   let _nickname = ctx.request.body.nickname
-  let user = {
+  let _cTime = ctx.request.body.c_time
+  let _mTime = ctx.request.body.m_time
+  let note = {
     note_content: _noteContent,
     head_img: _headImg,
     title: _title,
     note_type: _noteType,
     userId: _userId,
-    nickname: _nickname
+    nickname: _nickname,
+    c_time: _cTime,
+    m_time: _mTime
   }
-  await userService.insertNote([user.userId, user.title, user.note_type, user.note_content, user.head_img, user.nickname]).then((res) => {
+  await userService.insertNote([note.userId, note.title, note.note_type, note.note_content, note.c_time, note.m_time, note.head_img, note.nickname]).then((res) => {
     console.log(res)
     let r = ''
     if (res.affectedRows != 0) {

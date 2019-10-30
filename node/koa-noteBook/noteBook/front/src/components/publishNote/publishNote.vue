@@ -137,7 +137,10 @@ export default {
           title: this.title,
           note_type: this.selectCon,
           userId: curUserId,
-          nickname: nickname
+          nickname: nickname,
+          c_time: '2018-2-13',
+          m_time: '2018-4-13'
+
         }
       }).then((res) => {
         if (res.data.code === '800000') {

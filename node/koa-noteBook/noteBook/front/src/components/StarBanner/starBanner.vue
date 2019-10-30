@@ -44,58 +44,60 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.comm-style{
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    height: .933333rem;
-    line-height: .853333rem;
-    color: rgba(255, 255, 255, 1);
-    text-align: center;
-    font-family: Arial;
-    text-align: center;
+.comm-style {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 0.933333rem;
+  line-height: 0.853333rem;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  font-family: Arial;
+  text-align: center;
 }
-.van-swipe{
-    width: 100vw;
-    height: 100vh;
-    background: rgba(9, 30, 46, 1);
+.van-swipe {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(9, 30, 46, 1);
 }
 
-.banner-img{
-    position: absolute;
-    left: 50%;
-    top: 3.573333rem;
-    transform: translateX(-50%);
-    width: 5.626667rem;
-    height: 5.626667rem;
-    border-radius: 5.626667rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+.banner-img {
+  position: absolute;
+  left: 50%;
+  top: 3.573333rem;
+  transform: translateX(-50%);
+  width: 5.626667rem;
+  height: 5.626667rem;
+  border-radius: 5.626667rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
-.title{
-    top: 10.746667rem;
-    font-size: .64rem;
+.title {
+  top: 10.746667rem;
+  font-size: 0.64rem;
+  .comm-style;
 }
-.desc{
-    position: absolute;
-    top: 11.92rem;
-    font-size: .373333rem;
-    opacity: 0.5;
+.desc {
+  position: absolute;
+  top: 11.92rem;
+  font-size: 0.373333rem;
+  opacity: 0.5;
+  .comm-style;
 }
-.jump-over{
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 15.413333rem;
-    width: 5.546667rem;
-    height: 1.333333rem;
-    line-height: 1.333333rem;
-    border-radius: 1.066667rem;
-    background-color: rgba(155, 163, 181, 1);
-    text-align: center;
-    color: rgba(255, 255, 255, 1);
-    opacity: 0.85;
-    font-size: .56rem;
+.jump-over {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15.413333rem;
+  width: 5.546667rem;
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  border-radius: 1.066667rem;
+  background-color: rgba(155, 163, 181, 1);
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.85;
+  font-size: 0.56rem;
 }
 </style>

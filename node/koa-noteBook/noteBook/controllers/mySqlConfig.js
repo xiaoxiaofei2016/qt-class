@@ -70,7 +70,7 @@ let findNoteListById = function(id) {
 
 // 新增笔记
 let insertNote = function(value) {
-  let _sql = `insert into note (useId,title,note_type,note_content,head_img,nickname) values(${value});`
+  let _sql = `insert into note set useId=?,title=?,note_type=?,note_content=?,c_time=?,m_time=?,head_img=?,nickname=?;`
   return allServies.query(_sql, value)
 }
 
