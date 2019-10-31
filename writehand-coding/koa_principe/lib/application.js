@@ -42,7 +42,7 @@ class myKoa extends EventEmitter{
         res.end(JSON.stringify(ctx.body))
       } else if (ctx.body instanceof Stream) {
         ctx.body(res)
-      } else if (typeof ctx,body === 'string' || Buffer.isBuffer(ctx.body)) { // base64
+      } else if (typeof ctx.body === 'string' || Buffer.isBuffer(ctx.body)) { // base64
         res.setHeader('Content-Type', 'text/html;charset=utf8')
         res.end(ctx.body)
       } else {

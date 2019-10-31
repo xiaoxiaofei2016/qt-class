@@ -22,7 +22,7 @@
 let myKoa = require('./lib/application')
 let app = new myKoa()
 
-app.use((ctx) => {
+app.use((ctx, next) => {
   // res.end('abcdefg')
   // console.log(ctx.req.url)
   // console.log(ctx.request.req.url)
@@ -32,9 +32,20 @@ app.use((ctx) => {
   // console.log(ctx.url)
   // console.log(ctx.path)
   // ctx.body = 'hello world'
-  ctx.body = ''
+  ctx.body = 'hello'
   console.log(ctx.response.body)
   console.log(ctx.body)
+  next()
+})
+app.use((ctx, next) => {
+  console.log(1)
+  next()
+  console.log(2)
+})
+app.use((ctx, next) => {
+  console.log(3)
+  next()
+  console.log(4)
 })
 
 /*
