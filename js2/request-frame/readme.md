@@ -21,5 +21,5 @@ js 可以改变 DOM
 MacroTask(宏任务): 同步代码 setTimeOut setInterval
 MicroTask(微任务) Promise.then  nextTick
 
- 宏任务 -> 渲染    宏任务 -> 渲染    宏任务 -> 渲染 
+ 宏任务 ->微任务-> 渲染     宏任务 ->微任务-> 渲染    宏任务 ->微任务-> 渲染
 

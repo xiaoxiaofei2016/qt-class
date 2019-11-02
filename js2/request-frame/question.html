@@ -18,9 +18,19 @@
     // Promise.resolve().then(() => {
     //   console.log(2)
     // })
+    console.log(1)
     setTimeout(() => {
       console.log(3)
+      new Promise((resolve, reject) => {
+        console.log(4)
+        resolve()
+      }).then(res => {
+        console.log(5)
+      }).then(res => {
+        console.log(6)
+      })
     }, 0)
+    console.log(2)
   </script>
 </body>
 </html>
