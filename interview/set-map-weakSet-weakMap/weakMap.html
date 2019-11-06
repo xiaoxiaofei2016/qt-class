@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="logo">1234</div>
+  <script>
+    let myElement = document.getElementById('logo')
+    let myWeakmap = new WeakMap()
+    myWeakmap.set(myElement, {timesClicked: 0})
+    myElement.addEventListener('click', function() {
+      let logoData = myWeakmap.get(myElement)
+      logoData.timesClicked++
+      console.log(myWeakmap)
+    }, false)
+  </script>
+</body>
+</html>
