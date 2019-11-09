@@ -23,7 +23,7 @@
 let a = [0, '1', [2, 3]]
 let b = a.slice(1)
 a[1] = '22'
-a[2][0] = 4
+a[2][0] = 3
 console.log(a)
 console.log(b)
 
