@@ -6,9 +6,9 @@ const express = require('express');
 const app = express();
 var baseUrl = 'https://www.mi.com';
 app.get('/index', function(req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
 
   superagent.get(baseUrl).charset('utf-8').end((err, sres) => {
@@ -25,7 +25,7 @@ app.get('/index', function(req, res) {
         href: $element.attr('href')
       })
     })
-    res.json({ code: 200, msg: "", data: items });
+    res.json({ code: 200, msg: '', data: items });
   })
 })
 var server = app.listen(3000, () => {
