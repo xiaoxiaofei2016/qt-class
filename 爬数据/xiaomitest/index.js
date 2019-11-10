@@ -1,21 +1,21 @@
-var superagent = require('superagent');
-var charset = require('superagent-charset');
-charset(superagent);
-const cheerio = require('cheerio');
-const express = require('express');
-const app = express();
-var baseUrl = 'https://www.mi.com';
+var superagent = require('superagent')
+var charset = require('superagent-charset')
+charset(superagent)
+const cheerio = require('cheerio')
+const express = require('express')
+const app = express()
+var baseUrl = 'https://www.mi.com'
 app.get('/index', function(req, res) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS')
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With')
+  res.header('Access-Control-Allow-Headers', 'Content-Type')
 
   superagent.get(baseUrl).charset('utf-8').end((err, sres) => {
-    var items = [];
+    var items = []
     if (err) {
-      console.log('ERR: ' + err);
-      res.json({ code: 400, msg: err, sets: items });
+      console.log('ERR: ' + err)
+      res.json({ code: 400, msg: err, sets: items })
       return;
     } 
     var $ = cheerio.load(sres.text);
