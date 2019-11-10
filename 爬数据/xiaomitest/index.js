@@ -16,16 +16,16 @@ app.get('/index', function(req, res) {
     if (err) {
       console.log('ERR: ' + err)
       res.json({ code: 400, msg: err, sets: items })
-      return;
+      return
     } 
-    var $ = cheerio.load(sres.text);
+    var $ = cheerio.load(sres.text)
     $('ul.brick-list div li.brick-item a').each((idx, element) => {
-      var $element = $(element);
+      var $element = $(element)
       items.push({
         href: $element.attr('href')
       })
     })
-    res.json({ code: 200, msg: '', data: items });
+    res.json({ code: 200, msg: '', data: items })
   })
 })
 var server = app.listen(3000, () => {
