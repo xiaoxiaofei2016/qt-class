@@ -29,5 +29,5 @@ app.get('/index', function(req, res) {
   })
 })
 var server = app.listen(3000, () => {
-  console.log('Server is running')
+  console.log('Server is running 3000')
 })
