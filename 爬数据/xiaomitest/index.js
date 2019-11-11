@@ -10,7 +10,6 @@ app.get('/index', function(req, res) {
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS')
   res.header('Access-Control-Allow-Headers', 'X-Requested-With')
   res.header('Access-Control-Allow-Headers', 'Content-Type')
-
   superagent.get(baseUrl).charset('utf-8').end((err, sres) => {
     var items = []
     if (err) {
