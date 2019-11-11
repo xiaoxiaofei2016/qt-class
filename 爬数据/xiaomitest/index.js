@@ -28,6 +28,7 @@ app.get('/index', function(req, res) {
     res.json({ code: 200, msg: '', data: items })
   })
 })
+
 var server = app.listen(3000, () => {
   console.log('Server is running http://localhost:3000')
 })
