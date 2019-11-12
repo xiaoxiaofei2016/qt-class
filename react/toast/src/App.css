@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.notice-enter {
+  opacity: 0.01;
+  transform: scale(0);
+}
+.notice-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
+}
+.notice-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.notice-exit-active {
+  opacity: 0.01;
+  transform: translateY(-40%);
+  transition: all 300ms ease-in-out;
+}
