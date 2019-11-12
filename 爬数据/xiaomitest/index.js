@@ -14,17 +14,17 @@ app.get('/index', function(req, res) {
     var items = []
     if (err) {
       console.log('ERR: ' + err)
-      res.json({ code: 400, msg: err, sets: items })
-      return
+      return res.json({ code: 400, msg: err, sets: items })
     } 
     var $ = cheerio.load(sres.text)
-    $('ul.brick-list div li.brick-item a').each((idx, element) => {
-      var $element = $(element)
+    $('ul.brick-list li.brick-item a').each((idx, element) => {
       items.push({
-        href: $element.attr('href')
+        href: $(element).attr('href')
       })
     })
     res.json({ code: 200, msg: '', data: items })
+    res.json({data: sres})
+    // res.send(sres.text)
   })
 })
 
