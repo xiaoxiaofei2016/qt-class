@@ -35,7 +35,7 @@ class List extends React.Component {
         {
           store.getState().map((dis) => {
             return (
-              <li>{ dis }</li>
+              <li>{dis}</li>
             )
           })
         }
