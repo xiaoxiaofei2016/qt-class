@@ -43,6 +43,7 @@ class List extends React.Component {
     )
   }
 }
+
 store.subscribe(() => {
   ReactDOM.render(<List />, document.getElementById('root'));
 })
