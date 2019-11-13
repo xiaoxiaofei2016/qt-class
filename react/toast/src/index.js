@@ -27,7 +27,6 @@ setInterval(() => {
     content: '评论1'
   })
 }, 1000)
-
 class List extends React.Component {
   render() {
     return (
