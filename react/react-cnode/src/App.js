@@ -33,7 +33,7 @@ class App extends React.Component {
             <Route path="/topic">
               <Topic />
             </Route>
-            <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Content</div>
+            <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Conten</div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Ant Design 2018 Created by Ant UED</Footer>
         </Layout>
