@@ -6,6 +6,7 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './Home.jsx'
 import Topic from './Topic.jsx'
+
 const { Header, Content, Footer } = Layout;
 class App extends React.Component {
   render() {
