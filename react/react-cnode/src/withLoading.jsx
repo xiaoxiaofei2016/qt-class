@@ -25,7 +25,6 @@ import { Spin } from 'antd'
 // var aa = throttle(fetch1)
 // aa(1, 2) => undefined 参数丢失
 
-
 export default function(Com) {
   class withLoading extends Component {
     state = {
