@@ -14,13 +14,17 @@ import { Spin } from 'antd'
 // // 高阶函数
 // function myThrotle(func) {
 //   let pre = 0
-//   return function() {
+//   return function(...args) {
 //     let now = now
 //     if (now - pre >= wait) {
-//       func()
+//       func(...args)
 //     }
 //   }
 // }
+// function fetch1(a, b) {a + b}
+// var aa = throttle(fetch1)
+// aa(1, 2) => undefined 参数丢失
+
 
 export default function(Com) {
   class withLoading extends Component {
