@@ -49,6 +49,7 @@ export default function(Com) {
       return (
         <Spin spinning={this.state.isLoading}>
           <Com ref={this.ref} {...props} from="fromWithLoading"/>
+          {/* ...props拿到所有参数 */}
         </Spin>
       )
     }
