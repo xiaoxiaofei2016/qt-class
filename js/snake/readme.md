@@ -21,4 +21,4 @@
     addEvent();
     refreshSnake();
     winOrLose();
-    showResult();
+    showResult();   

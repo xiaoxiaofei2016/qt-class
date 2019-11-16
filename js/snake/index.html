@@ -23,7 +23,7 @@
     </div>
     <script>
         function imgLoad() {
-            console.log('哪吒来了')
+            console.log('哪吒来了')//图片第一次在DOMContentLoaded()后执行，第二次因为图片已经缓存好，所以在DOMContentLoaded()前执行
         }
         function hideWelcome() {
             console.log('隐藏welcome')
@@ -35,14 +35,14 @@
                 console.log('资源加载完毕');
             },5000)
         }
-        document.addEventListener('DOMContentLoaded',() => {
+        document.addEventListener('DOMContentLoaded',() => {//最先执行
            console.log('页面渲染完成')
-           loadAssets(hideWelcome);
+           loadAssets(hideWelcome);//把hideWelcome();作为参数传进loadAssets();，改变执行顺序，先执行定时器
         })
 
         //窗口下的资源加载完成
         window.onload = () =>{
-            console.log('页面加载完成');
+            console.log('页面加载完成')
             // 加载完资源之后，hideWelcome
             // loadAssets(hideWelcome);//hideWelcome实参
             // loadAssets();
