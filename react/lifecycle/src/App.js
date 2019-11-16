@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Child1 from './Child1.jsx'
-
+import Parent from './Parent.jsx'
 class App extends React.Component {
   state = {
     list: [1, 2, 3],
@@ -21,6 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+      <Parent/>
         <button onClick={() => {
           this.setState({
             show: !this.state.show
