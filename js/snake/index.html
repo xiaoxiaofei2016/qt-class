@@ -35,6 +35,7 @@
                 console.log('资源加载完毕');
             },5000)
         }
+
         document.addEventListener('DOMContentLoaded',() => {//最先执行
            console.log('页面渲染完成')
            loadAssets(hideWelcome) //把hideWelcome();作为参数传进loadAssets();，改变执行顺序，先执行定时器
@@ -44,9 +45,9 @@
         window.onload = () =>{
             console.log('页面加载完成')
             // 加载完资源之后，hideWelcome
-            // loadAssets(hideWelcome);//hideWelcome实参
-            // loadAssets();
-            // hideWelcome();
+            // loadAssets(hideWelcome) // hideWelcome实参
+            // loadAssets()
+            // hideWelcome()
 
         }
     </script>
