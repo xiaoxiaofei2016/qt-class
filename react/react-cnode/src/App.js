@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.css'
 import 'antd/dist/antd.css'
 import { Layout, Menu, Breadcrumb } from 'antd'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
