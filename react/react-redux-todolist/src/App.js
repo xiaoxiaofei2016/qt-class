@@ -45,5 +45,4 @@ const mapStateToProps = (state) => {
     todolist: state
   }
 }
-
 export default connect(mapStateToProps, null)(App); // curry化
