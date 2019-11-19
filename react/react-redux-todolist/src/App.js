@@ -4,11 +4,36 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends React.Component {
+  state = {
+    inputText: ''
+  }
+  handleChange = (e) => {
+    this.setState({
+      inputText: e.target.value
+    })
+  }
   render() {
     console.log(this.props)
+    const { todolist } = this.props;
+    const { inputText } = this.state
     return (
       <div>
-        123
+        {/* 父节点下面 唯一 */}
+        {
+          todolist.map((item, i) => {
+            return (
+              <li key={i}>
+                { item.content }
+              </li>
+            )
+          })
+        }
+        <div>
+          <input value={inputText} onChange={this.handleChange} />
+          <button onClick={() => {
+            console.log(this.state.inputText)
+          }}>提交</button>
+        </div>
       </div>
     )
   }
@@ -17,7 +42,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    ...state
+    todolist: state
   }
 }
 
