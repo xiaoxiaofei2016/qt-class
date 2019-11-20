@@ -11,7 +11,7 @@ function Header() {
 }
 function Footer() {
   // state hooks
-  const [ count, setCount ] = useState(0) // state={ 0 } 0默认值
+  const [ count, setCount ] = useState(1) // state={ 0 } 0默认值
   return (
     <div>
       foot: { count }
