@@ -27,6 +27,9 @@ class App extends React.Component {
                 <button >-</button>
                 {good.count}
                 <button>+</button>
+                <button onClick={() => {
+                  this.props.handleDel(i)
+                }}>delete</button>
               </div>
             )
           })
@@ -43,12 +46,15 @@ const mapStateToProps = (state) => { // 映射，把需要的数据过滤出来
 const mapDispatchToProps = (dispatch) => { // 定义dispatch
   return {
     checked(checked, i) {
-      dispatchEvent({
+      dispatch({
         type: 'TOGGLE_CHECKED',
         checked,
         index: i
       })
-    } 
+    },
+    handleDel() {
+      dispatch()
+    }
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);
