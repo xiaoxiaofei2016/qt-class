@@ -38,6 +38,16 @@ class App extends React.Component {
     )
   }
 }
+const del = (i) => {
+  return (dispatch) => {
+    setTimeout(() => { // 真实的为发送请求
+      dispatch({
+        type: 'DEL',
+        index: i
+      })
+    }, 2000)
+  }
+}
 const mapStateToProps = (state) => { // 映射，把需要的数据过滤出来
   return {
     shopCart: state.shopCart
@@ -46,14 +56,14 @@ const mapStateToProps = (state) => { // 映射，把需要的数据过滤出来
 const mapDispatchToProps = (dispatch) => { // 定义dispatch
   return {
     checked(checked, i) {
-      dispatch({
+      dispatch({ // dispatch一个纯对象
         type: 'TOGGLE_CHECKED',
         checked,
         index: i
       })
     },
-    handleDel() {
-      dispatch()
+    handleDel(i) {
+      dispatch(del(i)) // dispatch也可以接收一个函数
     }
   }
 }
