@@ -1,0 +1,41 @@
+html {
+  font-family: sans-serif;
+  background: #ffc600;
+}
+.inbox {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+  -ms-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+  -webkit-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+  box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+}
+.inbox .item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+.inbox .item:last-child {
+  border-bottom: none;
+}
+.inbox .item input[type="checkbox"] {
+  margin: 20px;
+}
+.inbox .item input[type="checkbox"]:checked + p {
+  background: #f9f9f9;
+  text-decoration: line-through;
+}
+.inbox .item p {
+  margin: 0;
+  padding: 20px;
+  flex: 1;
+  font-family: 'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+  border-left: 1px solid #d1e2ff;
+}

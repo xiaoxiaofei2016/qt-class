@@ -1,0 +1,35 @@
+$main = #ffa822
+$basic = #999999
+
+input
+    -webkit-appearance none
+    border none 
+    outline none 
+    cursor pointer
+
+.rate-content
+    display flex
+    flex-flow row-reverse
+
+    input[name="rate"]
+        font-family "iconfont"
+        font-size 30px
+        padding-right 10px
+        transition transform .2s ease
+
+        &::after
+            content '\e600'
+            color $basic
+            transition color .4s ease
+
+        &:checked
+            &::after
+                color $main
+                content '\e6a3'
+        &:hover
+            transform scale(1.5)
+        &:checked,
+        &:checked ~input[name="rate"]//选上边上的兄弟
+            &::after
+                color $main
+                content '\e6a3'

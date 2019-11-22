@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/three.js/92/three.min.js"></script>
+    <title>light</title>
+    <style>
+        #webglcanvas{
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webglcanvas" style="border:none;background-color:#000;" width="500" height="500"></canvas>
+</body>
+<script>
+    var renderer,//渲染器
+        scene,//场景
+        camera,
+        cube;
+    window.onload = function() {
+        var canvas = document.getElementById('webglcanvas');
+        renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: true//抗锯齿
+        });
+        renderer.setSize(canvas.width,canvas.height);
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(45,canvas.width/canvas.height,1,4000);
+
+        var light = new THREE.DirectionalLight(0xefe3400,10);//光的颜色，亮度
+        light.position.set(0,0,1);//光的位置
+        scene.add(light);
+
+        var mapUrl = './webgl.jpg';
+        var map = THREE.ImageUtils.loadTexture(mapUrl);
+        var material = new THREE.MeshPhongMaterial({
+            map: map
+        });
+        var geometry = new THREE.CubeGeometry(2,2,2);//大小
+        cube = new THREE.Mesh(geometry,material);
+        cube.position.z = -8;
+        cube.rotation.x = Math.PI / 5;
+        cube.rotation.y = Math.PI / 5;
+        scene.add(cube);
+        run();
+    }
+    function run() {
+        requestAnimationFrame(function() {
+            run();
+        });
+        renderer.render(scene,camera);
+        animate();
+    }
+    var currentTime = 0;
+    var duration = 5000;
+    function animate() {
+        var now = Date.now();
+        var deltat = now - currentTime;
+        currentTime = now;
+        var fract = deltat/duration;//多少分之一秒
+        var angle = Math.PI * 2 *fract;
+        cube.rotation.y += angle;
+        cube.rotation.x += angle;
+    }
+</script>
+</html>

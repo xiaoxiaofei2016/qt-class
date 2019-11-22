@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>map</title>
+</head>
+<body>
+    <script>
+        var map = {
+            a:() => {
+                console.log('a')
+            },
+            b:() => {
+                console.log('b')
+            },
+            default:() => {//默认
+                console.log('default')
+            }
+        }
+        doSomething('a')//'a'
+        doSomething('b')//'b'
+        doSomething()//default
+        function doSomething(status) {
+            if(map[status]) 
+                map[status]()
+            else 
+                map['default']()
+
+        }    
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tosum</title>
+</head>
+
+<body>
+    <script>
+        // 题目：给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+        /**
+        * @param {number[]} nums
+        * @param {number} target
+        * @return {number[]}
+        */
+        // var twoSum = function (nums, target) {
+        //     for(let i = 0; i < nums.length; i++) {
+        //         let num1 = nums[i]
+        //         for(let j = i + 1; j < nums.length; j++ ) {
+        //             let num2 = nums[j]
+        //             if (num1 + num2 === target) {
+        //                 return [i,j]
+        //             }
+        //         }
+        //     }
+        // }
+
+            //方法二
+        // var twoSum = function(nums,target) {
+        //     var map = {}
+        //     for(let i = 0; i < nums.length; i++) {
+        //         let num = nums[i]
+        //         map[num] = i
+        //     }
+        //     for (let j = 0; j < nums.length; j++) {
+        //         let num1 = nums[j]
+        //         let anotherNum = target - num1
+        //         if (map[anotherNum] !== undefined && map[anotherNum] !== j) {
+        //             return [j,map[anotherNum]]
+        //         }
+        //     }
+        // }
+
+        //方法三
+        /**
+         * hash 表解法 补数的解法
+         */
+        var twoSum = function(nums,target) {
+        const map = new Map();
+        for (let i = 0; i < nums.length; i++ ) {
+            if (map.has(nums[i])) {
+                return [map.get(nums[i]) ,i]
+            }
+            map.set(target - nums[i], i);
+            }
+        }
+
+        console.log(twoSum([2,2,11,5],4))
+    </script>
+</body>
+
+</html>

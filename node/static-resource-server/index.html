@@ -13,10 +13,14 @@
         const oFile = document.getElementById('imageSelector');
         oFile.addEventListener('change', 
         function(event) {
+            console.log(event);
             const file = event.target.files[0];
+            console.log(file);  
             // console.log(file instanceof Blob); //true
-            const url = URL.createObjectURL(file);
-            imagePreview.src = url;
+            const url = URL.createObjectURL(file); 
+            //createObjectURL返回一段带hash的url，并且一直存储在内存中
+            console.log(url); // blob:null/87aef471-61b3-4c3a-bad1-b9a019a3e14d
+            imagePreview.src = url;//id元素可以直接获取
         })
     </script>
 </body>

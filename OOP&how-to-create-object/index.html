@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        //人
+        var obj = new Object();
+        obj.name = '李雷';
+        obj.age = 18;
+
+        function createPerson(name,age) {
+            var t = new Object();
+            t.name = name;
+            t.age = age;
+            return t;
+        }
+        
+        //第三种
+        function Person(name,age,hobby) {
+            this.name = name;
+            this.age = age;
+            this.hobby = hobby;
+            this.say = function() {
+                console.log('hobby:',this.hobby)
+            }
+        }//抽象
+        // new 创建一个实例
+        var p1 = new Person('李雷','20',[1])//new 隐式创建一个对象，把属性放到该对象，并返回一个对象
+        p1.say();
+        //this === p1
+        //this.hobby === p1.hobby
+        console.log(p1)
+        function Foo() {
+            this.a = 1;
+            // return 2;
+            return {
+                b:2,c:3
+            }
+        }
+        var f = new Foo();
+        console.log(f)
+    </script>
+</body>
+</html>

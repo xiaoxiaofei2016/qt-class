@@ -63,7 +63,7 @@
       var len = 3;
       var current = 1;
       $container.find('.slide').css('height', height + 'px');  //所有的子页面
-      $scroll.show();
+      $scroll.show();  //show()方法：显示出隐藏的元素，如果被选元素已被隐藏，则显示这些元素
 
       // JSON 面向对象
       var page = {
@@ -86,7 +86,7 @@
           
           page.isScrolling = true;
           var di = - (index - 1) * height + 'px';
-          $scroll.css('transform', 'translateY(' + di + ')');
+          $scroll.css('transform', 'translateY(' + di + ')'); 
         },
         moveEnd: function() {
           page.isScrolling = false

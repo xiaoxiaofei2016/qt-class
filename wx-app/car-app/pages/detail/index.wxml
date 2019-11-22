@@ -1,0 +1,11 @@
+<view >
+  <view wx:for="{{ cart }}">
+    <view >{{ item.name }}</view>
+    <view >{{ item.price }}</view>
+  </view>
+  <view>
+    {{
+      
+    }}
+  </view>
+</view>

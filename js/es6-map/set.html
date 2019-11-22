@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>set</title>
+</head>
+<body>
+    <script>
+        var set = new Set()
+        set.add(1)
+        set.add(2)
+        for(let v of set) {
+            console.log(v)
+            //1
+            //2
+        }
+        console.log(set)//{1,2}
+
+        var s1 = new Set([0,1,2])
+        console.log(s1) //Set可传一个参数，参数为一个数组，返回一个对象{0,1,2}
+        
+        var arr = [0,1,1,2,3,3]
+        console.log([...new Set(arr)])//去除重复的元素,放在一个新数组中
+    </script>
+</body>
+</html>

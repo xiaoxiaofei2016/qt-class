@@ -15,6 +15,8 @@ var cloneObj = simpleClone(obj);
 cloneObj.a = '你好';
 console.log(obj.a);
 
+
+
 console.log('-------------------------------------');
 
 var obj1 = {a: {a: 'Hello',b: 21}};

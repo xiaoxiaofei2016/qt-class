@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label >用户名</label>
+                <input type="email" class="form-control" placeholder="用户名" name="userName">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">用户名</th>
+                <th scope="col">密码</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                <td scope="row">3</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const form = document.forms[0]
+        form.addEventListener('submit',(event) =>{
+            event.preventDefault()
+            const userName = form['userName'].value
+            const pwd = form['password'].value
+            console.log('form val',userName,pwd)
+            const tbody = document.getElementById('tbody')
+            const tr = document.createElement('tr')
+            const values = [tbody.childElementCount,userName,pwd]
+            for(let i=0;i<values.length;i++){
+                let td = document.createElement('td')
+                let text = document.createTextNode(values[i])
+                td.appendChild(text)
+                tr.appendChild(td)
+            }
+            tbody.insertBefore(tr, tbody.firstElementChild)
+        })
+    </script>
+  </body>
+</html>

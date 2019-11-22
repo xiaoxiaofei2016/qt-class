@@ -5,7 +5,7 @@ import { connect } from 'react-redux' // 高阶组件
 
 class App extends React.Component {
   handleCheck = (e, i) => {
-    const checked = e.target.checked
+    const checked = e.target.checked // 选上为ture ，否则为false
     this.props.checked(checked, i) // dispatch
   }
   render() {
@@ -49,16 +49,17 @@ const del = (i) => {
   }
 }
 const mapStateToProps = (state) => { // 映射，把需要的数据过滤出来
+  console.log(state)
   return {
     shopCart: state.shopCart
   }
 }
 const mapDispatchToProps = (dispatch) => { // 定义dispatch
   return {
-    checked(checked, i) {
+    checked(check, i) {
       dispatch({ // dispatch一个纯对象
         type: 'TOGGLE_CHECKED',
-        checked,
+        checked: check,
         index: i
       })
     },

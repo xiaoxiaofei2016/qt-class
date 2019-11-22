@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 方法一 */
+        /* .row{
+            height: 200px;
+            display: flex;
+        }
+        .col1,.col2{
+            height: 100%;
+            background-color: green;
+        }
+        .col1{
+            flex: 1; 
+        }
+        .col2{
+            width: 100px;
+            background-color: pink;
+        } */
+
+        /* 方法二 */
+        .row{
+            height: 200px;
+        }
+        .side,.col1{
+            height: 100%;
+            background-color: green;
+        }
+        .side{
+            float: right;
+            width: 100px;
+        }
+        .col1{
+            margin-right: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="row">
+        <div class="col1"></div>
+        <div class="col2"></div>
+    </div> -->
+    
+    <div class="row">
+        <!-- 将浮动列放前面 离开文档流 -->
+        <div class="side"></div>
+        <div class="col1"></div>
+    </div>
+</body>
+</html>

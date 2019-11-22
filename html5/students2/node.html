@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <li>1</li>
+    </div>
+    <script>
+        var box = document.getElementById('box')
+        console.log(box.firstChild.nodeType)//3  文本节点
+        console.log(box.firstElementChild)//第一个元素节点li
+        const liNode = document.createElement('li')//创建一个元素节点
+        const text = document.createTextNode('语文')//创建一个文本节点
+        liNode.appendChild(text)//给liNode添加一个孩子text
+        box.insertBefore(liNode,box.firstElementChild)//插入到父节点的某个元素前面
+        //1 通过 remove（）
+        const lis = box.querySelectorAll('li')//在box下搜索所有li标签
+        for (let i=0;i<lis.length;i++){
+            lis[i].addEventListener('click',function(){
+                // lis[i].remove()  通过自己移除自己
+                box.removeChild(lis[i]);// 通过父亲移除孩子
+            })
+        }
+        
+    </script>
+</body>
+</html>

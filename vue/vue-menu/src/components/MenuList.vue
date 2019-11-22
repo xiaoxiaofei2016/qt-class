@@ -9,7 +9,6 @@
       <ReSubMenu :key="menu.id" 
       :data="menu"
       v-else>
-      
       </ReSubMenu>
     </template>
   </Menu>

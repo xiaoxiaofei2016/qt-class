@@ -33,7 +33,7 @@
         //利用js 冒泡
         window.addEventListener('click', (e) => {
           let dom = e.target;
-          console.log(dom.tagName);
+          console.log(dom);
           if (dom.tagName.toUpperCase() === 'A' && dom.getAttribute('href')) {
             e.preventDefault();//阻止默认行为
             // history api

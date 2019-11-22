@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux' // 高阶组件connect
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux' // Connect 高阶组件 hoc
 
 class App extends React.Component {
   state = {
@@ -13,37 +13,47 @@ class App extends React.Component {
     })
   }
   render() {
-    console.log(this.props)
-    const { todolist } = this.props;
-    const { inputText } = this.state
+    // console.log(this.props)
+    const { todolist, addTodo } = this.props
     return (
       <div>
-        {/* 父节点下面 唯一 */}
+        {/* key 在父节点下面 唯一 */}
         {
           todolist.map((item, i) => {
             return (
-              <li key={i}>
-                { item.content }
-              </li>
+            <li key={i}>{ item.content }</li>
             )
           })
         }
         <div>
-          <input value={inputText} onChange={this.handleChange} />
+          <input value={this.state.inputText} onChange={this.handleChange} />
           <button onClick={() => {
             console.log(this.state.inputText)
+            // store.dispatch
+            addTodo(this.state.inputText)
           }}>提交</button>
         </div>
       </div>
     )
   }
 }
-
-// state 
+// 拿到store中的数据 是映射数据 放到props中
 const mapStateToProps = (state) => {
-  console.log(state);
+  console.log(state)
   return {
     todolist: state
   }
 }
-export default connect(mapStateToProps, null)(App); // curry化
+// action 有 type 和 payload 载荷
+const mapDispatchToProps = (dispatch) => { // 不再通过store.dispatch取到dispatch
+  return {
+    addTodo(content) {
+      dispatch({
+        type: 'ADD_TODO', // 唯一的
+        content
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

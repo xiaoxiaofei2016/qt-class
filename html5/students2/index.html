@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="red" id="box" data-index-color="pink">
+        box
+    </div>
+    <script>
+        var box = document.querySelector('.red');
+        console.log(box.className);
+        var className = box.getAttribute('class');//获取属性class的值red
+        console.log(className);
+        box.setAttribute('class','blue');//改变属性class的值为blue
+        console.log(box.dataset.indexColor);//dataset获取自定义属性data-index-color的值
+        console.log('all names',box.getAttributeNames());//获取所有属性名:class ,id ,data-index
+        console.log(box.className);
+    </script>
+</body>
+</html>

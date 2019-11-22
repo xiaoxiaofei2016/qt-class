@@ -5,7 +5,9 @@ const app = new Koa();
 const router = require('./router/index.js');
 
 app.use(KoaBodyParser());
-app.use(async (ctx, next) => {
+// options 预检请求
+// post /login 正式请求
+app.use(async (ctx, next) => { // 跨域
   // http://localhost:8080/cors.html
   ctx.set('Access-Control-Allow-Origin', '*');
   ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');

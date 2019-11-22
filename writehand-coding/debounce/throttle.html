@@ -15,14 +15,13 @@
             console.log('提交成功');
         }
         const throttle = (fn, delay) => {        
-            let flag = true;
-            console.log(num)
+            let flag = true;//开关变量
             return (...args) => {
-                if (!flag) return; 
-                flag = false;
+                if (!flag) return; //开关打开才执行
+                flag = false;//点击事件时开关关闭
                 setTimeout(() => {
                     fn.apply(this,args);
-                    flag = true;
+                    flag = true;//点击事件执行之后2秒把开关打开
                 }, delay);
             }
         }

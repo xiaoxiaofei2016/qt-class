@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>diff</title>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="box1"></div>
+    <script>
+        var box = document.getElementById('box')
+        var box1 = document.getElementById('box1')
+        var es5Map = {
+            b:1,
+            a:2,
+            '1':1,
+            [box]:'box',
+            [box1]:'box1'
+        }   
+        console.log(es5Map[box] === 'box1') // true 相同类型的标签后面会覆盖前面
+        console.log(es5Map[box] === 'box') //false
+        console.log(Object.keys(es5Map))//乱序 //["1", "b", "a", "[object HTMLDivElement]"]
+        Object.keys(es5Map).forEach(key => {
+            console.log(es5Map[key])  
+        })
+
+        var es6Map = new Map()
+        es6Map.set('b',1)
+        es6Map.set('a',2)//按set的顺序记录key的值
+        es6Map.set(box,'123456')
+        for(let k of es6Map.values()) {
+            console.log(k)
+        }
+    </script>
+</body>
+</html>

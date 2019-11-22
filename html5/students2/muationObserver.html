@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <li>0</li>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var cb = function(mutationList) {
+            console.log(mutationList);
+        }
+        var observer = new MutationObserver(cb);/*cb为一个函数*/
+        observer.observe(box,{
+            attributes:true,
+            childList:true
+        });
+        
+        box.setAttribute('style','color:red')
+        var li = document.createElement('li')
+        var text = document.createTextNode('2')
+        li.appendChild(text)
+        box.appendChild(li)
+
+
+        var observel = new MutationObserver(
+            function(mutationList) {
+                for (let i = 0;i<mutationList.length;i++){
+                    //type attributeName
+                    var nutation = nutationList[i]
+                    if(mutation.type === 'attributes'&& mutation.attributeName === 'bgcolor') {
+                        //click()
+                        setTimeout(() =>{
+                            stopTest();
+                        },10)
+                    }
+                }
+            })
+            observel.observe(document.body,{
+                attributes:true
+            })
+    </script>

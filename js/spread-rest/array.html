@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组解构</title>
+</head>
+<body>
+    <script>
+        var arr = [2,3,{a:1}];
+        var [a,b,c] = arr;
+        var [,,d,e] = arr;
+        console.log(a,b,c,d,e) //2 3 {a:1} {a:1} undefined
+        console.log(d,e) //{a:1} undefined 每个逗号前面都有一个元素
+        
+    </script>
+</body>
+</html>

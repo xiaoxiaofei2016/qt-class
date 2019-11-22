@@ -62,7 +62,7 @@ header .text{
 .create .input{
     display: flex;
     justify-content: space-between;
-    /* 在元素中间加空间 只有为浮动布局才能用 */
+    /* 在元素中间加空间 只有为弹性布局才能用 */
 
 }
 .create .input input{

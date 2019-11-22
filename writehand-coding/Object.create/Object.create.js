@@ -11,4 +11,5 @@ function create(proto) {
     return new F();
 }
 const me = create(person);
-console.log(me.__proto__ == person);
+// console.log(me);
+console.log(me.__proto__ === person);

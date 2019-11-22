@@ -22,7 +22,7 @@ Page({
     this.setData({
       curIndex:e.currentTarget.dataset.index,
       toView:e.currentTarget.dataset.id
-    })
+    })    
     console.log(this.data.toView)
   },
 

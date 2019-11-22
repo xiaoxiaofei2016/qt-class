@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>map2</title>
+</head>
+<body>
+    <script>
+        var map = new Map()    
+        map.set('a',() => {//把key设为某个值 即设置'a'为() =>{ console.log('a') }这样一个函数
+            console.log('a')
+        })
+        map.set('b',() => {//把key设为某个值
+            console.log('b')
+        })
+        map.get('a')()    //把key取出来
+        for (let key of map.keys()) {
+            console.log('key',key)
+        }
+        for (let v of map.values()) {
+            console.log('values',v)
+        }
+        for (let kv of map.entries()) {// map.entries()取出key和value，返回的是一个数组，有几个key就返回几个数组
+            console.log('key and values',kv)
+        }
+        map.delete('a')
+        console.log(map.has('a'),map.delete('a'))//map.has() 和 map.delete()都返回一个布尔值true or false
+    </script>
+</body>
+</html>

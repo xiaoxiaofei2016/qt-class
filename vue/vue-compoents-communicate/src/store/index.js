@@ -32,6 +32,7 @@ const actions = { //异步
 
 const getters = { // vuex计算属性
   count: function(state) {
+    console.log('getters')
     return state.count += 100
   }
 }

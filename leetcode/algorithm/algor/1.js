@@ -9,7 +9,7 @@ function isBalanced(exp) {
     len = exp.length;
     exp = exp.replace(reg, "")
     console.log(len);
-    console.log(exp.length);
+    console.log(exp);
   } while(len != exp.length) // len == exp.length退出循环
 
   return exp.length === 0;

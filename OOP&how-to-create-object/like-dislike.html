@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象与面向过程</title>
+    <style>
+       .blue{
+           color: blue;
+       }
+       .red{
+           color: red;
+       }
+    </style>
+</head>
+<body>
+    <ul>
+        <button id="btn">999</button>
+        <button>888</button>
+        <button>777</button>
+    </ul>
+    <script>
+
+        // const btnNode = document.getElementById('btn');
+        // let status = false;
+        // btnNode.addEventListener('click',() => {
+        //     let likeCount = btnNode.innerText;
+        //     let likeCountNum = parseInt(likeCount);
+        //     if(!status) {
+        //         likeCountNum +=1;
+        //         btnNode.classList.add('red');
+        //         status = true;
+        //     }else{
+        //         likeCountNum -=1;
+        //         btnNode.classList.remove('red');
+        //         status = false;
+        //     }
+        //     btnNode.innerText = likeCountNum;
+        // })
+
+
+
+        //面向对象  OOP
+        const btnNode = document.getElementById('btn');
+        function LikeDisLikeBtn(defaultCount,status) {
+            this.defaultCount = defaultCount;
+            this.status = status;
+            this.initDom();
+        }
+        // console.log(LikeDisLikeBtn.prototype);
+        LikeDisLikeBtn.prototype.initDom = function () {
+            this.btnNode = document.createElement('button');
+            var textNode = document.createTextNode(this.defaultCount);
+            this.btnNode.appendChild(textNode);
+            if(this.status) {
+                this.btnNode.classList.add('blue');
+            }
+            this.initEvent();
+        }
+        LikeDisLikeBtn.prototype.initEvent = function() {
+            this.btnNode.addEventListener('click',() => {
+                let likeCount = this.btnNode.innerText;
+                let likeCountNum = parseInt(likeCount);
+                if(!this.status) {
+                    likeCountNum += 1;
+                    this.btnNode.classList.add('red');
+                    this.status = true;
+                }else{
+                    likeCountNum -=1;
+                    this.btnNode.classList.remove('red');
+                    this.status = false;
+                }
+                this.btnNode.innerText = likeCountNum;
+            })
+        }
+        // var btn = new LikeDisLikeBtn(999,false)
+        // console.log(btn);
+        // 对象btn:{status: ,defaultCount: ,}   
+        for(let i = 0; i < 10; i++) {
+            let btn = new LikeDisLikeBtn(999,true)
+            document.body.appendChild(btn.btnNode);
+        }
+    </script>
+</body>
+</html>

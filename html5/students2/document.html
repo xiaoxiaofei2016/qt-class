@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="" alt="">
+    </div>
+    <form action="">
+        <input type="text" name="username">
+    </form>
+    <script src=""></script>
+    <script>
+        console.log('all',document.all);//获取所有标签
+        console.log('image',document.images);
+        console.log('form',document.forms);
+        console.log('body',document.body);
+        console.log('html',document.documentElement);//获取整个文档 根节点
+        document.body.addEventListener('click',() =>{
+            var form = document.forms[0];//获取表单
+            var inputNode = form['username'];
+            console.log(inputNode.value);
+        })
+        document.documentElement.style.fontSize = '32px';//改变html样式
+    </script>
+</body>
+</html>

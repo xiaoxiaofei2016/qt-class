@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>both/skew</title>
+    <style>
+        .box{
+            width: 40px;
+            height: 40px;
+            background-color: red;
+        }
+        @keyframes long {
+            0% {
+                width: 100px;
+            }
+            100% {
+                width: 600px;
+            }
+        }
+        .box1 {
+            animation: long 4s 8s both;
+        }
+        .box2 {
+            animation: long 4s 8s ;
+        }
+        .box3{
+            background-color: red;
+            width: 50px;
+            height: 40px;
+            transform: skewX(20deg) ;
+            /* skew 保持两条边 平行 */
+            /* x为正值 x不动 y逆时针倾斜 */
+            /* y为正值 y不动  x顺时针倾斜 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <hr>
+    <div class="box3"></div>
+</body>
+</html>

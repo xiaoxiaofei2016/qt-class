@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.15/lodash.min.js"></script>
+    <script>
+        var arr = [
+            'a','bb','ccc','ddd'
+        ]
+        //引入 loadsh之后 所有的方法放到_中
+        // var o = _.countBy(arr,'length')
+        var o = countBy(arr,'length')
+
+        console.log(o)//{1: 1, 2: 1, 3: 2}
+        var arr1 = [4.2,6.1,6.2,6.3]
+        // var p = _.countBy(arr1,Math.floor)
+        var p = countBy(arr1,Math.floor)
+        console.log(p)//{4: 1, 6: 3}
+        
+        function countBy(ele,by) {
+            let obj = {};
+            ele.forEach((item) => {
+                let fn = typeof by === 'function' ? by : (v) => v[by]
+                let val = fn(item);
+                if(!obj[val]) 
+                    obj[val] = 0;
+                obj[val] = obj[val] + 1;
+                //obj[val] = 出现的次数
+            })
+            return obj;
+        }
+    </script>
+    <script>
+        //Symbol
+        //why
+         
+        let a = Symbol('thisisa');
+        let b = Symbol('thisisb');
+        console.log(a)
+        var obj = {
+            a:1,
+            [a]:2,
+            [b]:1
+        }
+        console.log(obj)
+        //获取对象的所有属性
+        //for ... in 遍历对象
+        for(let key in obj) {
+            console.log(obj[key])
+        }
+        const keys = Object.keys(obj);//取出对象的普通属性
+        console.log(keys)
+        const SymbolKeys = Object.getOwnPropertySymbols(obj);//获取对象的Symbol属性
+        console.log(SymbolKeys)
+
+
+        //消除魔法字符串
+        const SHAPE = {
+            react:Symbol(),
+            sanjiao:Symbol()
+        }
+        function getArea(shape,options) {
+            switch(shape) {
+                case SHAPE.react:
+                    return options.width * options.height;
+                case SHAPE.sanjiao:
+                    return .5 * options.width * options.height;
+            }                                      
+        }
+        console.log(getArea(SHAPE.react,{ width:1,height:2 } ))
+        console.log(getArea(SHAPE.sanjiao,{ width:1,height:2 } ))
+    </script>
+</body>
+</html>

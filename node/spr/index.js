@@ -9,4 +9,4 @@ console.log(setInterval);
 
 console.log(__dirname); // 绝对路径
 console.log(__filename);
-console.log(process) // 为我们服务 传参？
+console.log(process); // 为我们服务 传参？

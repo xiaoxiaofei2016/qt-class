@@ -75,14 +75,14 @@
                 // obj[key] obj.name obj["name"]
                 // Ryu[commands[ev.keyCode]]();
                 // 具象
-                let keyCode = ev.keyCode,
-                command = commands[ev.keyCode]?makeCommand(currentPlayer,commands[ev.keyCode]):null;
-                    // 谁 ，哪种动作
-                    // 参数
-                  if(command){
-                      command();
-                      commandStack.push(command);
-                  }
+        let keyCode = ev.keyCode,
+        command = commands[ev.keyCode]?makeCommand(currentPlayer,commands[ev.keyCode]):null;
+            // 谁 ，哪种动作
+            // 参数
+            if(command){
+                command();
+                commandStack.push(command);
+            }
         }
         //封装
        var makeCommand = function(reciver,state) {
@@ -99,4 +99,4 @@
         }
     </script>
 </body>
-</html>
+</html> 

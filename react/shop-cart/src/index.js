@@ -6,8 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import reducer from './reducer/index'
 import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-const store = createStore(reducer, applyMiddleware(thunk))
+import thunk from 'redux-thunk' // thunk中间件，dispatch可以为函数
+const store = createStore(reducer, applyMiddleware(thunk)) // 
 
 ReactDOM.render(
 <Provider store={store}>

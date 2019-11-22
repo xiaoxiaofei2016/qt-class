@@ -1,4 +1,4 @@
-const md5 = require('md5');
+const md5 = require('md5'); // 加密
 const userModel = require('../model/user-info.js');
 module.exports = async (ctx) => {
   const { name, password } = ctx.request.body;

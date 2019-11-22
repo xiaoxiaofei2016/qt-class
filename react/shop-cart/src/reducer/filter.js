@@ -1,4 +1,4 @@
-const filter = 'all'
+const filter = ['all']
 
 function filterReducer() {
   return filter

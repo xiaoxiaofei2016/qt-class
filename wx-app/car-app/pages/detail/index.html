@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = [0, 1, 2, 3, 4];
+    var sum = a.reduce((pre, next) => {
+      return pre + next;
+    }, 10)
+    console.log('sum', sum);
+    // 没有第二个参数 pre 0 next 1  =>  1;
+    // 如果有第二个参数 pre=== 10 第二个参数 next 0 => 10
+    // 每一项去累加
+    // pre 1 next 2  =>  3;
+    // pre 3 next 3  =>  6;
+    // pre 6 next 4  => 10;
+    var b = [
+      {price: 20},
+      {price: 30},
+      {price: 40},
+    ]
+    var sum1 = b.reduce((pre, next) => {
+      return pre + next.price;
+    }, 0)
+    console.log(sum1);
+  </script>
+</body>
+</html>

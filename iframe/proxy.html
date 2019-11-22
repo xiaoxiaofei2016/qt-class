@@ -8,7 +8,7 @@
 </head>
 <body>
   <script>
-    fetch('/api/post')  
+    fetch('/api/post')  // 自动拼接 origin + '/api/post'
     .then(res => res.json())
     .then(data => {
       console.log(data);

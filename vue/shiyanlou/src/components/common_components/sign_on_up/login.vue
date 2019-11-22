@@ -99,6 +99,9 @@ export default {
     width: 50%;
     text-align: center;
 }
+.nav_bar_li_active {
+    border-bottom: 1px solid #0c9;
+}
 .nav_bar_li:hover {
     border-bottom: 1px solid #0c9;
 }
@@ -109,7 +112,5 @@ export default {
     font-size: 18px;
     color: #555;
 }
-.nav_bar_li_active {
-    border-bottom: 1px solid #0c9;
-}
+
 </style>

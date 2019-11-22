@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const ages = [32,15,19,12];
+        // const adultAdults = ages.filter(age => age >=18);
+        // const adultPreset = ages.some(age => age >=18);
+        // const allOldEnough = ages.every(age => age >=18);
+        // console.log(allAdults,adultPreset,allOldEnough);
+
+        const array = [1,2,2,1,'1'];
+        
+        // 两重循环  时间复杂度O(N2)
+        function uniq(arr) {
+            const res = [];
+            // 时间复杂度，空间复杂度
+            for(let i = 0;arrayLen = arr.length,i < arrayLen; i++) {
+                let j = 0;
+                for(resLen = res.length;j < resLen;j++) {
+                    if(arr[i] === res[j])
+                    break;
+                }
+                if(j == resLen) {
+                    res.push(arr[i]);
+                }
+            }
+            return res;
+        }
+        console.log(uniq(array));
+
+
+        
+
+        // arr.filter 数组uniq 去重
+        // function unique(arr) {
+        //     var res = arr.filter((item,index,arr) => {
+        //         return arr.indexOf(item) === index;
+        //     })
+        //     return res;
+        // }
+        // console.log(unique(array));
+    </script>
+</body>
+</html>

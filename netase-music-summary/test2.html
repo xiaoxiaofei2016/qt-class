@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>猫</title>
+  <style>
+      .cat{
+          padding: 100px;
+          
+          width: 118px;
+          height: 200px;
+      }
+      .weiba{
+       
+        width: 100%;
+        height: 100%;
+          position: absolute;
+          top: 50px;
+          background: url(http://s5.music.126.net/static_public/5c21db8d4684556c72180904/maowei.cebc9c6d99173d07009465c700b0eb21.png) no-repeat;
+          animation: weiba 5s ease-in-out infinite;
+          
+          transform-origin:0% 0%  ;
+      }
+      @keyframes weiba{
+          0%{
+              transform: rotateZ(30deg);
+          }
+          100%{
+              transform: rotateZ(0);
+          }
+      }
+      .body{
+          width: 100%;
+        position: absolute;
+        top:50px;
+          height: 100%;
+          background: url(http://s5.music.126.net/static_public/5c21db8d4684556c72180904/maoshenti.ad6177be5deba54a83a99ef58fe80047.png) no-repeat;
+      }
+      .arm{
+          width: 100%;
+        position: absolute;
+        top: 220px;
+        left: 200px;
+          height: 100%;
+          background: url(http://s5.music.126.net/static_public/5c21db8d4684556c72180904/maozhua.35cbb00fc5856cf230d6a4e60cfdfc55.png) no-repeat;
+          animation: arm .5s ease-in-out infinite;
+      }
+  </style>
+</head>
+<body>
+  <!-- 
+  身体：http://s5.music.126.net/static_public/5c21db8d4684556c72180904/maoshenti.ad6177be5deba54a83a99ef58fe80047.png
+  猫爪：http://s5.music.126.net/static_public/5c21db8d4684556c72180904/maozhua.35cbb00fc5856cf230d6a4e60cfdfc55.png
+  猫尾：http://s5.music.126.net/static_public/5c21db8d4684556c72180904/maowei.cebc9c6d99173d07009465c700b0eb21.png
+  1. 身体居中
+  2. 猫爪 猫尾摆动
+  -->
+
+
+  <div class="cat">
+      <div class="weiba">
+      </div>
+      <div class="body"></div>
+      <div class="arm"></div>
+  </div>
+</body>
+</html>

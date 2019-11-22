@@ -1,5 +1,6 @@
 const path = require('path')
 const VueloaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development', // production
   entry: {
@@ -24,6 +25,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new VueloaderPlugin()
+    new VueloaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './index.html')
+    })
   ]
 }

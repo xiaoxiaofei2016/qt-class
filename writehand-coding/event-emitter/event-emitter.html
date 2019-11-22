@@ -29,11 +29,13 @@
                 if (!handler) return false;
                 if (Array.isArray(handler)) {
                     for (let i = 0; i < handler.length; i++) {
-                        handler[i].call(this,...args)
+                        handler[i].call(this,...args);
+                        // handler[i](...args);
                     }
                 }
                 else {
                     handler.call(this,...args);
+                    // handler(...args);
                 }
             }
         }
@@ -48,8 +50,8 @@
             console.log(3,a,b);
         })
         ev.on('ev3', function (a,b) {
-            console.log(this);
             console.log(this === ev);
+            console.log(this)
         })
         ev.emit('ev2',5,6);
         ev.emit('ev3')

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="GET">
+        <!-- GET请求会有日志 涉及到密码不能用GET请求，用POST请求 -->
+        <!-- http://127.0.0.1:8080/login?username=%E4%B8%BA1321&password=323 -->
+        <!-- 协议 HTTPS TCP/IP Socket -->
+        <input type="text" id="username" name="username"/>
+        <input type="text" id="password" name="password"/>
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>

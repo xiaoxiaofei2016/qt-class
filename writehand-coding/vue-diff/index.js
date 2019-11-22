@@ -5,6 +5,11 @@
 </ul> */}
 
 
+var REPLACE = 0,    // replace 替换
+    REORDER = 1,    // reorder 父节点中子节点的操作
+    PROPS   = 2,    // props 属性的变化
+    TEXT    = 3     // text 文本内容的变化
+
 
 function Element(tagName, props, children) {
   this.tagName = tagName
@@ -58,7 +63,47 @@ function diffChildren(oldChildren, newChildren, index, patches) {
   })
 }
 
-function patch(node, patches) {
+function patch(node, patches) { // 将差异应用到Dom树上
   var walker = { index: 0 } // 记录当前节点的标志
   dfsWalk(node, walker, patches)
+}
+
+function dfWalk(node, walker, patches) {
+  var currentPatches = patches[walker.index]
+  var len = node.childNodes ? node.childNodes.length : 0
+  for (var i = 0; i < len; i++) { // 深度遍历子节点
+    var child = node.childNodes[i]
+    walker.index++
+    dfWalk(child, walker, patches)
+  }
+  if (currentPatches) {
+    applyPatches(node, currentPatches) // 对当前的节点进行Dom操作
+  }
+}
+function applyPatches(node, currentPatches) {
+  currentPatches.forEach((currentPatch) => {
+    switch (currentPatch.type) {
+      case REPLACE:
+        var newNode = (typeof currentPatch.node === 'string')
+          ? document.createTextNode(currentPatch.node)
+          : currentPatch.node.render()
+        node.parentNode.replaceChild(newNode, node)
+        break;
+      case REORDER:
+        reorderChildren(node, currentPatch.moves)
+        break;
+      case PROPS:
+        setProps(node, currentPatch.moves)
+        break;
+      case TEXT:
+        if (node.textContent) {
+          node.textContent = currentPatch.content
+        } else {
+          node.nodeValue = currentPatch.content
+        }
+        break;
+      default:
+        throw new Error('Unknow patch type' + currentPatch.type)
+    }
+  })
 }

@@ -157,6 +157,7 @@ export default {
     })
   },
   watch: {
+    
     playing (newPlaying) {
       if (!this.songReady) {
         return

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .paras{
+        padding-top: 100px;
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    .paras.up{
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 1.2s,transform 1s;
+    }
+  </style>
+</head>
+<body>
+  <!-- 1： 从下往上 
+  2： 淡入
+  -->
+  
+    <div class="paras">
+      <p class="para" style="transition-delay: .2s">这一年</p>
+      <p class="para" style="transition-delay: .3s">TA有46小时与音乐相伴</p>
+      <p class="para" style="transition-delay: .4s">在音乐的世界</p>
+      <p class="para" style="transition-delay: .5s">遇见你真好</p>
+    <script>
+        window.onload = function(){
+            var a = document.getElementsByClassName('paras')
+            a.classList.add('up');
+        } 
+    </script>
+</div>
+    
+</body>
+<ml>

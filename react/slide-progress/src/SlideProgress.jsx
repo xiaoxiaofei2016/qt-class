@@ -30,8 +30,7 @@ export default class SlideProgress extends Component {
         move = 0
       }
       this.progressBtn.current.style.left = move + 'px'
-      let percent = move / 
-      this.objRef.current.offsetWidth
+      let percent = move / this.objRef.current.offsetWidth
       this.props.onChange(percent)
       this.progressRef.current.width = percent + '%'
     })
