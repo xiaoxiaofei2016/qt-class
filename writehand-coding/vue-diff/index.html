@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul id="list">
+    <li class="item">item1</li>
+    <li class="item">item2</li>
+    <li class="item">item3</li>
+  </ul>
+  <script src="./index.js"></script>
+  <script>
+    var element = {
+      tagName: 'ul',
+      props: {
+        id: 'list'
+      },
+      children: [
+        {
+          tagName: 'li',
+          props: {
+            class: 'item'
+          },
+          children: ['item1']
+        },
+        {
+          tagName: 'li',
+          props: {
+            class: 'item'
+          },
+          children: ['item2']
+        },
+        {
+          tagName: 'li',
+          props: {
+            class: 'item'
+          },
+          children: [
+            {
+              tagName: 'span',
+              props: {
+                class: 'spa1'
+              },
+              children: ['hello']
+            }
+          ]
+        }
+      ]
+    }
+    const { tagName, props, children } = element
+    let ul = new Element(tagName, props, children)
+    let ulRoot = ul.render()
+    document.body.appendChild(ulRoot)
+  </script>
+</body>
+
+</html>
