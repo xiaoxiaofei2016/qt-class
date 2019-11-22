@@ -35,8 +35,15 @@
     test.addEventListener('touchstart', () => {
       touchstart.innerHTML = Date.now()
     })
-    test.addEventListener('touchend', () => {
+    test.addEventListener('touchend', (e) => {
+      e.preventDefault() 
+      // 1. test.click()
+      // 2. 自定义事件
       touchend.innerHTML = Date.now()
+      let event = document.createEvent('MouseEvents') // 自定义鼠标事件
+      event.initEvent('click', true, true) // 名字：click , 第一个为是否冒泡， 第二个为是否阻止默认事件 
+      test.dispatchEvent(event)
+      
     })
     test.addEventListener('click', () => {
       click.innerHTML = Date.now()
