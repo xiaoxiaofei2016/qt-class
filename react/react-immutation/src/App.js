@@ -21,6 +21,7 @@ let obj = {
     e: 3
   }
 }
+
 let imObj = immutable.fromJS(obj)
 console.log(imObj.getIn(['b', 'c'], 'default')) // 获取属性值
 let imObj1 = imObj.setIn(['d', 'e'], 'ee') // 设置属性值
