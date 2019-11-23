@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import immutable from 'immutable'
+import Header from './Header'
+import Main from './Main'
+import Footer from './Footer'
 
 // 可变
 let a = [0, 1, 2]
@@ -25,31 +28,32 @@ let obj = {
 let imObj = immutable.fromJS(obj)
 console.log(imObj.getIn(['b', 'c'], 'default')) // 获取属性值
 let imObj1 = imObj.setIn(['d', 'e'], 'ee') // 设置属性值
-
 let obj1 = {
   ...obj,
   b: 2
 }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    store: imObj
+  }
+  handleSet = () => {
+    let store = this.state.store.setIn(['d', 'e'], '456') // immutable处理后不需要浅拷贝
+    this.setState({ 
+      store
+    })
+  }
+  render() {
+    const store = this.state.store
+    return (
+      <div>
+        <button onClick={this.handleSet}>set d</button>
+        <Header value={store.get('a')}/>
+        <Main value={store.get('b')}/>
+        <Footer value={store.get('d')}/>
+      </div>
+    )
+  }
 }
 
 export default App;
