@@ -5,6 +5,7 @@ import immutable from 'immutable'
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
+import ColorRedWrapper from './redColor'
 
 // 可变
 let a = [0, 1, 2]
@@ -47,6 +48,10 @@ class App extends React.Component {
     const store = this.state.store
     return (
       <div>
+        <ColorRedWrapper>
+          <p>123</p>
+          <div>456</div>
+        </ColorRedWrapper>
         <button onClick={this.handleSet}>set d</button>
         <Header value={store.get('a')}/>
         <Main value={store.get('b')}/>
