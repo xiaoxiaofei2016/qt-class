@@ -21,6 +21,7 @@ class Home extends BaseComponent {
     );
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     changeHomeData() {
