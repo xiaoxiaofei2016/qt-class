@@ -8,6 +8,7 @@ class Home extends BaseComponent {
   componentDidMount() {
     this.props.changeHomeData()
   }
+  
   state = {}
   render() {
     return (
