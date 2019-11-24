@@ -11,10 +11,7 @@ module.exports = {
       { id: 2, name: '店铺2', thumb_url: '2.png', ...timestamps },
       { id: 3, name: '店铺3', thumb_url: '3.png', ...timestamps },
       { id: 4, name: '店铺4', thumb_url: '4.png', ...timestamps },
-    ],
-    {
-
-    }
+    ]
   ),
   down: (queryInterface, Sequelize) => {
     const { op } = Sequelize;
