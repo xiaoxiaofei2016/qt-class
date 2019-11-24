@@ -5,7 +5,7 @@ const sequelize = new Sequelize('learn_sequelize', 'root', '163004', {
 })
 
 // shops表的映射 ORM
-const Shop = sequelize.define('shops', {
+const Shop = sequelize.define('shops', { // 第一个参数为操作的对象,第三个为对数据库的操作
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
