@@ -66,6 +66,7 @@ x = ['hello', 12]
 enum Direction { // enum枚举属性
   Center = 1
 }
+
 let val: object
 val = Direction
 val = [2]
