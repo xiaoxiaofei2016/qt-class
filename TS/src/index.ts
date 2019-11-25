@@ -47,7 +47,7 @@ notSure = '324'
 notSure.foo.bar = 1
 let value: unknown = 4 // 不能进行深层赋值,不能被new
 value = 'q34'
-value.foo.bar = 23
+// value.foo.bar = 23
 
 function error(message: string): never { // 值永远不存在定义为never
   throw new Error(message)
