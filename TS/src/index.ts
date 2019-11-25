@@ -1,74 +1,74 @@
-// function greeter(person: string) {
-//   // return 'hello,' + person
-//   return function greeter(person: string) {
+function greeter(person: string) {
+  // return 'hello,' + person
+  return function greeter(person: string) {
 
-//   }
-// }
-// const user = 'wn'
+  }
+}
+const user = 'wn'
 
-// greeter(user)
+greeter(user)
 
-// // string number boolean null undefined symbol void bigint
+// string number boolean null undefined symbol void bigint
 
-// const isLoading: boolean = false
+const isLoading: boolean = false
 
-// const a: number = 6
-// const b: number = 0xf00d
-// const book: string = 'ts'
+const a: number = 6
+const b: number = 0xf00d
+const book: string = 'ts'
 
-// function warnUser(): void { // 没有返回值void(空)
-//   alert('test')
-// }
+function warnUser(): void { // 没有返回值void(空)
+  alert('test')
+}
 
-// const c: void = undefined
+const c: void = undefined
 
-// let u: undefined = undefined
-// let n: null = null
+let u: undefined = undefined
+let n: null = null
 
-// const sym1 = Symbol('key1')
-// const sym2 = Symbol('key1')
-// sym1 === sym2 // false
+const sym1 = Symbol('key1')
+const sym2 = Symbol('key1')
+sym1 === sym2 // false
 
-// const max = Number.MAX_SAFE_INTEGER // 2*53 -1
-// const max1 = max + 1
-// const max2 = max1 + 1
+const max = Number.MAX_SAFE_INTEGER // 2*53 -1
+const max1 = max + 1
+const max2 = max1 + 1
 
-// declare let foo: number
-// declare let bar: bigint
-// foo === bar // false
+declare let foo: number
+declare let bar: bigint
+foo === bar // false
 
-// // any
-// // unknow 跟any一样,但是unkown更加严格
-// // never
-// // object
+// any
+// unknow 跟any一样,但是unkown更加严格
+// never
+// object
 
-// let notSure: any = 4
-// notSure = '324'
-// notSure.foo.bar = 1
-// let value: unknown = 4 // 不能进行深层赋值,不能被new
-// value = 'q34'
-// value.foo.bar = 23
+let notSure: any = 4
+notSure = '324'
+notSure.foo.bar = 1
+let value: unknown = 4 // 不能进行深层赋值,不能被new
+value = 'q34'
+value.foo.bar = 23
 
-// function error(message: string): never { // 值永远不存在定义为never
-//   throw new Error(message)
-// }
-// const empty: never[] = []
+function error(message: string): never { // 值永远不存在定义为never
+  throw new Error(message)
+}
+const empty: never[] = []
 
-// const list: Array<number> = [1, 2, 3] // 泛型
-// const list2: number[] = [1, 2, 3]
+const list: Array<number> = [1, 2, 3] // 泛型
+const list2: number[] = [1, 2, 3]
 
-// // 元祖
-// let x: [string, number]
-// x = ['hello', 12]
+// 元祖
+let x: [string, number]
+x = ['hello', 12]
 
-// // object
-// enum Direction { // enum枚举属性
-//   Center = 1
-// }
-// let val: object
-// val = Direction
-// val = [2]
-// val = [1, 'hello'] // 元祖也是对象
+// object
+enum Direction { // enum枚举属性
+  Center = 1
+}
+let val: object
+val = Direction
+val = [2]
+val = [1, 'hello'] // 元祖也是对象
 
 enum Direction {
   up = '10',
