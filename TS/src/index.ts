@@ -25,9 +25,9 @@ const c: void = undefined
 let u: undefined = undefined
 let n: null = null
 
-const sym1 = Symbol('key1')
-const sym2 = Symbol('key1')
-sym1 === sym2 // false
+// const sym1 = Symbol('key1')
+// const sym2 = Symbol('key1')
+// sym1 === sym2 // false
 
 const max = Number.MAX_SAFE_INTEGER // 2*53 -1
 const max1 = max + 1
@@ -35,7 +35,7 @@ const max2 = max1 + 1
 
 declare let foo: number
 declare let bar: bigint
-foo === bar // false
+// foo === bar // false
 
 // any
 // unknow 跟any一样,但是unkown更加严格
