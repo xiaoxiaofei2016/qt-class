@@ -61,6 +61,7 @@ const list2: number[] = [1, 2, 3]
 let x: [string, number]
 x = ['hello', 12]
 
+
 // object
 enum Direction { // enum枚举属性
   Center = 1
