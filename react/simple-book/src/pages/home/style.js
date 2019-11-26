@@ -20,7 +20,7 @@ width: 625px;
 // styled.div是一个方法
 function foo(...args) {
   console.log(args)
-  console.log(args[0][0] + 'love' + args[1])
+  console.log(args[0][0][0] + 'love' + args[1])
 }
 // 1.foo`` 2.foo() // 调用foo
 // let str = `i am ${123}`

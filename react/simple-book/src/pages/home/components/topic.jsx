@@ -26,7 +26,7 @@ class Topic extends Component {
   }
 }
  
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { // 获取数据
   return {
     list: state.getIn(['home', 'topicList'])
   }
