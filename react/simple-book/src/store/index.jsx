@@ -4,7 +4,7 @@ import { combineReducers } from 'redux-immutable'; // 支持对每个store的划
 import homeReducer from '../pages/home/store/reducer.jsx';
 
 const reducer = combineReducers({ // fromJS({ home: , detail: , ... })
-  home: homeReducer
+  home: homeReducer // home模块
 })
 const store = createStore(reducer, applyMiddleware(thunk));
 
