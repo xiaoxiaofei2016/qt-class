@@ -17,4 +17,4 @@ function homeReducer(state = defaultState, action) { // 修改数据
   }
 }
 
-export default homeReducer
+export default homeReducer;
