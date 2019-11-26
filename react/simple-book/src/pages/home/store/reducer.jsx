@@ -4,7 +4,7 @@ const defaultState = fromJS({
   topicList: []
 })
 
-function homeReducer(state = defaultState, action) {
+function homeReducer(state = defaultState, action) { // 修改数据
   switch (action.type) {
     case CONSTANTS.CHANGE_HOME_DATA:
       return state.merge({ // 合并
