@@ -50,7 +50,7 @@
 </head>
 <body>
   <div id="content">
-    <input type="file" id="file">
+    <input type="file" id="myfile" style="position: relative;;z-index: 1000;" />
     <canvas id="canvas"></canvas>
     <audio id="audio" src="" crossorigin="anonymous"></audio>
     <a href="javascript:;" id="play-btn">PLAY</a>
@@ -58,12 +58,12 @@
   <script>
     var btn = document.getElementById('play-btn')
     var audio = document.getElementById('audio')
-    var file = document.getElementById('file')
-    file.onchange = function () {  
+    var file = document.getElementById('myfile')
+    file.addEventListener('change', function (e) { 
       var url = URL.createObjectURL(file.files[0])
       console.log(url)
       audio.src = url
-    } 
+    })
     btn.onclick = function () {
       btn.style.display = 'none'
       audio.play()
@@ -94,19 +94,19 @@
       var HEIGHT = canvas.height
       var barWidth = WIDTH / bufferLength * 1.5 // 对画布等比切割
       var barHeight;
-      console.log(barWidth)
+      // console.log(barWidth)
 
       function renderFrame() {
         requestAnimationFrame(renderFrame)
         analyser.getByteFrequencyData(dataArray)
-        console.log(dataArray)
+        // console.log(dataArray)
         ctx.clearRect(0, 0, WIDTH, HEIGHT)
 
         for (var i = 0, x = 0; i < bufferLength; i++) {
           barHeight = dataArray[i]
           var r = barHeight + 25 * (i / bufferLength)
           var g = 250 * (i / bufferLength)
-          console.log(i)
+          // console.log(i)
           var b = 50
           ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")"
           ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight)
