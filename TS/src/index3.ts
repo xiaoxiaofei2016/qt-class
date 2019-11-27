@@ -39,7 +39,7 @@ function getSomething(arg: A | B) {
 //     console.log(arg.name)
 //   }
 //   if ('color' in A) {
-//     console.log(arg.name)
+//     console.log(arg.color)
 //     console.log(arg.age)
 //   }
 // }
