@@ -23,7 +23,8 @@ export const getMoreList = (page) => {
       const result = res.data.data
       dispatch({
         type: constants.ADD_ARTICLE_LIST,
-
+        list: result,
+        nextPage: page
       })
     })
   }
