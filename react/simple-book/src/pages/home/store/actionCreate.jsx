@@ -17,3 +17,14 @@ export const getHomeInfo = () => { // 设置数据
   }
 }
 
+export const getMoreList = (page) => {
+  return (dispatch) => {
+    axios.get('/api/homeList.json?page=' + page).then(res => {
+      const result = res.data.data
+      dispatch({
+        type: constants.ADD_ARTICLE_LIST,
+
+      })
+    })
+  }
+}
