@@ -80,9 +80,6 @@ export const NavSearch = styled.input.attrs({
 	&::placeholder {
 		color: #999;
 	}
-	&.focused {
-		width: 240px;
-	}
 	&.slide-enter {
 		transition: all .2s ease-out;
 	}
