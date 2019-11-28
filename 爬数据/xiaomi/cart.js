@@ -11,7 +11,7 @@ nightmare
 .then(htmlStr => {
   navList = getnavList(htmlStr) // getnavList() 函数将执行对原始数据的选择和处理
   navList = JSON.stringify(navList) // 将数据转化为字符串，以便进行fs写文件操作
-  fs.writeFile("navList.json", navList, "utf-8", (error) => {
+  fs.writeFile("cart.json", navList, "utf-8", (error) => {
     //监听错误，如正常输出，则打印null
     if (error == null) {
       console.log("恭喜您，navList数据爬取成功!)");
@@ -25,16 +25,16 @@ nightmare
 let getnavList  = (res) => {
   if (res) {
     let $ = cheerio.load(res);
-    $('ul li').each(function (index, item) {
-      
-        let bitem = $(item).children('.title')
-        let citem = $(item).children('.price')
+    $('ul.row li').each(function (index, item) {
+
+      $('dl', this).each(function(index, item) {
         let navList = {
-          img: aitem.children("[width='160']").attr('src'), // attr('属性') 可以取到对应属性的值，包括行内样式的值
-          title: bitem.text(), // text() 取到文本内容
-          price: citem.text()
+          img: $(this).children("[width='160']").attr('src'), // attr('属性') 可以取到对应属性的值，包括行内样式的值
+          title: $(this).text(), // text() 取到文本内容
+          price: $(this).text()
         }
         newsList.push(navList)
+      })
     })
     return newsList
   } else {
