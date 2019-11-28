@@ -7,7 +7,7 @@ var newsList = [] // 用来存新闻数据
 nightmare
 .goto('https://www.mi.com/')
 .wait(1000) // 6000 的意思是当模拟浏览器打开后会等待6秒再爬取页面数据，有这段时间就可以做你想要的动态加载操作
-.evaluate(() => document.querySelector("div.header-nav-menu").innerHTML) // 这里一定要取到你想要爬取数据区域的容器的类名
+.evaluate(() => document.querySelector("div.site-category").innerHTML) // 这里一定要取到你想要爬取数据区域的容器的类名
 .then(htmlStr => {
   console.log(htmlStr, '123455534443');
   
@@ -15,7 +15,7 @@ nightmare
   console.log(navList);
   
   navList = JSON.stringify(navList) // 将数据转化为字符串，以便进行fs写文件操作
-  fs.writeFile("navList.json", navList, "utf-8", (error) => {
+  fs.writeFile("leftnav.json", navList, "utf-8", (error) => {
     //监听错误，如正常输出，则打印null
     if (error == null) {
       console.log("恭喜您，navList数据爬取成功!)");
@@ -36,9 +36,8 @@ let getnavList  = (res) => {
 
       $('a', this).each(function(index, item) {
         let navList = {
-          img: $(this).children().children().attr('src'),
-          text: $(this).children('.title').text(),
-          price: $(this).children('.price').text()
+          img: $(this).children().attr('src'),
+          text: $(this).children('.text').text()
         }
         newsList.push(navList)
       })
