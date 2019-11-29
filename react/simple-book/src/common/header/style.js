@@ -37,7 +37,7 @@ export const NavItem = styled.div`
 	}
 	&.right {
 		float: right;
-		color: #969696;
+		color: #ec6149;
 	}
 	&.active {
 		color: #ea6f5a;
@@ -118,7 +118,7 @@ export const SearchInfoTitle = styled.div`
 export const SearchInfoSwitch = styled.span`
 	float: right;
 	font-size: 13px;
-	cursor: pointer;
+  cursor: pointer;
 	.spin {
 		display: block;
 		float: left;

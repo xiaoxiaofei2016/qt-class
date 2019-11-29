@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { LoginWrapper, LoginBox, Input, Button } from './style'
 import * as actionCreator from './store/actioncreate'
-
+import { connect } from 'react-redux'
 class Login extends Component {
   state = {  }
   userName = React.createRef()
@@ -25,8 +25,8 @@ class Login extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     login() {
-      dispatch()
+      dispatch(actionCreator.changeLoginStatus(true))
     }
   }
 }
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);

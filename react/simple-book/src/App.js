@@ -9,7 +9,7 @@ import Home from './pages/home/index.jsx';
 import Header from './common/header/index.jsx';
 import { GlobalStyle } from './statics/iconfont/iconfont.js'
 import PrivateRoute from './lib/PrivateRoute.jsx'
-
+import Login from './pages/login/index.jsx'
 function Write() {
   return (
     <div>
@@ -28,6 +28,7 @@ class App extends BaseComponent {
             <GlobalStyle/>
             <Header></Header>
             <Route exact path="/" component={Home}/>
+            <Route path="/login" component={Login}/>
             {/* <PrivateRoute path="/write" Com={Write}></PrivateRoute> */}
             <PrivateRoute path="/write">
               <Write/>
