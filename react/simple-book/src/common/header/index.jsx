@@ -39,7 +39,11 @@ class header extends Component {
 						</Button>
           </Link>
           <Button className='reg'>注册</Button>
-          <Link to='/login'><NavItem className='right'><Button>登陆</Button></NavItem></Link>
+          <Link to='/login'>
+            <NavItem className='right'>
+              <Button>登陆</Button>
+            </NavItem>
+          </Link>
         </Addition>
       </HeaderWrapper>
     );
