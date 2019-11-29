@@ -8,6 +8,15 @@ import store from './store/index.jsx';
 import Home from './pages/home/index.jsx';
 import Header from './common/header/index.jsx';
 import { GlobalStyle } from './statics/iconfont/iconfont.js'
+import PrivateRoute from './lib/PrivateRoute.jsx'
+
+function Write() {
+  return (
+    <div>
+      写文章
+    </div>
+  )
+}
 
 class App extends BaseComponent {
   render() {
@@ -19,6 +28,10 @@ class App extends BaseComponent {
             <GlobalStyle/>
             <Header></Header>
             <Route exact path="/" component={Home}/>
+            {/* <PrivateRoute path="/write" Com={Write}></PrivateRoute> */}
+            <PrivateRoute path="/write">
+              <Write/>
+            </PrivateRoute>
           </div>
         </BrowserRouter>
       </Provider>

@@ -24,7 +24,9 @@ class header extends Component {
           <SearchWrapper>
             <CSSTransition timeout={200} in={focus} classNames="slide">
               <NavSearch onFocus={() => {
-                this.props.handFocus()
+                this.props.handFocus(true)
+              }} onBlur={() => {
+                this.props.handFocus(false)
               }}></NavSearch>
             </CSSTransition>
           </SearchWrapper>
@@ -50,8 +52,8 @@ const mapStateToPropsc = (state) => {
 
 const mapDispatchToProps = (disptach) => {
   return {
-    handFocus() {
-      disptach(actionCreators.searchFocus())
+    handFocus(isfoucs) {
+      disptach(actionCreators.searchFocus(isfoucs))
     }
   }
 }
