@@ -28,7 +28,7 @@
         </el-row>
       </div>
     </div>
-    <RegisterAndLogin :visible="visible" @cancel="handleCancel"></RegisterAndLogin>
+    <RegisterAndLogin :visible="visible" @cancel="handleCancel" :handleFlag="handleFlag"></RegisterAndLogin>
   </div>
 </template>
 

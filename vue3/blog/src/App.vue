@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <Nav/>
+    <Nav v-if="isShowNav"/>
     <router-view/>
   </div>
 </template>
 
-<script>
-import { Component, Vue } from 'vue-property-decorator';
+<script lang="ts">
+import { Component, Vue, Watch } from 'vue-property-decorator';
 // import Component from 'vue-class-component';
 import Nav from '@/components/nav.vue';
 @Component({
@@ -15,7 +15,11 @@ import Nav from '@/components/nav.vue';
   },
 })
 export default class App extends Vue {
-  
+  private isShowNav: boolean = false;
+  @Watch('$route')
+  routeChange (val, oldVal) {
+    
+  }
 }
 </script>
 <style lang="less">
