@@ -1,0 +1,29 @@
+{
+  "name": "react_ts",
+  "version": "1.0.0",
+  "description": "- typescript   ----   react     他们的关系？   这两个结合就是一个 超级大项目的技术栈   typescript  js 的超集     webpack  src   index.js    loader  index.ts  入口文件   index.jsx            index.tsx   - 安装依赖： npm i webpack webpack-cli webpack-dev-server babel-core babel-preset-env --save-dev             npm i typescript awesome-typescript-loader --save-dev",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "bootstrap": "^4.4.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.15",
+    "@types/react-dom": "^16.9.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^3.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "typescript": "^3.7.3"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --inline --hot --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
