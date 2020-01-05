@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Bar(name) {
+      this.name = name
+    }  
+    function makeFactory(name) {
+      var p1 = new Bar(name)
+      return function() {
+        return {
+          create: p1,
+          destroy: function() {
+            p1 = null // 把闭包访问的变量置为null
+          }
+        }
+      }
+    }
+    var p2 = makeFactory('zhao')
+    // var p3 = p2() // 一直引用
+    // p3 = null
+
+    console.log(p2.create)
+    p2.destroy()
+  </script>
+</body>
+</html>

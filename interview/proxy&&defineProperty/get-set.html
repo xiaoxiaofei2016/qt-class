@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      k: 123, // 数据属性
+      _kk: undefined,
+      get kk() { // 访问器属性(get set)
+        console.log('拿到kk')
+        return this._kk
+      },
+      set kk(val) {
+        console.log('kk变了')
+        this._kk = val
+      }
+    }
+    console.log(obj.kk)
+    // proxy可以劫持未来的属性 defineProperty只能劫持现有属性
+  </script>
+</body>
+</html>

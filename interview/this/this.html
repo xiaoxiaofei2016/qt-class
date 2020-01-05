@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    this.a = 20;
+    function go() {
+      // new调用 this指向实例
+      // this指向一个对象 继承自 go.prototype
+      // 把this.a 属性赋值上去
+      console.log(this.a) // 40
+      this.a = 30 // !!!! 改变了window下的a
+    }  
+    go.prototype.a = 40
+    var test = {
+      a: 50,
+      init: function(fn) {
+        fn() // 普通调用，相当于window下调用
+        console.log(this.a)
+        return fn
+      }
+    }
+    console.log(new go().a) // 40 30
+    test.init(go) // 20 50
+
+    var p = test.init(go) // 30 50
+
+    p() // 30
+  </script>
+</body>
+</html>

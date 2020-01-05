@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = [1, 2, 3];
+    // a[1] = 10
+    a.push(4);
+    //1
+    var oldPush = Array.prototype.push;
+    //2
+    // Array.prototype.push = function() {
+    //   // 
+    //   console.log('change');
+    //   // 3 恢复
+    //   oldPush();
+    // }
+    // xhr
+    // Proxy();
+    let pArr = new Proxy(a, {
+      get: function(target, key, receiver) {
+        console.log('get');
+        // 3 恢复
+        return Reflect.get(target, key, receiver)
+      },
+      set: function(target, key, value, receiver) {
+        console.log('set');
+        return Reflect.set(target, key, value,receiver);
+      }
+    })
+    // pArr[2] = 999;
+    pArr.push(9999);
+    /**
+     * len = pArr.length
+     * len ++
+     * pArr[len] = ele
+    */
+  </script>
+</body>
+</html>

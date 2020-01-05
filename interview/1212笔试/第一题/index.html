@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1561313_9frkhu6ka8.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    .header_content {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      height: 600px;
+    }
+
+    .header_nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 30px;
+    }
+
+    .left {
+      margin: 0 250px 0 150px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .left span {
+      font-size: 12px;
+      font-weight: 800;
+      color: #878889;
+    }
+
+    .left span:last-child {
+      color: #fff;
+    }
+
+    .center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .center span {
+      flex: 1;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .right {
+      margin: 0 180px 0 250px;
+    }
+
+    .right .pic {
+      float: left;
+      margin: 0 10px;
+    }
+
+    .right .pic .iconfont {
+      font-size: 20px;
+      color: #878889;
+    }
+
+    .header_title {
+      width: 300px;
+      display: inline-block;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .header_title .logo {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto;
+    }
+
+    .header_title .logo .iconfont {
+      font-size: 50px;
+      color: #878889;
+    }
+
+    .header_title .title {
+      font-size: 30px;
+      font-weight: bold;
+      word-spacing: 5px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .header_title .desc {
+      display: inline-block;
+      width: 240px;
+      font-size: 14px;
+      word-spacing: 2px;
+      font-weight: normal;
+      color: #fff;
+    }
+
+    .header_input {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      padding: 20px 30px;
+      background: #3C3D41;
+      box-sizing: border-box;
+      box-shadow: 1px -2px 2px #454648;
+    }
+
+    .header_input .email {
+      height: 40px;
+      width: 240px;
+    }
+
+    .email input {
+      height: 40px;
+      width: 240px;
+      text-indent: 10px;
+      font-size: 12px;
+      outline: none;
+      border: 0;
+      border-radius: 4px;
+      background: #878889;
+    }
+
+    input::-webkit-input-placeholder {
+      color: #fff;
+    }
+
+    .header_input .down {
+      flex: 0 0 30%;
+      height: 40px;
+      width: 400px;
+      margin: 0 20px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .header_input .down select {
+      height: 40px;
+      width: 400px;
+      outline: none;
+      font-size: 12px;
+      text-indent: 5px;
+      background: #878889;
+      color: #fff;
+    }
+
+    .header_input .btn {
+      height: 40px;
+      width: 160px;
+    }
+
+    .header_input button {
+      height: 40px;
+      width: 160px;
+      border-radius: 20px;
+      outline: none;
+      border: 0;
+      box-shadow: none;
+      font-size: 6px;
+      background-color: #2557C1;
+      color: #fff;
+    }
+
+    .header_pic {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      width: 1519.2px;
+    }
+
+    #uls {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #img_ul {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      left: -1519.2px;
+      width: 7596px;
+    }
+
+    #img_ul li {
+      float: left;
+      width: 1519.2px;
+    }
+
+    #img_ul li img {
+      background-repeat: no-repeat;
+      width: 1519.2px;
+      height: 616.64px;
+    }
+
+    .left-arrow {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 40%;
+      left: 150px;
+    }
+
+    .right-arrow {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 40%;
+      right: 150px;
+    }
+
+    .arrow .iconfont {
+      color: #878889;
+      font-size: 40px;
+    }
+
+    .arrow .iconfont:hover {
+      padding: 5px;
+      border-radius: 50%;
+      border: 2px solid #878889;
+    }
+
+    .footer {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      height: 400px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+
+    .footer_icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    .footer_icon .iconfont {
+      width: 100%;
+      height: 100%;
+      font-size: 70px;
+      color: #2557C1;
+    }
+
+    .footer_title {
+      font-size: 30px;
+      font-weight: bold;
+      word-spacing: 5px;
+      margin-bottom: 10px;
+      color: #3B3E41;
+    }
+
+    .footer_desc {
+      display: inline-block;
+      width: 294px;
+      font-size: 14px;
+      word-spacing: 2px;
+      font-weight: normal;
+      color: #878889;
+      margin-bottom: 80px;
+    }
+
+    .footer_nav {
+      margin: 0 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .footer_nav-4 {
+      flex: 1;
+      width: 100px;
+      height: 100px;
+    }
+
+    .footer_nav-4 .icon {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .footer_nav-4 .icon .iconfont {
+      font-size: 20px;
+      color: #878889;
+    }
+
+    .footer_nav-4 .title {
+      font-size: 14px;
+      font-weight: bold;
+      word-spacing: 5px;
+      margin-bottom: 10px;
+      color: #6C6E6D;
+    }
+
+    .footer_nav-4 .desc {
+      display: inline-block;
+      width: 172px;
+      font-size: 12px;
+      word-spacing: 2px;
+      font-weight: normal;
+      color: #878889;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 第一部分 -->
+  <div class="header_content">
+    <div class="header_nav">
+      <div class="left">
+        <span>RU</span>
+        <span>/</span>
+        <span>EN</span>
+      </div>
+      <div class="center">
+        <span>PROJECTS</span>
+        <span>ABOUT US</span>
+        <span>STORIES</span>
+        <span>CONTACT</span>
+      </div>
+      <div class="right">
+        <div class="pic">
+          <i class="iconfont icon-f"></i>
+        </div>
+        <div class="pic">
+          <i class="iconfont icon-gezi1"></i>
+        </div>
+        <div class="pic">
+          <i class="iconfont icon-zhaoxiangji"></i>
+        </div>
+      </div>
+    </div>
+    <div class="header_title">
+      <div class="logo">
+        <i class="iconfont icon-Oval"></i>
+      </div>
+      <h1 class="title">We Build Objects And Spaces</h1>
+      <h2 class="desc">Support bright students today for a better tomorrow</h2>
+    </div>
+    <div class="header_input">
+      <div class="email">
+        <input type="email" placeholder="E-mail" />
+      </div>
+      <div class="down">
+        <select name="" id="">
+          <option value="">Investment</option>
+        </select>
+      </div>
+      <div class="btn">
+        <button>LET'S START</button>
+      </div>
+    </div>
+    <!-- 轮播图 -->
+    <div class="header_pic">
+      <div id="uls">
+        <ul id="img_ul">
+          <li>
+            <img
+              src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576229606146&di=71623a669879856785aa5c41dc885f03&imgtype=0&src=http%3A%2F%2Fimg1.juimg.com%2F171222%2F330802-1G22200335199.jpg"
+              alt="">
+          </li>
+          <li>
+            <img
+              src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576230114303&di=9a4abeb23d511b78d3c6d529cbf48f7d&imgtype=0&src=http%3A%2F%2Ffile06.16sucai.com%2F2016%2F0708%2F523996019d31c70d62bba301892b81e9.jpg"
+              alt="">
+          </li>
+          <li>
+            <img
+              src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576230114303&di=e9cf0f78dc526dc9190d069110d6e7e9&imgtype=0&src=http%3A%2F%2Fimgcdn.gz01.bdysite.com%2Fupfile%2Ft01c8bc6651517e4085.jpg"
+              alt="">
+          </li>
+          <li>
+            <img src="http://i0.hdslb.com/bfs/archive/5d7cae0b6f89f1cbcdf20f38b5e4b97d88e1718d.jpg" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="left-arrow arrow">
+      <i class="iconfont icon-arw-toLeft-copy"></i>
+    </div>
+    <div class="right-arrow arrow">
+      <i class="iconfont icon-jiantoux"></i>
+    </div>
+  </div>
+  </div>
+  <!-- 第二部分 -->
+  <div class="footer">
+    <div class="footer_icon">
+      <i class="iconfont icon-xin"></i>
+    </div>
+    <div class="footer_title">Your Next Move</div>
+    <div class="footer_desc">Helping talented students unlock their full potential.Help us help them thrive.</div>
+    <div class="footer_nav">
+      <div class="footer_nav-4">
+        <div class="icon">
+          <i class="iconfont icon-shizhong"></i>
+        </div>
+        <div class="title">EXPERIENCE</div>
+        <div class="desc">72% of the students attended on scholarship</div>
+      </div>
+      <div class="footer_nav-4">
+        <div class="icon">
+          <i class="iconfont icon-xin"></i>
+        </div>
+        <div class="title">OUT FUTURE</div>
+        <div class="desc">20% of its student body is currently under scholarship</div>
+      </div>
+      <div class="footer_nav-4">
+        <div class="icon">
+          <i class="iconfont icon-meiyuan"></i>
+        </div>
+        <div class="title">ACADEMIC TALENTS</div>
+        <div class="desc">More than 1000 scholarships have been awarded</div>
+      </div>
+      <div class="footer_nav-4">
+        <div class="icon">
+          <i class="iconfont icon-ren"></i>
+        </div>
+        <div class="title">BRILLIANT MINDS</div>
+        <div class="desc">Anatolia College has always relied on donations</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var parent = document.querySelector('.header_pic')
+    var img_ul = document.getElementById("img_ul");
+    var left = document.querySelector('.left-arrow')
+    var right = document.querySelector('.right-arrow')
+    var len = img_ul.children.length
+    var width = parent.offsetWidth
+    var rate = 15
+    var gap = 5000
+    var timer = null
+    var picN = 0
+    var temp
+    function Roll(distance) {                                         //参数distance：滚动的目标点（必为图片宽度的倍数）
+      clearInterval(img_ul.timer);
+      var speed = img_ul.offsetLeft < distance ? rate : (0 - rate);     //判断图片移动的方向
+      img_ul.timer = setInterval(() => {
+        img_ul.style.left = img_ul.offsetLeft + speed + "px";        //每一次调用滚动到的地方 (速度为 speed px/10 ms)
+        var leave = distance - img_ul.offsetLeft;                    //距目标点剩余的px值      
+        if (Math.abs(leave) <= Math.abs(speed)) {
+          clearInterval(img_ul.timer);
+          img_ul.style.left = distance + "px";
+        }
+      }, 10);
+    }
+    img_ul.appendChild(img_ul.children[0].cloneNode(true));
+    function autoRun() {
+      picN++
+      if (picN > len) {
+        img_ul.style.left = 0;
+        picN = 1;
+      }
+      Roll(-picN * width)
+    }
+    timer = setInterval(autoRun, gap);
+    parent.onmouseover = function () {
+      clearInterval(timer);
+    }
+    parent.onmouseout = function () {
+      timer = setInterval(autoRun, gap);
+    }
+    //给左边按钮添加点击事件
+    left.onclick = function () {
+      picN--;
+      if (picN < 0) {
+        img_ul.style.left = -len * width + 'px';
+        picN = len - 1;
+      }
+      Roll(-picN * width);
+    }
+    //给右边按钮添加点击事件
+    right.onclick = autoRun;
+  </script>
+</body>
+
+</html>

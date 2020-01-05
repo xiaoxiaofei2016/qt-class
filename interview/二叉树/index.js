@@ -54,28 +54,35 @@ preOrder3(tree)
 
 
 // 深度优先非递归 相当于前序遍历
+console.log('-------------------------')
 var preOrderUnrecur = function (node) {
   if (!node) {
     throw new Error('Empty Tree')
   }
   var stack = []
   stack.push(node)
+  // console.log(stack)
   while (stack.length !== 0) {
     node = stack.pop()
     console.log(node.value)
     if (node.right) {
       stack.push(node.right)
+      // console.log(stack)
     }
-    else if (node.left) {
+    if (node.left) {
       stack.push(node.left)
+      // console.log(stack)
     }
+    // console.log(stack)
   }
 }
 
 preOrderUnrecur(tree)
 
+console.log('-----------------------------')
+
 // 广度优先非递归 同级从左到右,不同级从上到下
-function BreadthFirstUnrecur (biTree) {
+function BreadthFirstUnrecur (biTree) { // 方法一
   let queue = []
   queue.push(biTree)
   while (queue.length !== 0) {
@@ -84,6 +91,20 @@ function BreadthFirstUnrecur (biTree) {
     if (node.left) queue.push(node.left)
     if (node.right) queue.push(node.right)
   }
+}
+
+function BreadthFirstUnrecur(biTree) { // 方法二
+  let result = [];
+  let queue = [];
+  queue.push(biTree);
+  let pointer = 0;
+  while(pointer < queue.length) {
+      let node = queue[pointer++]; // // 这里不使用 shift 方法（复杂度高），用一个指针代替
+      result.push(node.value);
+      node.left && queue.push(node.left);
+      node.right && queue.push(node.right);
+  }
+  return result;
 }
 
 BreadthFirstUnrecur(tree)

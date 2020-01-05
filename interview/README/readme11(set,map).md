@@ -7,3 +7,4 @@
 ## Map 和 Weakmap 区别
 1. Weakmap 只能接受对象作为健名 (null除外)
 2. Weakmap 键名指向对象不会计入到对象的引用数当中
+WeakMap相对于Map是一个不可枚举的对象，必须使用对象作为键值

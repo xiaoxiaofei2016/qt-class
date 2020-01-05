@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = [1, 2, 3]
+    // a[1] = 10 // vue2.0不会改变数组的值
+    a.push(a)
+
+    var oldPush = Array.prototype.push // 1保存原来的push
+    Array.prototype.push = function() { // 2重写一遍方法
+      console.log('change')
+      oldPush() // 3 恢复
+    }  
+
+
+
+
+    // Proxy()
+    let pArr = new Proxy(a, {
+      get: function(target, key, receiver) {
+        console.log('get')
+        return Reflect.get(target, key, receiver) // 反射、恢复
+      },
+      set: function(target, key, value, receiver) {
+        console.log('set')
+        return Reflect.set(target, key, value, receiver) // 恢复
+      }
+    })
+    pArr[2] = 999
+  </script>
+</body>
+</html>
