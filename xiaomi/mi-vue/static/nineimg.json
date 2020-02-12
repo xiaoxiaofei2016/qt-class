@@ -1,0 +1,57 @@
+{
+  "nineImg": [
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ca9b4f81af709935556bef9aa21a90e8.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "小米9 Pro 5G",
+      "desc": "5G双卡全网通，骁龙855Plus",
+      "newprice": "3699元起"
+    },
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "Redmi 8",
+      "desc": "5000mAh超长续航",
+      "newprice": "749元起",
+      "oldprice": "799元"
+    },
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "Redmi Note 8 Pro",
+      "desc": "6400万全场景四摄",
+      "newprice": "1299元起",
+      "oldprice": "1399元"
+    },
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "Redmi Note 8",
+      "desc": "千元4800万四摄",
+      "newprice": "999元起"
+    },
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "Redmi K20 Pro 尊享版",
+      "desc": "骁龙855 Plus， 弹出全面屏",
+      "newprice": "2699元起"
+    },
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "Redmi Note 7",
+      "desc": "4800万拍照千元机",
+      "newprice": "1049元",
+      "oldprice": "1099元"
+    },
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "Redmi 7",
+      "desc": "4000mAh超长续航",
+      "newprice": "899元",
+      "oldprice": "999元"
+    },
+    {
+      "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3c1af9783bdc53ed843af5655ca92009.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+      "title": "Redmi 7A",
+      "desc": "小巧大电量 持久流畅",
+      "newprice": "539元起",
+      "oldprice": "599元"
+    }
+  ]
+}

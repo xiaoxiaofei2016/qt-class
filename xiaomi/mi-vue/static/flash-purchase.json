@@ -1,0 +1,667 @@
+{
+  "list": [
+    {
+      "goods_id": "2191600020",
+      "product_id": "9674",
+      "goods_name": "小米体重秤2 白色 通用",
+      "desc": "起重低至100G   一杯水都能测",
+      "seckill_type": "goods",
+      "goods_price": "59",
+      "seckill_Price": "29.5",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5d2bc8d96ed3e592ea49e20daed2763f.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5d2bc8d96ed3e592ea49e20daed2763f.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1555580244.96131118.jpg",
+      "label_text": "5折",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2191600020&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2192900008",
+      "product_id": "10313",
+      "goods_name": "QISHI爱心足金吊坠 小款",
+      "desc": "一颗真心，只喜欢你",
+      "seckill_type": "goods",
+      "goods_price": "699",
+      "seckill_Price": "349.5",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/98633d2dfa663d16412bc3b833869f25.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/98633d2dfa663d16412bc3b833869f25.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1563502222.1771870.jpg",
+      "label_text": "5折",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2192900008&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2191700019",
+      "product_id": "9710",
+      "goods_name": "MIJOY 6寸相框摆台 黑色",
+      "desc": "美观耐用 自由百搭",
+      "seckill_type": "goods",
+      "goods_price": "9.9",
+      "seckill_Price": "1",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7d041f1fb0df51f7c314cc801655bd7.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7d041f1fb0df51f7c314cc801655bd7.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1565334714.10885227.jpg",
+      "label_text": "1元",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2191700019&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2183000006",
+      "product_id": "8645",
+      "goods_name": "小米路由器4C 白色",
+      "desc": "300M单频，高增益4天线",
+      "seckill_type": "seckill",
+      "goods_price": "99",
+      "seckill_Price": "59",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5c43cc667982414502dd9733dce46748.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5c43cc667982414502dd9733dce46748.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1532604005.80875371.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2183000006&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2193000002",
+      "product_id": "10342",
+      "goods_name": "最生活毛巾·Air（10条装） 素蓝",
+      "desc": "给生活一条好毛巾",
+      "seckill_type": "seckill",
+      "goods_price": "169",
+      "seckill_Price": "99",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1bc4f6467dfe754f6ddacb3f605d8948.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1bc4f6467dfe754f6ddacb3f605d8948.jpg",
+      "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9c4bdbabe1a232469eea43c1824990d3.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2193000002&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2194100029",
+      "product_id": "10970",
+      "goods_name": "MIJOY 抽纸青春版 24包/箱 ",
+      "desc": "精选原生竹浆，健康环保",
+      "seckill_type": "seckill",
+      "goods_price": "32.9",
+      "seckill_Price": "27.9",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1da82158fa133859c4a0eb45dd202a17.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1da82158fa133859c4a0eb45dd202a17.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1571038766.41824452.jpg",
+      "label_text": "包邮",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2194100029&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2192300055",
+      "product_id": "10015",
+      "goods_name": "小米小爱音箱 Play（白色）量产版 白色",
+      "desc": "听音乐、语音遥控家电",
+      "seckill_type": "seckill",
+      "goods_price": "169",
+      "seckill_Price": "99",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/75cfba1ec641388eabc3ae5464ff1d27.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/75cfba1ec641388eabc3ae5464ff1d27.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560230039.28979252.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2192300055&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2164000002",
+      "product_id": "4664",
+      "goods_name": "净化器滤芯 通用版",
+      "desc": "3层高效净化悬浮物",
+      "seckill_type": "goods",
+      "goods_price": "149",
+      "seckill_Price": "74.5",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/80ce3118fb719a16fc1dda004950b391.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/80ce3118fb719a16fc1dda004950b391.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/0a872a83-a929-7e0d-1892-cf28b0d75077.jpg",
+      "label_text": "5折",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2164000002&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "1194400013",
+      "product_id": "11119",
+      "goods_name": "MIJOY 抽纸青春版 家庭装 2箱",
+      "desc": "MIJOY 抽纸青春版 家庭装 2箱",
+      "seckill_type": "seckill",
+      "goods_price": "65.8",
+      "seckill_Price": "52.9",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/401568f19dbb296b4a1a8ea9fa573cf0.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/401568f19dbb296b4a1a8ea9fa573cf0.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1572526521.79485101.jpg",
+      "label_text": "包邮",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=1194400013&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2192200039",
+      "product_id": "9938",
+      "goods_name": "3卷装抽绳式垃圾袋 银色",
+      "desc": "让清洁更简单",
+      "seckill_type": "goods",
+      "goods_price": "14.9",
+      "seckill_Price": "1",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9942522a37f6ccb066b7bb7bee395f5c.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9942522a37f6ccb066b7bb7bee395f5c.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1559702125.10299597.png",
+      "label_text": "1元",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2192200039&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2192300005",
+      "product_id": "9959",
+      "goods_name": "Redmi全自动波轮洗衣机1S 8kg 灰色",
+      "desc": "小身材大容量，可预约",
+      "seckill_type": "seckill",
+      "goods_price": "899",
+      "seckill_Price": "699",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3c53a053357c0fb086a1eb7d43908b70.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3c53a053357c0fb086a1eb7d43908b70.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560062441.20748673.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2192300005&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2174400013",
+      "product_id": "7229",
+      "goods_name": "米家空气净化器 2S",
+      "desc": "好空气看得见",
+      "seckill_type": "goods",
+      "goods_price": "899",
+      "seckill_Price": "649",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/db68b179e4287c321eb2c3685c615088.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/db68b179e4287c321eb2c3685c615088.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/d5a39c5e-28e7-f4c1-57fd-59933f26032b.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2174400013&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2193600001",
+      "product_id": "8026",
+      "goods_name": "小米米家智能摄像机云台版 白",
+      "desc": "高清画质，守护家的每一面",
+      "seckill_type": "goods",
+      "goods_price": "199",
+      "seckill_Price": "159",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e8121b43506f63797ef6221b4fc7f584.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e8121b43506f63797ef6221b4fc7f584.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1567393585.49577260.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2193600001&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2190800001",
+      "product_id": "9334",
+      "goods_name": "小米小爱触屏音箱 白色",
+      "desc": "好听，更好看",
+      "seckill_type": "seckill",
+      "goods_price": "299",
+      "seckill_Price": "199",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a3593f6ee74115531a529226b64702f9.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a3593f6ee74115531a529226b64702f9.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1550719656.70567332.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2190800001&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2183400004",
+      "product_id": "8760",
+      "goods_name": "小米无线充电器（通用快充版） 黑色",
+      "desc": "铝合金外观，金属质感好",
+      "seckill_type": "goods",
+      "goods_price": "69",
+      "seckill_Price": "34.5",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4f5296e235d63857889ae9005723458.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4f5296e235d63857889ae9005723458.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1535440524.10478102.jpg",
+      "label_text": "5折",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2183400004&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2193200008",
+      "product_id": "10477",
+      "goods_name": "米家无线除螨仪 白色",
+      "desc": "每个家庭都需要一台除螨仪",
+      "seckill_type": "goods",
+      "goods_price": "549",
+      "seckill_Price": "499",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e38e51819728173d71aaf38027b165d0.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e38e51819728173d71aaf38027b165d0.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1566614515.33746420.png",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2193200008&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2183900024",
+      "product_id": "8883",
+      "goods_name": "小米笔记本电脑Air 13.3\" A38310I0S/CN 银色",
+      "desc": "轻薄全金属机身 8G大内存",
+      "seckill_type": "seckill",
+      "goods_price": "3999",
+      "seckill_Price": "2699",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1539939825.15067587.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2183900024&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2191100024",
+      "product_id": "9509",
+      "goods_name": "Redmi全自动波轮洗衣机 1A 8kg 白色",
+      "desc": "一键操作，父母都爱用",
+      "seckill_type": "seckill",
+      "goods_price": "799",
+      "seckill_Price": "699",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/793a818aee7cb7634522940323fb54f8.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/793a818aee7cb7634522940323fb54f8.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1552868299.27348967.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2191100024&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2192300016",
+      "product_id": "9991",
+      "goods_name": "米兔冰格 薄荷绿",
+      "desc": "夏日凉饮好伴侣",
+      "seckill_type": "goods",
+      "goods_price": "19.9",
+      "seckill_Price": "9.95",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/84be3beab2c021c6d6d83d0085b0adcc.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/84be3beab2c021c6d6d83d0085b0adcc.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560169782.26895892.jpg",
+      "label_text": "5折",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2192300016&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2164300024",
+      "product_id": "4802",
+      "goods_name": "米家空气净化器Pro",
+      "desc": "大空间，快循环",
+      "seckill_type": "goods",
+      "goods_price": "1499",
+      "seckill_Price": "1099",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f11b3f5b4a1df7e9bdfce788b6506ebb.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f11b3f5b4a1df7e9bdfce788b6506ebb.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/b315ba2c-3dc0-1352-3fbf-b23ffad1bb0f.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2164300024&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2183400001",
+      "product_id": "8757",
+      "goods_name": "15.6\"笔记本 i7 8G MX110 深空灰",
+      "desc": "全面均衡的国民轻薄本",
+      "seckill_type": "seckill",
+      "goods_price": "4999",
+      "seckill_Price": "3999",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a055a04c6f61eae989f10e370d903b29.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a055a04c6f61eae989f10e370d903b29.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1535357114.80045067.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2183400001&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2193200006",
+      "product_id": "10475",
+      "goods_name": "米家扫拖机器人 黑色",
+      "desc": "扫得干净，拖得彻底",
+      "seckill_type": "goods",
+      "goods_price": "1999",
+      "seckill_Price": "1699",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/81ad0f47f7ba0c9a553c4c6344ad2960.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/81ad0f47f7ba0c9a553c4c6344ad2960.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1565665370.46592801.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2193200006&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2165100001",
+      "product_id": "5059",
+      "goods_name": "小米活塞耳机 清新版 黑色",
+      "desc": "新鲜绽放，三色可选",
+      "seckill_type": "goods",
+      "goods_price": "29",
+      "seckill_Price": "14.5",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/85852ad545c4b3218d670573e05408b7.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/85852ad545c4b3218d670573e05408b7.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/3c114987-43d5-f6d3-d2f4-8b86dd90a55d.jpg",
+      "label_text": "5折",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2165100001&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "1193300041",
+      "product_id": "10565",
+      "goods_name": "空调C1（大1匹/一级能效）",
+      "desc": "变频节能省电，自清洁",
+      "seckill_type": "seckill",
+      "goods_price": "2299",
+      "seckill_Price": "1899",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2db42506103ac3f34d286f94a7eded77.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2db42506103ac3f34d286f94a7eded77.jpg",
+      "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f611ae04c145343ea266df4f54b41f9d.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=1193300041&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2191200014",
+      "product_id": "9526",
+      "goods_name": "米家手持无线吸尘器 白色",
+      "desc": "除尘除螨黑科技",
+      "seckill_type": "goods",
+      "goods_price": "1299",
+      "seckill_Price": "1099",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fd15d2e98dac571b279314e4528d5f37.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fd15d2e98dac571b279314e4528d5f37.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1553825094.62581252.png",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2191200014&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2192900004",
+      "product_id": "10303",
+      "goods_name": "米家智能门锁 标准锁体 磨砂金",
+      "desc": "全新磨砂金配色，精湛工艺升级",
+      "seckill_type": "goods",
+      "goods_price": "1499",
+      "seckill_Price": "1099",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/20228f33450904674475086b5dc35f3c.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/20228f33450904674475086b5dc35f3c.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1563188402.30011093.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2192900004&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2191600037",
+      "product_id": "9693",
+      "goods_name": "MIJOY 胶带座套装 白色",
+      "desc": "结实耐用 轻松便捷",
+      "seckill_type": "goods",
+      "goods_price": "19.9",
+      "seckill_Price": "9.95",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2cb37bb4945e7734f2be72902d03db04.png",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2cb37bb4945e7734f2be72902d03db04.png",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1555902841.82517552.jpg",
+      "label_text": "5折",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2191600037&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2175200001",
+      "product_id": "7565",
+      "goods_name": "小米笔记本Air 12.5\" 4G 128G 银色",
+      "desc": "轻薄长续航 超窄边框",
+      "seckill_type": "seckill",
+      "goods_price": "3599",
+      "seckill_Price": "1999",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/19a01dfb52bd52d9a3654eab319b457e.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/19a01dfb52bd52d9a3654eab319b457e.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1514387870.88251945.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2175200001&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2185100019",
+      "product_id": "9161",
+      "goods_name": "米家互联网洗烘一体机10Kg 白色",
+      "desc": "智能烘干，高效净衣",
+      "seckill_type": "seckill",
+      "goods_price": "2299",
+      "seckill_Price": "1899",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0b4ba11f82f7c911035cec61f4fac511.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0b4ba11f82f7c911035cec61f4fac511.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1545975724.92496169.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2185100019&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2175000293",
+      "product_id": "7522",
+      "goods_name": "米家空气净化器MAX",
+      "desc": "适用大面积，先进静音技术",
+      "seckill_type": "goods",
+      "goods_price": "2199",
+      "seckill_Price": "1799",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/34115bdad5efa98e425606512527dd7b.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/34115bdad5efa98e425606512527dd7b.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1514092107.15719247.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2175000293&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2183400003",
+      "product_id": "8759",
+      "goods_name": "15.6\"笔记本 i5 4G MX110 深空灰",
+      "desc": "全面均衡的国民轻薄本",
+      "seckill_type": "seckill",
+      "goods_price": "4199",
+      "seckill_Price": "2999",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a055a04c6f61eae989f10e370d903b29.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a055a04c6f61eae989f10e370d903b29.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1535357046.36178878.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2183400003&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2192900005",
+      "product_id": "10304",
+      "goods_name": "小米米家智能门锁 磨砂金 霸王锁体 磨砂金",
+      "desc": "适配霸王锁体，多种开锁方式",
+      "seckill_type": "goods",
+      "goods_price": "1799",
+      "seckill_Price": "1399",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/20228f33450904674475086b5dc35f3c.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/20228f33450904674475086b5dc35f3c.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1565944082.21497591.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2192900005&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2191100003",
+      "product_id": "9468",
+      "goods_name": "小米路由器4A千兆版",
+      "desc": "双核全千兆AC1200路由器",
+      "seckill_type": "seckill",
+      "goods_price": "169",
+      "seckill_Price": "149",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c97afe622ee275fe873abd9f80a31e6d.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c97afe622ee275fe873abd9f80a31e6d.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1552376822.09637089.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2191100003&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2183800003",
+      "product_id": "8835",
+      "goods_name": "小米米家小白智能摄像机增强版 白色",
+      "desc": "智能看护， AI你所爱",
+      "seckill_type": "seckill",
+      "goods_price": "399",
+      "seckill_Price": "329",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5d0f25ec3799ea934f800739e81ee789.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5d0f25ec3799ea934f800739e81ee789.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1538031692.35815325.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2183800003&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2184300026",
+      "product_id": "9017",
+      "goods_name": "米家新风机 白色",
+      "desc": "全效解决全屋空气问题",
+      "seckill_type": "seckill",
+      "goods_price": "2699",
+      "seckill_Price": "2399",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9a1f6e185c9ae49ca06dbbd2569e8266.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9a1f6e185c9ae49ca06dbbd2569e8266.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1541418170.92952541.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2184300026&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2193000003",
+      "product_id": "10345",
+      "goods_name": "小米米家智能门锁 青春版 左开门",
+      "desc": "隐形指纹识别设计 简单一步快进家门",
+      "seckill_type": "goods",
+      "goods_price": "999",
+      "seckill_Price": "899",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cfeab777dec858ddf31bd4bd593f892f.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cfeab777dec858ddf31bd4bd593f892f.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1563953638.84752422.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2193000003&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2184100007",
+      "product_id": "8915",
+      "goods_name": "15.6\"笔记本 i5 8G MX110 白色",
+      "desc": "全面均衡的国民轻薄本",
+      "seckill_type": "seckill",
+      "goods_price": "4599",
+      "seckill_Price": "3499",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/7d9aa23fbce666684146530e4e398e81.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/7d9aa23fbce666684146530e4e398e81.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1539587302.00221286.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2184100007&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "1191300027",
+      "product_id": "9558",
+      "goods_name": "空调C1（1.5匹/一级能效）",
+      "desc": "变频节能省电，自清洁",
+      "seckill_type": "seckill",
+      "goods_price": "2799",
+      "seckill_Price": "2249",
+      "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ccfd18043892007a695bc321d4386f11.jpg",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ccfd18043892007a695bc321d4386f11.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1554108362.70322107.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=1191300027&start_time=1572919200&end_time=1572932520"
+      }
+    },
+    {
+      "goods_id": "2173600001",
+      "product_id": "6781",
+      "goods_name": "小米笔记本Pro 15 i7 16G",
+      "desc": "高性能独显 第八代处理器",
+      "seckill_type": "seckill",
+      "goods_price": "6999",
+      "seckill_Price": "4999",
+      "discount_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8df23b0886a4f4e484057959719ec2b7.jpg",
+      "img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8df23b0886a4f4e484057959719ec2b7.jpg",
+      "pc_img": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/e46d4f23-bd83-b2a0-d8d5-00fa83b7399e.jpg",
+      "label_text": "",
+      "is_test": "0",
+      "action": {
+        "log_code": "31activity_homeseckill#goodsid=2173600001&start_time=1572919200&end_time=1572932520"
+      }
+    }
+  ]
+}

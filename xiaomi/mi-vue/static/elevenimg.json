@@ -1,0 +1,756 @@
+{
+  "jiadian": [
+    {
+      "Ltitle": "家电",
+      "tab": [
+        "热门", "电视影音"
+      ],
+      "leftImg": [
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b56fd90a60e3d9e5d87dae9fbd427ea8.jpg?thumb=1&w=293&h=375&f=webp&q=90" },
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b67de5a8ce9025fb5d8bac66e019d1c3.jpg?thumb=1&w=293&h=375&f=webp&q=90" }
+      ],
+      "a": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ca9b4f81af709935556bef9aa21a90e8.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg?thumb=1&w=125&h=125&f=webp&q=90",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ],
+      "b": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://i8.mifile.cn/v1/a1/ef617fac-7489-436d-b74e-c43582f09633!250x250.jpg",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/aa8a6ce3b2b1201d74d0197482f3403b!125x125.jpg",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "zhineng": [
+    {
+      "Ltitle": "智能",
+      "tab": [
+        "热门", "安防", "出行"
+      ],
+      "leftImg": [
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/45c23f5b9a927b2dc49c25277e07727c.jpg?thumb=1&w=293&h=375&f=webp&q=90" },
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a660ce095e8f553a9ed1515265f4e9fc.jpg?thumb=1&w=293&h=375&f=webp&q=90" }
+      ],
+      "a": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://i8.mifile.cn/v1/a1/ef617fac-7489-436d-b74e-c43582f09633!250x250.jpg",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ef6b4e9b9151849b3b1fb1dbf069c6ed.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b3317a291b112aa4712059ad93263668.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/ede227c1f0e3472fb8dcfae980d1e43f!250x250.jpg",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://i8.mifile.cn/v1/a1/cef8a9c0-2386-5b66-9ed2-6b1d4e4490bf!250x250.jpg",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/91b59cc6474e0cd777445b15adb13980!250x250.jpg",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e7eee530e4a103f2f5a0937a14bed53.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/aa8a6ce3b2b1201d74d0197482f3403b!125x125.jpg",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ],
+      "b": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2f33baec53cc73e2942277640ba6e710.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米8 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1840f64ea310ca8013385885baaf16a8.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg?thumb=1&w=125&h=125&f=webp&q=90",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ],
+      "c": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://i8.mifile.cn/v1/a1/768992ca-4136-92f1-244a-0194a81a6360!250x250.jpg",
+              "title": "小米7 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg?thumb=1&w=125&h=125&f=webp&q=90",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dapei": [
+    {
+      "Ltitle": "搭配",
+      "tab": [
+        "热门", "耳机音箱"
+      ],
+      "leftImg": [
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6874615b3c50e837ffe532eb6ea4ef1a.jpg?thumb=1&w=293&h=375&f=webp&q=90" },
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e4e456617d58227cc70d682b42fe90e3.jpg?thumb=1&w=293&h=375&f=webp&q=90" }
+      ],
+      "a": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/50649d7b5706f4cd9f658e93db6b6564.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg?thumb=1&w=125&h=125&f=webp&q=90",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ],
+      "b": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/faf8668acb2fd80c0afad4d4c4e837ad.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/aa8a6ce3b2b1201d74d0197482f3403b!125x125.jpg",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "peijian": [
+    {
+      "Ltitle": "配件",
+      "tab": [
+        "热门", "保护套", "充电器"
+      ],
+      "leftImg": [
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/739ebd8abfc2b1be8866a2c1ad87e709.jpg?thumb=1&w=293&h=375&f=webp&q=90" },
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ffe4182f1d9a5befdf2380ec90ae1620.jpg?thumb=1&w=293&h=375&f=webp&q=90" }
+      ],
+      "a": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/318cdf014d9adfa2f6bbd6513aff40af.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ef6b4e9b9151849b3b1fb1dbf069c6ed.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b3317a291b112aa4712059ad93263668.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/ede227c1f0e3472fb8dcfae980d1e43f!250x250.jpg",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://i8.mifile.cn/v1/a1/cef8a9c0-2386-5b66-9ed2-6b1d4e4490bf!250x250.jpg",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/91b59cc6474e0cd777445b15adb13980!250x250.jpg",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e7eee530e4a103f2f5a0937a14bed53.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/aa8a6ce3b2b1201d74d0197482f3403b!125x125.jpg",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ],
+      "b": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5c200476bc9336d171931cb7ee2e4549.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米8 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1840f64ea310ca8013385885baaf16a8.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg?thumb=1&w=125&h=125&f=webp&q=90",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ],
+      "c": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/13ef5c2433660b1ca58e80491b848ea7!250x250.jpg",
+              "title": "小米7 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "zhoubian": [
+    {
+      "Ltitle": "周边",
+      "tab": [
+        "热门", "出行"
+      ],
+      "leftImg": [
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/37dc0898c2624b4130da4631f2d9a675.jpg?thumb=1&w=293&h=375&f=webp&q=90" },
+        { "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e0b8cffcbdaa88e2a314f0a372ca75dd.jpg?thumb=1&w=293&h=375&f=webp&q=90" }
+      ],
+      "a": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cccac948e1b8ffb47f1fecde67692e60.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74e573c4c0d89048392d14831cc507d5.jpg?thumb=1&w=125&h=125&f=webp&q=90",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ],
+      "b": [
+        {
+          "centerImg": [
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d26d3a80dd1ab0c6a657f13cb234dade.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "小米9 Pro 5G",
+              "desc": "5G双卡全网通，骁龙855Plus",
+              "newprice": "3699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 8",
+              "desc": "5000mAh超长续航",
+              "newprice": "749元起",
+              "oldprice": "799元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8 Pro",
+              "desc": "6400万全场景四摄",
+              "newprice": "1299元起",
+              "oldprice": "1399元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 8",
+              "desc": "千元4800万四摄",
+              "newprice": "999元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi K20 Pro 尊享版",
+              "desc": "骁龙855 Plus， 弹出全面屏",
+              "newprice": "2699元起"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi Note 7",
+              "desc": "4800万拍照千元机",
+              "newprice": "1049元",
+              "oldprice": "1099元"
+            },
+            {
+              "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+              "title": "Redmi 7",
+              "desc": "4000mAh超长续航",
+              "newprice": "899元",
+              "oldprice": "999元"
+            }
+          ],
+          "rightImg": [
+            { 
+              "imgUrl": "https://i8.mifile.cn/b2c-mimall-media/aa8a6ce3b2b1201d74d0197482f3403b!125x125.jpg",
+              "title": "Redmi 7",
+              "newprice": "899元"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "topNav": [
+    {
+      "id": 0,
+      "name": "小米手机",
+      "list": [
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Redmi 红米",
+      "list": [
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c1937ecb7e9b8e1aee11d6936e19d53c.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "电视",
+      "list": [
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "笔记本",
+      "list": [
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "家电",
+      "list": [
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "路由器",
+      "list": [
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "智能硬件",
+      "list": [
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        },
+        {
+          "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41c566d825a3ae3b5751a78d4c7cffdb.png?thumb=1&w=200&h=138&f=webp&q=90",
+          "title": "小米9 Pro 5G",
+          "price": "3699元起"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "服务"
+    },
+    {
+      "id": 8,
+      "name": "社区"
+    }
+  ]
+}
