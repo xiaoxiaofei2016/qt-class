@@ -8,6 +8,7 @@ import './style/css/reset.styl' // 清楚默认样式
 import './style/css/font.styl' // iconfont图标字体
 import axios from 'axios'
 import store from './store'
+import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper' // 轮播
 import VueVideoPlayer from 'vue-video-player' // 播放video
@@ -20,7 +21,7 @@ Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 // console.log(store.state.login.isLogin)
-
+Vue.use(ElementUI)
 router.beforeEach((to, from, next) => {
   if (to.meta.isLogin) {
     if (store.state.login.isLogin) {

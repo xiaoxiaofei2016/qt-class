@@ -13,16 +13,17 @@
             <div>
               <div class="regbox">
                 <div class="phone_step1">
-                  <h4 class="tit_normal">国家/地区</h4>
-                  <div class="listwrap select-regions">
-                    <div class="listtit reg-select-regions">
-                      <div class="tits">
-                        <p class="result-select-regions">中国</p>
-                        <i class="icon_cirarr"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="region_tip_text">成功注册帐号后，国家/地区将不能被修改</div>
+                  <el-form ref="form" :model="form" label-width="50px">
+                    <el-form-item label="昵称:">
+                      <el-input v-model="form.nickname" placeholder="昵称"></el-input>
+                    </el-form-item>
+                    <el-form-item label="邮箱:">
+                      <el-input v-model="form.mail" placeholder="请输入邮箱"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码:">
+                      <el-input placeholder="请输入密码" v-model="form.password" show-password></el-input>
+                    </el-form-item>
+                  </el-form>
                   <h4 class="tit_normal">手机号码</h4>
                   <div class="listwrap_inside_panel c_b">
                     <div class="listwrap">
@@ -39,7 +40,7 @@
                         <input type="tel" name="phone" placeholder="请输入手机号码" v-model="phone">
                       </label>
                     </div>
-                    <div class="err_tip" :style="{display: errType == 0 || errType == 1 || errType == 2? 'block': 'none'}">
+                    <div class="err_tip" :style="{display: errType != undefined ? 'block': 'none'}">
                       <div class="dis_box">
                         <em class="icon_error"></em>
                         <span>{{err[errType]}}</span>
@@ -105,22 +106,46 @@
 <script>
 import { Message } from 'element-ui'
 export default {
+  data () {
+    return {
+      phone: '',
+      errType: 3,
+      err: ['请输入手机号码', '手机号已经存在', '请输入正确的手机号', '请输入昵称', '请输入邮箱', '请输入正确的邮箱', '请输入密码', '密码至少6个字符，至少1个大写字母，1个小写字母和1个数字,不能包含特殊字符'],
+      form: {
+        nickname: '',
+        mail: '',
+        password: ''
+      }
+    }
+  },
   methods: {
     toRegister () {
       if (this.phone.trim() === '') {
         console.log('手机号不能为空')
         this.errType = 0
         return
-      }
-      else if (/^1[3456789]\d{9}$/.test(this.phone) == false) {
+      } else if (this.form.nickname.trim() === '') {
+        this.errType = 3
+      } else if (this.form.mail.trim() === '') {
+        this.errType = 4
+      } else if (this.form.password.trim() === '') {
+        this.errType = 6
+      } else if (/^1[3456789]\d{9}$/.test(this.phone) == false) {
         console.log('手机号错误')
         this.errType = 2
+      } else if (/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(this.form.mail) == false) {
+        this.errType = 5
+      } else if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(this.form.password) == false) {
+        this.errType = 7
       } else {
         this.$http({
         url: 'http://localhost:3000/users/userRegister',
         method: 'post',
         data: {
-          phone: this.phone.trim()
+          phone: this.phone.trim(),
+          nickname: this.form.nickname.trim(),
+          mail: this.form.mail.trim(),
+          password: this.form.password.trim()
         }
       }).then(res => {
         if (res.data.code === '800000') {
@@ -144,13 +169,6 @@ export default {
         })
       }
     } 
-  },
-  data () {
-    return {
-      phone: '',
-      errType: 3,
-      err: ['请输入手机号码', '手机号已经存在', '请输入正确的手机号']
-    }
   }
 }
 </script>
