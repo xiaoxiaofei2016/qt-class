@@ -6,7 +6,7 @@ router.get('/', function (ctx, next) {
   ctx.body = 'this is a users response!'
 })
 
-// 所有用户
+// 所有用户信息
 router.get('/all', async (ctx, next) => {
   await userService.getAllUsers().then((res) => {
     console.log('打印结果:' + JSON.stringify(res))
@@ -89,16 +89,16 @@ router.post('/userRegister', async (ctx, next) => {
 
 // 用户登录
 router.post('/userLogin', async (ctx, next) => {
-  let _phone = ctx.request.body.phone
+  let _message = ctx.request.body.message
   let _password = ctx.request.body.password
 
-  await userService.userLogin(_phone, _password).then((res) => {
+  await userService.userLogin(_message, _password).then((res) => {
     let r = ''
     if (res.length) {
       r = 'ok'
       let result = {
         id: res[0].id,
-        phone: res[0].phone,
+        message: res[0].message,
         password: res[0].password
       }
       ctx.body = {

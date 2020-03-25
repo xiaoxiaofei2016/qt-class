@@ -7,13 +7,13 @@ const state = {
 const actions = {
   setIsLogin ({commit}, status) {
     commit(types.ISLOGIN, status)
-  }
+  },
 }
 
 const mutations = {
   [types.ISLOGIN] (state, status) {
     state.isLogin = status
-  }
+  },
 }
 
 const getters = {

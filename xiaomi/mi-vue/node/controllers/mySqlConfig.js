@@ -32,7 +32,7 @@ let allServies = {
   }
 }
 
-// 读取所有user表数据，测试数据连接
+// 读取所有login表数据，测试数据连接
 let getAllUsers = function () {
   let _sql = `select * from login`
   return allServies.query(_sql)
@@ -51,14 +51,14 @@ let findUser = function (phone, mail, nickname) {
 }
 
 // 用户登录
-let userLogin = function (phone, password) {
-  let _sql = `select * from login where (phone="${phone}" or mail="${phone}" or nickname="${phone}") and password ="${password}"`
+let userLogin = function (message, password) {
+  let _sql = `select * from login where (phone="${message}" or mail="${message}" or nickname="${message}") and password ="${password}"`
   return allServies.query(_sql)
 }
 
 //  所有商品
 let findallgoods = function (num) {
-  let _sql = `select * from cart order by rand() limit ${num} ;`
+  let _sql = `select * from cart order by rand() limit ${num};`
   return allServies.query(_sql)
 }
 

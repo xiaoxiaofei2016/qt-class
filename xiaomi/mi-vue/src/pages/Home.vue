@@ -8,6 +8,7 @@
     <v-footer></v-footer>
     <v-video></v-video>
     <div class="video_mask" v-show="isShowMask"></div><!-- 蒙层效果 -->
+    
   </div>
 </template>
 

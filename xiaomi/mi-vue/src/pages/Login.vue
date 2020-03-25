@@ -94,7 +94,7 @@
                               :type="typeNum == 0? 'text': 'number'" 
                               name="user" id="username" 
                               :placeholder="typeNum == 0 ? '邮箱/手机号码/昵称': '手机号码'"
-                              v-model="phone"
+                              v-model="message"
                               />
                             <input type="hidden" name="log" id="debug_log" /><!-- 用于存放数据，form表单提交时会把这个值也提交至后台 -->
                           </label>
@@ -442,7 +442,7 @@ export default {
       tab: 0,
       typeNum: 0,
       type: ['手机短信登录/注册', '用户名密码登录'],
-      phone: '',
+      message: '',
       password: '',
       computeTime: 0,
       timer: null,
@@ -462,7 +462,7 @@ export default {
       this.$store.dispatch('setIsLogin', true)
       this.$store.dispatch('setShowAgreement', false)
       this.$store.dispatch('setShowMask', false)
-      if (this.phone.trim() === '') { // trim()去空格
+      if (this.message.trim() === '') { // trim()去空格
         // Message('账号或密码不能为空')
         this.errType = 2
       } else if (this.password.trim() === '') {
@@ -472,7 +472,7 @@ export default {
         url: 'http://localhost:3000/users/userLogin',
         method: 'post',
         data: {
-          phone: this.phone.trim(),
+          message: this.message.trim(),
           password: this.password.trim()
         }
       }).then((res) => {
