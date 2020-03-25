@@ -93,7 +93,7 @@
                               autocomplete="off" 
                               :type="typeNum == 0? 'text': 'number'" 
                               name="user" id="username" 
-                              :placeholder="typeNum == 0 ? '邮箱/手机号码/小米ID': '手机号码'"
+                              :placeholder="typeNum == 0 ? '邮箱/手机号码/昵称': '手机号码'"
                               v-model="phone"
                               />
                             <input type="hidden" name="log" id="debug_log" /><!-- 用于存放数据，form表单提交时会把这个值也提交至后台 -->
@@ -467,15 +467,13 @@ export default {
         this.errType = 2
       } else if (this.password.trim() === '') {
         this.errType = 1
-      } else if (/^1[3456789]\d{9}$/.test(this.phone) == false) {
-        console.log('手机号错误')
-        this.errType = 0
-      } else {
+      }else {
         this.$http({
         url: 'http://localhost:3000/users/userLogin',
         method: 'post',
         data: {
-          phone: this.phone.trim()
+          phone: this.phone.trim(),
+          password: this.password.trim()
         }
       }).then((res) => {
         if (res.data.code === '800000') {

@@ -40,7 +40,7 @@
                         <input type="tel" name="phone" placeholder="请输入手机号码" v-model="phone">
                       </label>
                     </div>
-                    <div class="err_tip" :style="{display: errType != undefined ? 'block': 'none'}">
+                    <div class="err_tip" :style="{display: errType != '' ? 'block': 'none'}">
                       <div class="dis_box">
                         <em class="icon_error"></em>
                         <span>{{err[errType]}}</span>
@@ -109,8 +109,8 @@ export default {
   data () {
     return {
       phone: '',
-      errType: 3,
-      err: ['请输入手机号码', '手机号已经存在', '请输入正确的手机号', '请输入昵称', '请输入邮箱', '请输入正确的邮箱', '请输入密码', '密码至少6个字符，至少1个大写字母，1个小写字母和1个数字,不能包含特殊字符'],
+      errType: '',
+      err: ['请输入手机号码', '手机号已经存在', '请输入正确的手机号', '请输入昵称', '含有特殊字符', '请输入邮箱', '请输入正确的邮箱', '请输入密码', '密码至少6个字符，至少1个大写字母，1个小写字母和1个数字,不能包含特殊字符'],
       form: {
         nickname: '',
         mail: '',
@@ -127,16 +127,17 @@ export default {
       } else if (this.form.nickname.trim() === '') {
         this.errType = 3
       } else if (this.form.mail.trim() === '') {
-        this.errType = 4
+        this.errType = 5
       } else if (this.form.password.trim() === '') {
-        this.errType = 6
+        this.errType = 7
+      } else if (/^[\w\u4e00-\u9fa5()-]+$/.test(this.form.nickname) == false) {
+        this.errType = 4
       } else if (/^1[3456789]\d{9}$/.test(this.phone) == false) {
-        console.log('手机号错误')
         this.errType = 2
       } else if (/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(this.form.mail) == false) {
         this.errType = 5
       } else if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(this.form.password) == false) {
-        this.errType = 7
+        this.errType = 8
       } else {
         this.$http({
         url: 'http://localhost:3000/users/userRegister',
@@ -221,9 +222,10 @@ export default {
               line-height 1.5
           .regbox
             width 332px
-            padding 30px 0
+            padding 30px
             line-height 20px
             margin 0 auto
+            border 1px solid rgba(0,0,0,0.1)
             .tit_normal
               padding-bottom 5px
               color #333

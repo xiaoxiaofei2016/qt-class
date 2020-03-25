@@ -35,6 +35,9 @@ router.post('/allcarts', async (ctx, next) => {
 // 用户注册
 router.post('/userRegister', async (ctx, next) => {
   let _phone = ctx.request.body.phone
+  let _mail = ctx.request.body.mail
+  let _nickname = ctx.request.body.nickname
+  let _password = ctx.request.body.password
   if (!_phone) {
     ctx.body = {
       code: '800001',
@@ -43,9 +46,12 @@ router.post('/userRegister', async (ctx, next) => {
     return
   } else {
     let user = {
-      phone: _phone
+      phone: _phone,
+      mail: _mail,
+      nickname: _nickname,
+      password: _password
     }
-    await userService.findUser(user.phone).then(async (res) => {
+    await userService.findUser(user.phone, user.mail, user.nickname).then(async (res) => {
       if (res.length) {
         try {
           throw Error('用户名已存在')
@@ -58,7 +64,7 @@ router.post('/userRegister', async (ctx, next) => {
           mess: '用户名已存在'
         }
       } else {
-        await userService.insertUser([user.phone]).then((res) => {
+        await userService.insertUser([user.phone, user.mail, user.nickname, user.password]).then((res) => {
           let r = ''
           if (res.affectedRows !== 0) {
             r = 'ok'

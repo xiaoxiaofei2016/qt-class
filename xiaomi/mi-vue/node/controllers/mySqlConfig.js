@@ -40,19 +40,19 @@ let getAllUsers = function () {
 
 // 注册用户
 let insertUser = function (value) {
-  let _sql = `insert into login set phone=?`
+  let _sql = `insert into login set phone=?,mail=?,nickname=?,password=?`
   return allServies.query(_sql, value)
 }
 
 // 查找用户
-let findUser = function (phone) {
-  let _sql = `select * from login where phone="${phone}"`
+let findUser = function (phone, mail, nickname) {
+  let _sql = `select * from login where phone="${phone}" or mail="${mail}" or nickname="${nickname}"`
   return allServies.query(_sql)
 }
 
 // 用户登录
-let userLogin = function (phone) {
-  let _sql = `select * from login where phone="${phone}"`
+let userLogin = function (phone, password) {
+  let _sql = `select * from login where (phone="${phone}" or mail="${phone}" or nickname="${phone}") and password ="${password}"`
   return allServies.query(_sql)
 }
 
