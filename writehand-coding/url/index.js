@@ -1,27 +1,27 @@
 function parseParams(url) {
-    let obj = {}
-    if (url.indexOf('?') !== -1) {
-        paramsString = url.split('?')[1]
-        // console.log(paramsString) 
+  let obj = {}
+  if (url.indexOf('?') !== -1) {
+    paramsString = url.split('?')[1]
+    // console.log(paramsString) 
+  }
+  var paramsArr = paramsString.split('&')
+  paramsArr.forEach(element => {
+    if (element.indexOf('=') !== -1) {
+      var [key, val] = element.split('=')
+      var val = decodeURIComponent(val) // 解码
+      if (obj.hasOwnProperty(key)) {
+        obj[key] = [].concat(obj[key], val)
+      } else {
+        obj[key] = val
+      }
     }
-    var paramsArr = paramsString.split('&')
-        paramsArr.forEach(element => {
-            if(element.indexOf('=') !== -1) {
-            var [key,val] = element.split('=')
-            var val = decodeURIComponent(val)
-            if(obj.hasOwnProperty(key)) {
-                obj[key] = [].concat(obj[key],val)
-            }else{
-                obj[key] = val
-                }
-            }
-            else {
-                obj[element] = true
-            }
-        })
-        return obj
+    else {
+      obj[element] = true
     }
-   
+  })
+  return obj
+}
+
 
 console.log(parseParams('https://juejin.im/search?query=node&type=all'))
 console.log(parseParams('https://juejin.im/search?query=node&type'))

@@ -10,10 +10,12 @@ function testMycall (a,c,d) {
 }
 Function.prototype.myCall = function(obj,...rest) {//...rest表示除obj以外的剩余参数
     // console.log('call',obj)
-    obj._fn = this//单纯运行，return被吞掉了
-    // console.log(this) //this指向调用myCall方法的函数
+    obj._fn = this // 单纯运行，return被吞掉了
+    console.log(this) //this指向调用myCall方法的函数
     var res = obj._fn(...rest)
+    console.log(res)
     delete obj._fn
+    console.log(res)
     return res
 }
 var tetsObj1 = {

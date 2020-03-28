@@ -62,7 +62,7 @@ module.exports = {
     })
   ],
   resolve: { // vue有两种形式的代码 compiler（模板）模式和runtime模式（运行时）,vue模块的package.json的main字段默认为runtime模式,指向了"dist/vue.runtime.common.js"位置
-    alias: {
+    alias: { // 别名配置 import Vue from ‘vue’ 这行代码被解析为 import Vue from ‘vue/dist/vue.js’
       vue: 'vue/dist/vue.js'
     }
   },

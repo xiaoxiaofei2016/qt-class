@@ -29,7 +29,7 @@
     function jsonP(option) {
       const { url, callback } = option
       return new Promise((resolve, reject) => {
-        let methodName = 'abcdefg'
+        let methodName = 'getBook'
         window[methodName] = function(data) {
           resolve(data)
           delete window[methodName]

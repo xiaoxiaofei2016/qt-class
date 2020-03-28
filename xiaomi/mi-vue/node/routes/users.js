@@ -1,5 +1,8 @@
 var router = require('koa-router')()
 const userService = require('../controllers/mySqlConfig.js')
+const jwt = require('jsonwebtoken') // jwt生成token
+const crypto = require('crypto')
+
 router.prefix('/users')
 
 router.get('/', function (ctx, next) {
@@ -24,7 +27,8 @@ router.post('/allcart', async (ctx, next) => {
 })
 // 购物车所有商品
 router.post('/allcarts', async (ctx, next) => {
-  await userService.findallcart().then((res) => {
+  let _userId = ctx.request.body.userId
+  await userService.findallcart(_userId).then((res) => {
     // console.log('打印结果:' + JSON.stringify(res))
     ctx.body = {
       data: res
@@ -34,10 +38,12 @@ router.post('/allcarts', async (ctx, next) => {
 
 // 用户注册
 router.post('/userRegister', async (ctx, next) => {
+  let md5 = crypto.createHash('md5')
   let _phone = ctx.request.body.phone
   let _mail = ctx.request.body.mail
   let _nickname = ctx.request.body.nickname
   let _password = ctx.request.body.password
+  let newPas = md5.update(_password).digest('hex')
   if (!_phone) {
     ctx.body = {
       code: '800001',
@@ -49,7 +55,7 @@ router.post('/userRegister', async (ctx, next) => {
       phone: _phone,
       mail: _mail,
       nickname: _nickname,
-      password: _password
+      password: newPas
     }
     await userService.findUser(user.phone, user.mail, user.nickname).then(async (res) => {
       if (res.length) {
@@ -89,21 +95,32 @@ router.post('/userRegister', async (ctx, next) => {
 
 // 用户登录
 router.post('/userLogin', async (ctx, next) => {
+  let md5 = crypto.createHash('md5')
   let _message = ctx.request.body.message
   let _password = ctx.request.body.password
-
-  await userService.userLogin(_message, _password).then((res) => {
+  let newPas = md5.update(_password).digest('hex')
+  await userService.userLogin(_message, newPas).then((res) => {
     let r = ''
     if (res.length) {
       r = 'ok'
-      let result = {
-        id: res[0].id,
-        message: res[0].message,
-        password: res[0].password
+      let userInfo = {
+        userId : res[0].userId,
+        nickname: res[0].nickname,
+        phone: res[0].phone,
+        mail: res[0].mail,
+        password: res[0].password,
+        avatar: res[0].avatar
       }
+      let payload = {
+        nickname: userInfo.nickname,
+        admin: true
+      }
+      let secret = 'MISHOP'
+      let token = jwt.sign(payload, secret, {expiresIn: 60 * 60 * 24})
       ctx.body = {
         code: '800000',
-        data: result,
+        data: userInfo,
+        token: token,
         mess: '登录成功'
       }
     } else {
@@ -131,6 +148,7 @@ router.post('/insertcart', async (ctx, next) => {
   let _img = ctx.request.body.img
   let _num = ctx.request.body.num
   let _checked = ctx.request.body.checked
+  let _userId = ctx.request.body.userId
   if (!_id) {
     return
   } else {
@@ -141,9 +159,10 @@ router.post('/insertcart', async (ctx, next) => {
       recommend: _recommend,
       img: _img,
       num: _num,
-      checked: _checked
+      checked: _checked,
+      userId: _userId
     }
-    await userService.findcart(cart.id).then(async (res) => {
+    await userService.findcart(cart.id, cart.userId).then(async (res) => {
       if (res.length) {
         try {
           throw Error('购物车中已存在')
@@ -156,7 +175,7 @@ router.post('/insertcart', async (ctx, next) => {
           mess: '购物车已存在该商品'
         }
       } else {
-        await userService.insertgoods([cart.id, cart.title, cart.price, cart.recommend, cart.img, cart.num, cart.checked]).then(async (res) => {
+        await userService.insertgoods([cart.id, cart.title, cart.price, cart.recommend, cart.img, cart.num, cart.checked, cart.userId]).then(async (res) => {
           let r = ''
           if (res.affectedRows !== 0) {
             await userService.findcartgoods(cart.id).then((res1) => {
@@ -183,7 +202,8 @@ router.post('/insertcart', async (ctx, next) => {
 // 删除商品
 router.post('/deletegood', async (ctx, next) => {
   let _id = ctx.request.body.id
-  await userService.deletegoods(_id).then(res => {
+  let _userId = ctx.request.body.userId
+  await userService.deletegoods(_id, _userId).then(res => {
     ctx.body = {
       code: '800000',
       data: res,
@@ -201,7 +221,8 @@ router.post('/deletegood', async (ctx, next) => {
 // 增加购物车某个商品数量
 router.post('/addcartnum', async (ctx, next) => {
   let _id = ctx.request.body.id
-  await userService.addcartnum(_id).then(res => {
+  let _userId = ctx.request.body.userId
+  await userService.addcartnum(_id, _userId).then(res => {
     ctx.body = {
       code: '800000',
       data: res,
@@ -217,7 +238,8 @@ router.post('/addcartnum', async (ctx, next) => {
 // 减少购物车某个商品数量
 router.post('/reducecartnum', async (ctx, next) => {
   let _id = ctx.request.body.id
-  await userService.reducecartnum(_id).then(res => {
+  let _userId = ctx.request.body.userId
+  await userService.reducecartnum(_id, _userId).then(res => {
     ctx.body = {
       code: '800000',
       data: res,
@@ -232,7 +254,8 @@ router.post('/reducecartnum', async (ctx, next) => {
 })
 // 设置全选
 router.post('/alltrue', async (ctx, next) => {
-  await userService.alltrue().then(res => {
+  let _userId = ctx.request.body.userId
+  await userService.alltrue(_userId).then(res => {
     ctx.body = {
       code: '800000',
       data: res
@@ -246,7 +269,8 @@ router.post('/alltrue', async (ctx, next) => {
 })
 // 设置全不选
 router.post('/allfalse', async (ctx, next) => {
-  await userService.allfalse().then(res => {
+  let _userId = ctx.request.body.userId
+  await userService.allfalse(_userId).then(res => {
     ctx.body = {
       code: '800000',
       data: res
@@ -261,7 +285,8 @@ router.post('/allfalse', async (ctx, next) => {
 // 根据id切换该商品选中还是不选中
 router.post('/singleselect', async (ctx, next) => {
   let _id = ctx.request.body.id
-  await userService.singleselect(_id).then(res => {
+  let _userId = ctx.request.body.userId
+  await userService.singleselect(_id, _userId).then(res => {
     ctx.body = {
       code: '800000',
       data: res

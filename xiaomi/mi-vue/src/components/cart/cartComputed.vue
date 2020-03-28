@@ -11,7 +11,7 @@
     <div class="cart-goods-list">
       <div class="list-head clearfix">
         <div class="col col-check">
-          <i class="iconfont icon-checkbox" @click="allselect" :class="{'icon-checkbox-selected': allcheked}">√</i>
+          <i class="iconfont icon-checkbox" @click="allselect(userId)" :class="{'icon-checkbox-selected': allcheked}">√</i>
           全选
         </div>
         <div class="col col-img">&nbsp;</div>
@@ -26,7 +26,7 @@
           <div class="item-table">
             <div class="item-row clearfix">
               <div class="col col-check">
-                <i class="iconfont icon-checkbox" @click="singleselected(item.id)" :class="{'icon-checkbox-selected': item.checked == 1}">√</i>
+                <i class="iconfont icon-checkbox" @click="singleselected(item.id, userId)" :class="{'icon-checkbox-selected': item.checked == 1}">√</i>
               </div>
               <div class="col col-img">
                 <router-link to="">
@@ -46,11 +46,11 @@
               </div>
               <div class="col col-num">
                 <div class="change-goods-num clearfix">
-                  <router-link to="" @click.native="add(item.id)" :data-index="item.id">
+                  <router-link to="" @click.native="add(item.id, userId)" :data-index="item.id">
                     <i class="iconfont">+</i>
                   </router-link>
                   <input type="text" :value="item.num" autocomplete="off" class="goods-num"/>
-                  <router-link to="" @click.native="reduce(item.id)">
+                  <router-link to="" @click.native="reduce(item.id, userId)">
                     <i class="iconfont">-</i>
                   </router-link>
                 </div>
@@ -60,7 +60,7 @@
                 <p class="pre-info"></p>
               </div>
               <div class="col col-action">
-                <router-link to="" class="del" @click.native="deletecart(item.id)">
+                <router-link to="" class="del" @click.native="deletecart(item.id, userId)">
                   <i class="iconfont icon-icons-btn-cancel"></i>
                 </router-link>
               </div>
@@ -117,42 +117,54 @@ export default {
       screenHeight: window.innerHeight,
       singleselect: -1,
       num: 1,
-      allcheked: false
+      allcheked: false,
+      userInfo: {
+        userId: ''
+      }
+    }
+  },
+  created() {
+    if (this.loginStatus == true) {
+      this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      console.log(this.cart, 'this.cart')
     }
   },
   mounted() {
-    this.$store.dispatch('getcart')
+    this.$store.dispatch('getcart', this.userInfo.userId)
   },
   methods: {
-    deletecart (id) { // 删除购物车的商品
-      this.$store.dispatch('deletecart', id)
+    deletecart (id, userId) { // 删除购物车的商品
+      this.$store.dispatch('deletecart', {id, userId})
     },
     // isFixed1 () {
     //   this.top = this.$refs.cartBar.getBoundingClientRect().bottom
     //   this.screenHeight = window.innerHeight
     //   this.isFixed =  this.screenHeight - this.top
     // },
-    add (id) { // 增加商品数量
-      this.$store.dispatch('addcartnum', id)
+    add (id, userId) { // 增加商品数量
+      this.$store.dispatch('addcartnum', {id, userId})
     },
-    reduce (id) { // 减少商品数量
-      this.$store.dispatch('reducecartnum', id)
+    reduce (id, userId) { // 减少商品数量
+      this.$store.dispatch('reducecartnum', {id, userId})
     },
-    allselect () { // 全选
+    allselect (userId) { // 全选
      if (this.allcheked) {
-       this.$store.dispatch('allfalse')
+       this.$store.dispatch('allfalse', userId)
      } else {
-       this.$store.dispatch('alltrue')
+       this.$store.dispatch('alltrue', userId)
      }
     },
-    singleselected (id) { // 单选
-      this.$store.dispatch('singleselect', id)
+    singleselected (id, userId) { // 单选
+      this.$store.dispatch('singleselect', {id, userId})
     }
   },
   computed: {
     ...mapGetters([
-      'cart', 'littletotalPrice', 'totalnum', 'totalPrice', 'selectednum'
-    ])
+      'cart', 'littletotalPrice', 'totalnum', 'totalPrice', 'selectednum', 'loginStatus'
+    ]),
+    userId() {
+      return this.userInfo.userId
+    }
   },
   watch: {
     cart: {

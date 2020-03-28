@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <div class="topbar-info" v-if="!isLogin">
+      <div class="topbar-info" v-if="!loginStatus">
         <router-link class="link title" to="/Login">登录</router-link>
         <span class="sep">|</span>
         <router-link class="link title" to="" @click.native="showAgreement">注册</router-link>
@@ -63,7 +63,7 @@
       <div class="topbar-info" v-else>
         <span class="user" @mouseenter="showUser" @mouseleave="leaveUser" :class="{'user-active': showUserInfo}">
           <router-link to="" class="user-name">
-            <span class="name">huahai</span>
+            <span class="name">{{nickname}}</span>
             <i class="iconfont icon-jiantouxia"></i>
           </router-link>
           <div class="user-menu-wrapper" :style="{height: showUserInfo ? '164px': '0px'}">
@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   inject: ['reload'],
   data () {
@@ -107,7 +107,15 @@ export default {
       user: [
         '个人中心', '评价晒单', '我的喜欢'
       ],
-      Id: ['6', '3', '12']
+      Id: ['6', '3', '12'],
+      userInfo: {
+        nickname: ''
+      }
+    }
+  },
+  created() {
+    if (this.loginStatus == true) {
+      this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
     }
   },
   methods: {
@@ -144,9 +152,12 @@ export default {
     leaveUser () {
       this.showUserInfo = false
     },
+    ...mapMutations(['loselogin']),
     loseLogin () {
-      this.$store.dispatch('setIsLogin', false)
-      this.$router.push({ path: '/' })
+      this.loselogin()
+      // this.$store.dispatch('setIsLogin', false)
+      // this.$router.push({ path: '/' })
+      localStorage.removeItem('userInfo')
       this.reload()
     },
     // beforeRouteEnter(to, from, next) {
@@ -162,11 +173,12 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'isLogin'
-    ])
+      'loginStatus'
+    ]),
+    nickname() {
+      return this.userInfo.nickname
+    },
   },
-  mounted () {
-  }
 }
 </script>
 

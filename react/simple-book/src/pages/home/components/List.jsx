@@ -37,11 +37,11 @@ class List extends Component {
      );
   }
 }
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => ({ //将store里的state（数据源）绑定到指定组件的props中
   list: state.getIn(['home', 'articleList']),
   page: state.getIn(['home', 'articlePage'])
 })
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => { // 将store里的action（操作数据的方法）绑定到指定组件的props中
   return {
     getMoreList(page) {
       // action 纯对象 thunk使dispatch支持function

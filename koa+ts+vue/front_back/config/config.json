@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "root",
+    "password": "163004",
+    "database": "goodfood",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false,
+    "timezone": "+08:00"
+  }
+}

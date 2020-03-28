@@ -8,7 +8,7 @@
         <h2>我的购物车</h2>
         <p v-if="cart.length">温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</p>
       </div>
-      <div class="topbar-info" v-if="!isLogin">
+      <div class="topbar-info" v-if="loginStatus == false">
         <router-link class="link" to="/Login">登录</router-link>
         <span class="sep">|</span>
         <router-link class="link" to="/Register">注册</router-link>
@@ -16,7 +16,7 @@
       <div class="topbar-info" v-else>
         <span class="user" @mouseenter="showUser" @mouseleave="leaveUser" :class="{'user-active': showUserInfo}">
           <router-link to="" class="user-name">
-            <span class="name">huahai</span>
+            <span class="name">{{nickname}}</span>
             <i class="iconfont icon-jiantouxia"></i>
           </router-link>
           <div class="user-menu-wrapper" :style="{height: showUserInfo ? '164px': '0px'}">
@@ -41,13 +41,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   inject: ['reload'],
   computed: {
     ...mapGetters([
-      'isLogin', 'cart'
-    ])
+      'loginStatus', 'cart'
+    ]),
+    nickname() {
+      return this.userInfo.nickname
+    },
+    userId() {
+      return this.userInfo.userId
+    }
   },
   data () {
     return {
@@ -55,16 +61,28 @@ export default {
         '个人中心', '评价晒单', '我的喜欢'
       ],
       Id: ['6', '3', '12'],
-      showUserInfo: false
+      showUserInfo: false,
+      userInfo: {
+        nickname: '',
+        userId: ''
+      }
+    }
+  },
+  created() {
+    if (this.loginStatus == true) {
+      this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
     }
   },
   methods: {
     toUser (index) {
       this.reload()
     },
+    ...mapMutations(['loselogin']),
     loseLogin () {
-      this.$store.dispatch('setIsLogin', false)
-      this.$router.push({ path: '/' })
+      this.loselogin()
+      // this.$store.dispatch('setIsLogin', false)
+      // this.$router.push({ path: '/' })
+      localStorage.removeItem('userInfo')
       this.reload()
     },
     showUser () {
@@ -73,7 +91,7 @@ export default {
     leaveUser () {
       this.showUserInfo = false
     }
-  }
+  },
 }
 </script>
 

@@ -24,19 +24,32 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 router.beforeEach((to, from, next) => {
   if (to.meta.isLogin) {
-    if (store.state.login.isLogin) {
+    if (localStorage.getItem('Authorization')) {
       next()
     } else {
       // console.log(to.fullPath)
       next({
         path: '/Login',
-        redirect: to.fullPath
+        query: { redirect: to.fullPath }
       })
     }
   } else {
     next()
   }
 })
+
+// 添加请求拦截器，在请求头中加token
+axios.interceptors.request.use(
+  config => {
+    if (localStorage.getItem('Authorization')) {
+      config.headers.Authorization = localStorage.getItem('Authorization');
+    }
+ 
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  });
 
 /* eslint-disable no-new */
 new Vue({

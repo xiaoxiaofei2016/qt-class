@@ -68,50 +68,50 @@ let findcartgoods = function (id) {
   return allServies.query(_sql)
 }
 
-// 查找某一件商品
-let findcart = function (id) {
-  let _sql = `select * from cartselected where id="${id}";`
+// 查找用户某一件商品
+let findcart = function (id, userId) {
+  let _sql = `select * from cartselected where id="${id}" and userId="${userId}";`
   return allServies.query(_sql)
 }
-// 查找购物车所有商品
-let findallcart = function () {
-  let _sql = `select * from cartselected;`
+// 查找用户购物车所有商品
+let findallcart = function (userId) {
+  let _sql = `select * from cartselected where userId="${userId}";`
   return allServies.query(_sql)
 }
 // 插入购物车(id, title)
 let insertgoods = function (value) {
-  let _sql = `insert into cartselected set id=?,title=?,price=?,recommend=?,img=?,num=?,checked=?`
+  let _sql = `insert into cartselected set id=?,title=?,price=?,recommend=?,img=?,num=?,checked=?,userId=?`
   return allServies.query(_sql, value)
 }
-// 根据删除购物车某一件商品
-let deletegoods = function (value) {
-  let _sql = `delete from cartselected where id=?`
-  return allServies.query(_sql, value)
+// 根据id删除购物车某一件商品
+let deletegoods = function (id, userId) {
+  let _sql = `delete from cartselected where id="${id}" and userId="${userId}"`
+  return allServies.query(_sql)
 }
 
 // 购物车数量增加
-let addcartnum = function (id) {
-  let _sql = `update cartselected set num=num+1 where id="${id}"`
+let addcartnum = function (id, userId) {
+  let _sql = `update cartselected set num=num+1 where id="${id}" and userId="${userId}"`
   return allServies.query(_sql)
 }
 // 购物车数量减少
-let reducecartnum = function (id) {
-  let _sql = `update cartselected set num=num-1 where id="${id}" and num >= 2`
+let reducecartnum = function (id, userId) {
+  let _sql = `update cartselected set num=num-1 where id="${id}" and userId="${userId}" and num >= 2`
   return allServies.query(_sql)
 }
 // 设置全不选
-let allfalse = function () {
-  let _sql = `update cartselected set checked=0`
+let allfalse = function (userId) {
+  let _sql = `update cartselected set checked=0 where userId="${userId}"`
   return allServies.query(_sql)
 }
 // 设置全选
-let alltrue = function () {
-  let _sql = `update cartselected set checked=1`
+let alltrue = function (userId) {
+  let _sql = `update cartselected set checked=1 where userId="${userId}"`
   return allServies.query(_sql)
 }
 // 根据id切换该商品选中还是不选中
-let singleselect = function (id) {
-  let _sql = `update cartselected set checked=(case when checked=0 then 1 else checked=0 end) where id="${id}"`
+let singleselect = function (id, userId) {
+  let _sql = `update cartselected set checked=(case when checked=0 then 1 else checked=0 end) where id="${id}" and userId="${userId}"`
   return allServies.query(_sql)
 }
 

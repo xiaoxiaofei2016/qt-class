@@ -8,6 +8,10 @@ let set2 = new Set()
 // class App extends React.Component {}
 // reactRouter(connect(App))
 // use 
+// 函数式组件没有生命周期，可以用useEffect模拟生命周期
+// 函数组件没有实例，也没有状态。使用状态需要使用useState钩子
+// useCallback用于比较两个函数有没有变化
+// useMeno用于函数组件，用来提高性能的，第一个参数回调，第二个为判断对象，只有当它改变了，useMemo后才会改变
 function App() {
   let [ count, setCount ] = useState(0) // 0是默认值
   let [ time, setTime ] = useState(0)

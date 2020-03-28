@@ -2,33 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>节流函数</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节流函数</title>
 </head>
 
 <body>
-    <button id="submit">节流提交</button>
-    <script>
-        function success(e) {
-            console.log('提交成功');
-        }
-        const throttle = (fn, delay) => {        
-            let flag = true;//开关变量
-            return (...args) => {
-                if (!flag) return; //开关打开才执行
-                flag = false;//点击事件时开关关闭
-                setTimeout(() => {
-                    fn.apply(this,args);
-                    flag = true;//点击事件执行之后2秒把开关打开
-                }, delay);
-            }
-        }
-        const oThtottle = throttle(success, 2000)
-        var a = document.getElementById('submit');
-        a.addEventListener('click', oThtottle);
-    </script>
+  <button id="submit">节流提交</button>
+  <script>
+    function success(e) {
+      console.log('提交成功');
+    }
+    const throttle = (fn, delay) => {
+      let flag = true;//开关变量
+      return (...args) => {
+        if (!flag) return; //开关打开才执行
+        flag = false;//点击事件时开关关闭
+        setTimeout(() => {
+          fn.apply(this, args);
+          flag = true;//点击事件执行之后2秒把开关打开
+        }, delay);
+      }
+    }
+    const oThtottle = throttle(success, 2000)
+    var a = document.getElementById('submit');
+    a.addEventListener('click', oThtottle);
+  </script>
 </body>
 
 </html>

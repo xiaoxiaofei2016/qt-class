@@ -4,10 +4,10 @@
       <div class="cart-loading loading hide">
         <div class="loader"></div>
       </div>
-      <div class="cart-empty" :class="[{'cart-empty-nologin': !isLogin}, {'hide': cart.length}]">
+      <div class="cart-empty" :class="[{'cart-empty-nologin': !loginStatus}, {'hide': cart.length}]">
         <h2>您的购物车还是空的!</h2>
-        <p class="login-desc" v-if="!isLogin">登录后将显示您之前加入的商品</p>
-        <router-link to="/Login" class="btn btn-primary btn-login" v-if="!isLogin">立即登录</router-link>
+        <p class="login-desc" v-if="!loginStatus">登录后将显示您之前加入的商品</p>
+        <router-link to="/Login" class="btn btn-primary btn-login" v-if="!loginStatus">立即登录</router-link>
         <router-link to="" class="btn btn-primary btn-shoping">马上去购物</router-link>
       </div>
       <v-cart></v-cart>
@@ -77,7 +77,7 @@
                   <router-link to="" 
                     class="btn btn-small btn-line-primary" 
                     :style="{display: isShowBtn == item.id ? 'block': 'none'}"
-                    @click.native="addcart(item.id, item.title, item.price, item.recommend, item.img, 1, 1)"
+                    @click.native="addcart(item.id, item.title, item.price, item.recommend, item.img, 1, 1, userId)"
                     >加入购物车</router-link>
                 </dd>
                 <div class="xm-recommend-notice"></div>
@@ -97,7 +97,10 @@ export default {
   data () {
     return {
       isShowBtn: -1,
-      allcart: []
+      allcart: [],
+      userInfo: {
+        userId: ''
+      }
     }
   },
   components: {
@@ -105,8 +108,16 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'isLogin', 'cart'
-    ])
+      'loginStatus', 'cart'
+    ]),
+    userId() {
+      return this.userInfo.userId
+    }
+  },
+  created() {
+    if (this.loginStatus == true) {
+      this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
+    }
   },
   watch: { // 监听cart长度从而判断请求几条数据(10条还是20条)
     cart (newval, old) {
@@ -127,8 +138,8 @@ export default {
     donotshowBtn (id) {
       this.isShowBtn = -1
     },
-    addcart (id, title, price, recommend, img, num, checked) { // 点击加入购物车
-      this.$store.dispatch('addcart', {id, title, price, recommend, img, num, checked})
+    addcart (id, title, price, recommend, img, num, checked, userId) { // 点击加入购物车
+      this.$store.dispatch('addcart', {id, title, price, recommend, img, num, checked, userId})
     },
     requestGoods (nums) {
       this.$http({

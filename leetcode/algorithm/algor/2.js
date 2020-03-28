@@ -20,3 +20,4 @@ function isBalanced(exp) {
   return stack.length === 0;
 }
 console.log(isBalanced(expression));
+

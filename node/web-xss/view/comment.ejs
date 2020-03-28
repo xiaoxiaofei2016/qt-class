@@ -45,8 +45,9 @@
     const txt = document.getElementById('txt')
 
     comment.addEventListener('click', function () {
-      const XHR = new XMLHttpRequest()
+      const XHR = new XMLHttpRequest() // aiax是由原生XHR对象发出http请求，得到服务器返回的数据后，再进行处理
       XHR.onreadystatechange = function () {
+        // readyState属性值由一个值变成另一个值，都会触发一次readystatechange事件
         // 0 1 2 3 4
         // 0 － （未初始化）还没有调用send()方法
         // 1 － （载入）已调用send()方法，正在发送请求
@@ -78,7 +79,7 @@
           }
         }
       }
-      XHR.open('GET', '/getcomment' + '?comment=' + txt.value, true)
+      XHR.open('GET', '/getcomment' + '?comment=' + txt.value, true) // true默认，表示异步发送
       XHR.send()
     })
   </script>

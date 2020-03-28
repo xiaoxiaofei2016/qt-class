@@ -436,6 +436,7 @@
 
 <script>
 import { Message } from 'element-ui'
+import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -447,10 +448,22 @@ export default {
       computeTime: 0,
       timer: null,
       errType: 3,
-      errTypeText: ['用户名或密码错误', '请输入密码', '请输入账号']
+      errTypeText: ['用户名或密码错误', '请输入密码', '请输入账号'],
+      nextPath: '',
+      beforePath: ''
     }
   },
+  created() {
+    this.nextPath = this.$route.query.redirect // 把拦截的页面路由信息拿到
+    console.log(this.nextPath)
+  },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.beforePath = from.path
+    })
+  },
   methods: {
+    ...mapMutations(['changeLogin']),
     changetab (index) {
       this.tab = index
     },
@@ -459,9 +472,7 @@ export default {
       else this.typeNum = 0
     },
     login () {
-      this.$store.dispatch('setIsLogin', true)
-      this.$store.dispatch('setShowAgreement', false)
-      this.$store.dispatch('setShowMask', false)
+      let _this = this
       if (this.message.trim() === '') { // trim()去空格
         // Message('账号或密码不能为空')
         this.errType = 2
@@ -478,7 +489,13 @@ export default {
       }).then((res) => {
         if (res.data.code === '800000') {
           console.log('登录成功', res)
-          sessionStorage.setItem('islogin', JSON.stringify(res.data.data))
+          let userToken = 'Bearer' + res.data.token
+          _this.changeLogin({Authorization: userToken})
+          if (_this.nextPath) {
+            _this.$router.push(_this.nextPath)
+          } else {
+            _this.$router.push(_this.beforePath)
+          }
           Message({
             message: '登录成功',
             center: true,
@@ -486,8 +503,10 @@ export default {
             duration: 1000,
             type: "success"
           })
-          sessionStorage.setItem('userInfo', JSON.stringify(res.data.data)) // 存到本地内存中
-          this.$router.push({path: '/'})
+          // _this.$store.dispatch('setIsLogin', true)
+          _this.$store.dispatch('setShowAgreement', false)
+          _this.$store.dispatch('setShowMask', false)
+          localStorage.setItem('userInfo', JSON.stringify(res.data.data)) // 存到本地内存中
         } else {
           // Message(res.data.mess)
         }

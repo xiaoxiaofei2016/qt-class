@@ -27,7 +27,7 @@ export default {
   methods: {
     login () {
       if (this.user && this.password) {
-        localStorage.setItem('userName', this.user)// 将用户名存到本地存储
+        localStorage.setItem('userName', this.user) // 将用户名存到本地存储
         this.$router.push({ path: '/main' })
       }
     }

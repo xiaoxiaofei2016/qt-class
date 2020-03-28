@@ -44,7 +44,7 @@ export default {
       }).then((res) => {
         if (res.data.code === '800000') {
           console.log('登录成功', res)
-          sessionStorage.setItem('userInfo', JSON.stringify(res.data.data)) // 存到本地内存中
+          sessionStorage.setItem('userInfo', 'true') // 存到本地内存中
           this.$router.push({path: '/NoteClass'})
         } else {
           this.$toast(res.data.mess)

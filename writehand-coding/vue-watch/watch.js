@@ -1,15 +1,16 @@
-class Watch{
+class Watcher{
   constructor(opts) {
-    this.$data = this.getBaseType(opts.data) === 'object' ? opts.data : {}
-    this.$watch = this.getBaseType(opts.watch) === 'object' ? opts.watch : {}
+    this.$data = this.getBaseType(opts.data) === 'Object' ? opts.data : {}
+    this.$watch = this.getBaseType(opts.watch) === 'Object' ? opts.watch : {}
     for (let key in opts.data) {
       this.setData(key)
     }
   }
 
   getBaseType (target) {
-    const typeStr = Object.prototype.toString.call(target)
-    return typeStr.slice(8, -1)
+    const typeStr = Object.prototype.toString.call(target) // [object Object]
+    console.log(typeStr.slice(8, -1) === 'Object')
+    return typeStr.slice(8, -1) // Object
   }
 
   setData (_key, _val) {
@@ -31,7 +32,7 @@ class Watch{
   }
 }
 
-let vm = new watcher({
+let vm = new Watcher({
   data: {
     a: 0,
     b: 'hello'
