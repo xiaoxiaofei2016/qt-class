@@ -12,8 +12,9 @@
               :src="avatar"
               width="150"
               height="150"
+              ref="image"
             />
-            <input ref="input" type="file" accept="image/*" @change="handleFile" style="display:none"/>
+            <input ref="input" type="file" accept="image/png, image/jpeg, image/jpg, image/svg, image/gif" @change="handleFile" style="display:none"/>
           </div>
           <div class="user-actions">
             <ul class="action-list">
@@ -124,7 +125,7 @@ export default {
       return this.userInfo.nickname
     },
     avatar() {
-      return this.base64ImgtoFile(this.userInfo.avatar)
+      return this.userInfo.avatar
     }
   },
   methods: {
@@ -173,14 +174,29 @@ export default {
       this.$refs.input.click()
     },
     handleFile(e) {
-      let target = e.target || e.srcElement
-      let file = target.files[0]
-      let reader = new FileReader()
-      reader.onload = (data) => {
-        let res = data.target || data.srcElement
-        this.userInfo.avatar = res.result
-      }
-      reader.readAsDataURL(file)
+      // let target = e.target || e.srcElement
+      // let file = target.files[0]
+      // let reader = new FileReader()
+      // reader.onload = (data) => {
+      //   let res = data.target || data.srcElement
+      //   this.userInfo.avatar = res.result
+      // }
+      // reader.readAsDataURL(file)
+
+      //
+      console.log(e)
+      let _this = this
+      var body = document.body || document.getElementsByTagName('body')[0]
+      var files = Array.from(e.target.files)
+      console.log(files, 'files')
+        files.forEach(function(item) {
+        // var image = new Image()
+        _this.$refs.image.src = _this.createObjectURL(item)
+        // body.appendChild(image)
+        _this.$refs.image.onload = function() {
+          _this.revokeObjectURL(_this.$refs.image.src)
+        }
+      })
     },
     // Base64编码转换图片
     base64ImgtoFile(dataurl, filename = 'file') {
@@ -196,6 +212,29 @@ export default {
       return new File([u8arr], `${filename}.${suffix}`, {
         type: mime
       })
+    },
+    createObjectURL(file) {
+        if (window.URL) {
+            return window.URL.createObjectURL(file)
+        } else {
+            return window.webkitURL.createObjectURL(file)
+        }
+    },
+
+    revokeObjectURL(file) {
+        if (window.URL) {
+            return window.URL.revokeObjectURL(file)
+        } else {
+            return window.webkitURL.revokeObjectURL(file)
+        }
+    },
+    ImgToFile(dataurl) {
+      let dataurl2 = Array.from(dataurl)
+      let _this = this
+      _this.$refs.image.src = _this.createObjectURL(dataurl2[0])
+      _this.$refs.image.onload = function() {
+        _this.revokeObjectURL(_this.$refs.image.src)
+      }
     }
   },
   watch: {

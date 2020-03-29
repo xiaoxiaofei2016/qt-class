@@ -130,5 +130,5 @@ module.exports = {
   reducecartnum,
   alltrue,
   allfalse,
-  singleselect
+  singleselect,
 }

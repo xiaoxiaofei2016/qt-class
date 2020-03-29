@@ -509,6 +509,7 @@ export default {
           localStorage.setItem('userInfo', JSON.stringify(res.data.data)) // 存到本地内存中
         } else {
           // Message(res.data.mess)
+          _this.errType = 0
         }
       }).catch((err) => {
         console.log(err)

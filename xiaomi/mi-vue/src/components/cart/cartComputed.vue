@@ -97,7 +97,7 @@
         <em>{{totalPrice}}</em>
         元
       </span>
-      <router-link class="btn btn-a btn-primary" to="">去结算</router-link>
+      <router-link class="btn btn-a btn-primary" to="/Buy">去结算</router-link>
       <div class="no-select-tip hide">
         请勾选需要结算的商品
         <i class="arrow arrow-a"></i>

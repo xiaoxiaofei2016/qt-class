@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <v-cartHeader :title="'我的购物车'"></v-cartHeader>
-    <v-cartBody></v-cartBody>
+  <div class="buy">
+    <v-cartHeader :title="'确认订单'"></v-cartHeader>
+    <v-address></v-address>
     <v-footer></v-footer>
   </div>
 </template>
 
 <script>
 import cartHeader from '@/components/cart/cartHeader.vue'
-import cartBody from '@/components/cart/cartbody.vue'
+import address from '@/components/buy/address.vue'
 import footer from '@/components/footer/footer.vue'
 export default {
+  name: 'Buy',
   components: {
     'v-cartHeader': cartHeader,
-    'v-cartBody': cartBody,
+    'v-address': address,
     'v-footer': footer
   }
 }

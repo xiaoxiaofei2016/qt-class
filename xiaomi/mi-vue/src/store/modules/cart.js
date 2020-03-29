@@ -175,6 +175,12 @@ const getters = {
       sum = sum + state.cart[i].num
     }
     return sum
+  },
+  allselected (state) { // 购物车选中的商品
+    let selected = state.cart.filter(function(e) {
+      return e.checked == 1
+    })
+    return selected
   }
 }
 

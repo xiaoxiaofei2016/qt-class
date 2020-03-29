@@ -17,6 +17,10 @@ export default new Router({
       component: __import__('Cart')
     },
     {
+      path: '/Buy',
+      component: __import__('Buy')
+    },
+    {
       path: '/Register',
       component: __import__('Register')
     },

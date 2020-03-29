@@ -116,7 +116,7 @@ router.post('/userLogin', async (ctx, next) => {
         admin: true
       }
       let secret = 'MISHOP'
-      let token = jwt.sign(payload, secret, {expiresIn: 60 * 60 * 24})
+      let token = jwt.sign(payload, secret, {expiresIn: 60 * 60 * 2})
       ctx.body = {
         code: '800000',
         data: userInfo,
@@ -298,5 +298,6 @@ router.post('/singleselect', async (ctx, next) => {
     }
   })
 })
+
 
 module.exports = router

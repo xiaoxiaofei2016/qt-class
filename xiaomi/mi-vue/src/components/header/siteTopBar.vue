@@ -39,13 +39,37 @@
         </router-link>
         <div class="cart-menu" :style="{height: isShowCart?'100px':'0px'}">
           <div class="menu-content">
-            <div class="loading" :class="showLoading ? '' : 'hide'" ref="loading" >
+            <!-- <div class="loading" :class="showLoading ? '' : 'hide'" ref="loading" >
               <div class="loader"></div>
+            </div> -->
+            <ul class="cart-list" :class="{'hide' : allselected.length == 0 || isShowCart == false}" style="height: auto">
+              <li v-for="(list, index) in allselected" :key="index">
+                <div class="cart-item clearfix first">
+                  <div class="name">{{list.title}}</div>
+                  <div class="thumb">
+                    <img :src="list.img" alt="">
+                  </div>
+                  <span class="price">{{list.price}} x {{list.num}}</span>
+                  <router-link to="" class="btn-del" @click.native="deletecart(list.id, userId)">
+                    <i class="iconfont icon-icons-btn-cancel"></i>
+                  </router-link>
+                </div>
+              </li>
+            </ul>
+            <div class="cart_total clearfix" :class="{'hide' : allselected.length == 0 || isShowCart == false}">
+              <span class="total">
+                共
+                <i>{{totalnum}}</i>
+                件商品
+                <span class="price">
+                  <i>{{totalPrice}}</i>
+                  元
+                </span>
+              </span>
+              <router-link class="btn btn-cart btn-primary" to="/Buy">去结算</router-link>
             </div>
-            <ul class="cart-list hide"></ul>
-            <div class="cart-total clearfix hide"></div>
             <div class="msg msg-error hide"></div>
-            <div class="msg msg-empty" ref="msg" :class="showMsg ? '' : 'hide'">购物车中还没有商品，赶紧选购吧!</div>
+            <div class="msg msg-empty" ref="msg" :class="{'hide' : allselected.length != 0 || isShowCart == false}">购物车中还没有商品，赶紧选购吧!</div>
           </div>
         </div>
       </div>
@@ -117,6 +141,7 @@ export default {
     if (this.loginStatus == true) {
       this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
     }
+    this.$store.dispatch('getcart', this.userInfo.userId)
   },
   methods: {
     enterQRCode () {
@@ -129,18 +154,9 @@ export default {
       this.isShowCart = true
       // this.showMsg = false
       // this.showLoading = true
-      let timer1 = setTimeout(() => {
-        this.showLoading = false
-        this.showMsg = true
-      }, 500)
     },
     leaveCart () {
-      clearTimeout(this.timer1)
       this.isShowCart = false
-      this.showMsg = false
-      setTimeout(() => {
-        this.showLoading = true
-      }, 500)
     },
     showAgreement () {
       this.$store.dispatch('setShowAgreement', true)
@@ -173,11 +189,20 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'loginStatus'
+      'loginStatus', 'allselected', 'totalnum', 'totalPrice'
     ]),
     nickname() {
       return this.userInfo.nickname
     },
+    totalprice() {
+      let totalprice = []
+      for (let i = 0; i < this.allselected.length; i++) {
+        let price1 = this.allselected[i].price.substring(0, this.allselected[i].price.indexOf('元'))
+        let price2 = price1 * this.allselected[i].num
+        totalprice.push(price2)
+      }
+      return totalprice
+    }
   },
 }
 </script>
@@ -323,6 +348,69 @@ export default {
           text-align center
           margin 20px 20px
           padding 20px 0 20px
+        .cart-list
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          li
+            position: relative;
+            height: 80px;
+            padding: 0 20px;
+            .cart-item
+              position: relative;
+              height: 60px;
+              padding: 10px 0;
+              line-height: 20px;
+              .thumb
+                width: 60px;
+                height: 60px;
+                line-height: 40px;
+                display: inline-block;
+                img
+                  width: 60px;
+                  height: 60px;
+              .name
+                float: left;
+                width: 95px;
+                height: 40px;
+                line-height: 20px;
+                margin: 10px 0;
+                color: #424242;
+                overflow: hidden;
+              .price
+                float: right;
+                margin: 20px 20px 0 5px;
+              .btn-del
+                position: absolute;
+                top: 20px;
+                right: 0;
+                font-size: 16px;
+                opacity: 0;
+                -webkit-transition: all .2s;
+                transition: all .2s;
+        .cart_total
+          padding: 15px 20px;
+          background: #fafafa;
+          .total
+            float: left;
+            width: 135px;
+            color: #757575;
+            .price
+              display: block;
+              font-weight: 400;
+              color: #ff6700;
+              i
+                font-size: 24px;
+                line-height: 1;
+          .btn-cart
+            float: right;
+            width: 130px;
+            padding: 0;
+            font-size: 14px;
+            line-height: 40px;
+            text-align: center;
+            color: #f5f5f5;
+            background: #ff6700;
       @keyframes loader
         0%
           transform scaleY(0.5)
