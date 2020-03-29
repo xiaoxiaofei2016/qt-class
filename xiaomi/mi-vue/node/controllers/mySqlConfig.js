@@ -114,6 +114,18 @@ let singleselect = function (id, userId) {
   let _sql = `update cartselected set checked=(case when checked=0 then 1 else checked=0 end) where id="${id}" and userId="${userId}"`
   return allServies.query(_sql)
 }
+// 订单
+let orders = function (userId) {
+  let _sql = `insert into orders (userId,id) select userId,id from cartselected where userId="${userId}" and checked=1`
+  return allServies.query(_sql)
+}
+
+let order = function (userId) {
+  let _sql = `select * from cartselected where userId="${userId}" and checked=1`
+  return allServies.query(_sql)
+}
+
+
 
 module.exports = {
   getAllUsers,
@@ -131,4 +143,6 @@ module.exports = {
   alltrue,
   allfalse,
   singleselect,
+  orders,
+  order
 }

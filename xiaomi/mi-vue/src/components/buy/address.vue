@@ -37,7 +37,7 @@
             <span class="yuan">元</span>
           </div>
           <div class="handle-action">
-            <div class="btn btn-primary">去结算</div>
+            <div class="btn btn-primary" @click="order(userInfo.userId)">去结算</div>
             <div class="btn btn-return" @click="back">返回购物车</div>
           </div>
         </div>
@@ -49,9 +49,20 @@
 <script>
 import AMap from "AMap";
 import { mapGetters } from 'vuex'
+import { Message, MessageBox } from 'element-ui';
 export default {
   mounted() {
     this.init();
+    if (this.loginStatus == true) {
+      this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
+    }
+  },
+  data() {
+    return {
+      userInfo: {
+        userId: ''
+      }
+    }
   },
   methods: {
     init() {
@@ -96,23 +107,38 @@ export default {
       } //如为IP精确定位结果则没有精度信息
       str.push("是否经过偏移：" + (data.isConverted ? "是" : "否"));
       console.log(str);
-      alert("定位成功" + str);
+      Message({
+        message: `定位成功${str}`,
+        type: "success"
+      })
       // document.getElementById('result').innerHTML = str.join('<br>');
     },
     //解析定位错误信息
     onError(data) {
       console.log("定位失败");
       console.log(data.message);
-      alert("定位失败" + data.message);
+      Message({
+        message: `定位失败${data.message}`,
+        type: "error"
+      })
       // document.getElementById('status').innerHTML='定位失败'
       // document.getElementById('result').innerHTML = '失败原因排查信息:'+data.message;
     },
     back() {
       this.$router.go(-1)
+    },
+    order(userId) {
+      this.$store.dispatch('orders', userId)
+      MessageBox({
+        type: "success",
+        message: '结算成功'
+      }).then(res => {
+        this.$router.push({path: '/'})
+      })
     }
   },
   computed: {
-    ...mapGetters(['allselected', 'totalPrice']),
+    ...mapGetters(['allselected', 'totalPrice', 'loginStatus']),
     totalprice() {
       let totalprice = []
       for (let i = 0; i < this.allselected.length; i++) {

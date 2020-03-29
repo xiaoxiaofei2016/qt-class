@@ -1,7 +1,8 @@
 import axios from 'axios'
 import http from '../../utils/axios.js'
 const state = {
-  cart: []
+  cart: [],
+  orders: [] 
 }
 
 const actions = {
@@ -127,17 +128,35 @@ const actions = {
     }).catch(err => {
       console.log(err)
     })
+  },
+  // 订单
+  orders ({commit}, userId) {
+    axios({
+      url: 'http://localhost:3000/users/orders',
+      method: 'post',
+      data: {
+        userId: userId
+      }
+    }).then(res => {
+      commit('setOrders', res.data.data)
+    }).catch(err => {
+      console.log(err)
+    })
   }
 }
 
 const mutations = {
   setcart (state, cart) {
     state.cart = cart
+  },
+  setOrders (state, orders) {
+    state.orders = orders
   }
 }
 
 const getters = {
   cart: state => state.cart,
+  orders: state => state.orders,
   littletotalPrice (state) { // 小计
     let money = []
     if (state.cart.length != 0) {

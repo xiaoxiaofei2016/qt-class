@@ -299,5 +299,21 @@ router.post('/singleselect', async (ctx, next) => {
   })
 })
 
+// 订单
+router.post('/orders', async (ctx, next) => {
+  let _userId = ctx.request.body.userId
+  await userService.orders(_userId).then(async res => {
+    console.log(res)
+    if (res.affectedRows !== 0) {
+      await userService.order(_userId).then(data => {
+        ctx.body = {
+          code: '800000',
+          data: data
+        }
+      })
+    }
+  })
+})
+
 
 module.exports = router

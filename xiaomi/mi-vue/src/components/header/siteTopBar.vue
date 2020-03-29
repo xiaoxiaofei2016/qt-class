@@ -35,9 +35,9 @@
           <i class="iconfont icon-cart--copy "></i>
           <i class="iconfont icon-gouwucheman hide"></i>
           购物车
-          <span class="cart-mini-num">(0)</span>
+          <span class="cart-mini-num">{{allselected.length}}</span>
         </router-link>
-        <div class="cart-menu" :style="{height: isShowCart?'100px':'0px'}">
+        <div class="cart-menu" style="height: auto">
           <div class="menu-content">
             <!-- <div class="loading" :class="showLoading ? '' : 'hide'" ref="loading" >
               <div class="loader"></div>
@@ -280,7 +280,7 @@ export default {
       background #fff
     .cart-mini
       position relative
-      z-index 32
+      z-index 999
       display block
       height 40px
       line-height 40px
@@ -296,7 +296,7 @@ export default {
       position absolute
       right 0
       top 40px
-      z-index 31
+      z-index 999
       width 316px
       height 0
       color $bg_color
