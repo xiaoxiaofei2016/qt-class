@@ -119,11 +119,16 @@ let orders = function (userId, date) {
   let _sql = `insert into orders (userId,id,date) select userId,id,"${date}" as date from cartselected where userId="${userId}" and checked=1`
   return allServies.query(_sql)
 }
-
 let order = function (userId) {
   let _sql = `select * from cartselected where userId="${userId}" and checked=1`
   return allServies.query(_sql)
 }
+// 订单时间
+let ordersTime = function (userId) {
+  let _sql = `select date from orders where userId="${userId}`
+  return allServies.query(_sql)
+}
+
 
 
 
@@ -144,5 +149,6 @@ module.exports = {
   allfalse,
   singleselect,
   orders,
+  ordersTime,
   order
 }

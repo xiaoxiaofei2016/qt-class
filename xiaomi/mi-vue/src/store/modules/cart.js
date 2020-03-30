@@ -145,6 +145,21 @@ const actions = {
     }).catch(err => {
       console.log(err)
     })
+  },
+  // 订单时间
+  ordersTime ({commit}, userId) {
+    axios({
+      url: 'http://localhost:3000/users/ordersTime',
+      method: 'post',
+      data: {
+        userId: userId
+      }
+    }).then(res => {
+      console.log(res)
+      commit('setTime', res.data)
+    }).catch(err => {
+      console.log(err)
+    })
   }
 }
 
@@ -152,10 +167,11 @@ const mutations = {
   setcart (state, cart) {
     state.cart = cart
   },
+  setTime (state, orders) {
+    state.ordersTime = orders[0]
+  },
   setOrders (state, orders) {
-    console.log(orders)
     state.orders = orders.data
-    state.ordersTime = orders.time
   }
 }
 

@@ -98,6 +98,7 @@ export default {
     if (this.loginStatus == true) {
       this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
     }
+    this.$store.dispatch('ordersTime', this.userInfo.userId)
   },
   computed: {
     ...mapGetters(['loginStatus', 'totalPrice', 'orders', 'ordersTime']),
