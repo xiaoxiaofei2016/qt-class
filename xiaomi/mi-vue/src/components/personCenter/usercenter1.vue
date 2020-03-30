@@ -42,16 +42,16 @@
             <div class="uc-order-item uc-order-item-pay">
               <div class="order-status">等待付款</div>
               <div class="caption-info">
-                2020
+                {{ordersTime}}
                 <span class="sep">|</span>
-                huahai
+                {{userInfo.nickname}}
                 <span class="sep">|</span>
                 在线支付
               </div>
               <div class="col-sub">
                 <div class="caption-price">
                   应付金额
-                  <span class="num">22</span>
+                  <span class="num">{{totalPrice}}</span>
                   元
                 </div>
               </div>
@@ -76,17 +76,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 export default {
   data() {
     return {
       nav: ["全部有效订单", "待支付", "待收货", "订单回收站"],
       currentIndex: 0,
       userInfo: {
-        userId: ''
+        userId: '',
+        nickname: ''
       }
     };
   },
+  // inject: ['date'],
   methods: {
     selectnav(index) {
       this.currentIndex = index;
@@ -96,10 +98,9 @@ export default {
     if (this.loginStatus == true) {
       this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
     }
-    this.$store.dispatch('orders', this.userInfo.userId)
   },
   computed: {
-    ...mapGetters(['loginStatus', 'orders']),
+    ...mapGetters(['loginStatus', 'totalPrice', 'orders', 'ordersTime']),
   }
 };
 </script>
@@ -249,6 +250,90 @@ export default {
         font-size: 18px;
         text-align: center;
         color: #b0b0b0;
+      }
+    }
+    .order-list {
+      padding: 10px 0;
+      .uc-order-item {
+        border-color: #ff6700;
+        margin-bottom: 20px;
+        border: 1px solid #ff6700;
+        background: #fffaf7;
+        .order-status {
+          background: #fffaf7;
+          padding: 25px 30px 1px;
+          color: #ff6700;
+          font-size: 18px;
+        }
+        .caption-info {
+          display: inline-block;
+          font-size: 15px;
+          background: #fffaf7;
+          height: 28px;
+          padding: 20px 30px 24px;
+          font-weight: 400;
+          text-align: left;
+          color: #757575;
+          vertical-align: bottom;
+          .sep {
+            color: #e0e0e0;
+            margin: 0 .25em;
+          }
+        }
+        .col-sub {
+          display: inline-block;
+          background: #fffaf7;
+          height: 28px;
+          padding: 20px 30px 24px;
+          font-weight: 400;
+          text-align: left;
+          color: #757575;
+          vertical-align: bottom;
+          width: 240px;
+          padding-left: 10px;
+          text-align: right;
+          .num {
+            height: 18px;
+            margin-right: 5px;
+            font-size: 28px;
+            font-weight: 200;
+            line-height: 1;
+            color: #333;
+          }
+        }
+      }
+      .orders {
+        padding: 0 30px;
+        box-sizing: border-box;
+        border: 1px solid #ff6700;
+        border-width: 1px 1px 1px 1px;
+        .goods-list {
+          padding: 10px 0;
+          list-style-type: none;
+          li {
+            position: relative;
+            height: 44px;
+            margin: 10px 0;
+            padding: 18px 18px 18px 100px;
+            line-height: 22px;
+            color: #333;
+            .figure {
+              position: absolute;
+              left: 0;
+              top: 0;
+              img {
+                width 80px
+                height 80px
+              }
+            }
+            .name {
+              color: #333;
+            }
+            .price {
+              color: #333;
+            }
+          }
+        }
       }
     }
   }

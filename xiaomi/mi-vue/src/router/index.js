@@ -43,17 +43,26 @@ export default new Router({
         {
           path: '/User/detail1',
           name: 'usercenter1',
-          component: __import2__('usercenter1')
+          component: __import2__('usercenter1'),
+          meta: {
+            isLogin: true
+          },
         },
         {
           path: '/User/detail2',
           name: 'usercenter2',
-          component: __import2__('usercenter2')
+          component: __import2__('usercenter2'),
+          meta: {
+            isLogin: true
+          },
         },
         {
           path: '/User/detail3',
           name: 'usercenter3',
-          component: __import2__('usercenter3')
+          component: __import2__('usercenter3'),
+          meta: {
+            isLogin: true
+          },
         },
         {
           path: '/User/detail6',

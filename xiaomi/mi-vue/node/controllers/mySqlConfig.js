@@ -115,8 +115,8 @@ let singleselect = function (id, userId) {
   return allServies.query(_sql)
 }
 // 订单
-let orders = function (userId) {
-  let _sql = `insert into orders (userId,id) select userId,id from cartselected where userId="${userId}" and checked=1`
+let orders = function (userId, date) {
+  let _sql = `insert into orders (userId,id,date) select userId,id,"${date}" as date from cartselected where userId="${userId}" and checked=1`
   return allServies.query(_sql)
 }
 

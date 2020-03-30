@@ -2,7 +2,8 @@ import axios from 'axios'
 import http from '../../utils/axios.js'
 const state = {
   cart: [],
-  orders: [] 
+  orders: [],
+  ordersTime: ''
 }
 
 const actions = {
@@ -130,15 +131,17 @@ const actions = {
     })
   },
   // 订单
-  orders ({commit}, userId) {
+  orders ({commit}, {userId, date}) {
     axios({
       url: 'http://localhost:3000/users/orders',
       method: 'post',
       data: {
-        userId: userId
+        userId: userId,
+        date: date
       }
     }).then(res => {
-      commit('setOrders', res.data.data)
+      console.log(res)
+      commit('setOrders', res.data)
     }).catch(err => {
       console.log(err)
     })
@@ -150,13 +153,16 @@ const mutations = {
     state.cart = cart
   },
   setOrders (state, orders) {
-    state.orders = orders
+    console.log(orders)
+    state.orders = orders.data
+    state.ordersTime = orders.time
   }
 }
 
 const getters = {
   cart: state => state.cart,
   orders: state => state.orders,
+  ordersTime: state => state.ordersTime,
   littletotalPrice (state) { // 小计
     let money = []
     if (state.cart.length != 0) {

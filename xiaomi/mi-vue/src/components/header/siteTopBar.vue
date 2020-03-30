@@ -111,7 +111,7 @@
           </router-link>
         </span>
         <span class="sep">|</span>
-        <router-link to="" class="link link-order title">我的订单</router-link>
+        <router-link :to="{name: 'usercenter1', query: {title: '我的订单'}, params: {id: 1}}" class="link link-order title">我的订单</router-link>
       </div>
     </div>
   </div>

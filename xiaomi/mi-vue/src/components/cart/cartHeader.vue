@@ -34,7 +34,7 @@
           </div>
         </span>
         <span class="sep">|</span>
-        <router-link to="" class="link link-order title">我的订单</router-link>
+        <router-link :to="{name: 'usercenter1', query: {title: '我的订单'}, params: {id: 1}}" class="link link-order title">我的订单</router-link>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ export default {
     loseLogin () {
       this.loselogin()
       // this.$store.dispatch('setIsLogin', false)
-      // this.$router.push({ path: '/' })
+      this.$router.push({ path: '/' })
       localStorage.removeItem('userInfo')
       this.reload()
     },

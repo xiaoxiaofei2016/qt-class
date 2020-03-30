@@ -61,8 +61,12 @@ export default {
     return {
       userInfo: {
         userId: ''
-      }
+      },
+      date: ''
     }
+  },
+  provide: {
+    date: this.date
   },
   methods: {
     init() {
@@ -128,14 +132,35 @@ export default {
       this.$router.go(-1)
     },
     order(userId) {
-      this.$store.dispatch('orders', userId)
+      let _this = this
+      let date = _this.getMyDate(new Date())
+      this.$store.dispatch('orders', {userId, date})
       MessageBox({
         type: "success",
         message: '结算成功'
       }).then(res => {
         this.$router.push({path: '/'})
       })
-    }
+    },
+    getMyDate(str){  
+      var date = new Date(str),  
+      oYear = date.getFullYear(), //年  
+      oMonth = date.getMonth() + 1, //月  
+      oDay = date.getDate(),  //日
+      h = date.getHours(),//小时
+      m = date.getMinutes(),//分钟
+      s = date.getSeconds();//秒数
+      // 以自己需要的方式拼接
+      var oTime = oYear +'-'+ this.getZero(oMonth) +'-' + this.getZero(oDay)+' ' + this.getZero(h) + ':' +  this.getZero(m)+ ':' +  this.getZero(s);//最后拼接时间  
+      return oTime;  
+    },
+    getZero(num){  
+      // 单数前面加0
+      if(parseInt(num) < 10){  
+        num = '0'+num;  
+      }  
+      return num;  
+    }
   },
   computed: {
     ...mapGetters(['allselected', 'totalPrice', 'loginStatus']),
