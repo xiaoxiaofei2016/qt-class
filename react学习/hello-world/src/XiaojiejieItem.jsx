@@ -15,7 +15,7 @@ class XiaojiejieItem extends Component {
     }
   }
 
-  // 组件第一次存在于dom中，函数是不会被执
+  // 组件第一次存在于dom中，函数是不会被执行
   // 如果已经存在dom中，函数才会被执行
   componentWillReceiveProps(newProps) {
     console.log('child-componentWillReceiveProps')
