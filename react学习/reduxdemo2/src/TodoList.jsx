@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 const TodoList = (props) => {
   let { inputValue, inputChange, addItem, list, deleteItem } = props
+  console.log('render')
     return (
       <div>
         <div>
@@ -50,11 +51,12 @@ const mapDispatchToProps = (dispatch) => {
       store.dispatch(action)
     },
     deleteItem(index) {
+      console.log(index, '删除的序号')
       const action = {
         type: 'delete_item',
         value: index
       }
-      dispatch(action)
+      store.dispatch(action)
     }
   }
 }

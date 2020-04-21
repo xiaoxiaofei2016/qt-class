@@ -18,9 +18,11 @@ export default (state, action) => {
       })
     
     case 'delete_item':
+      const newList = [...state.list]
+      newList.splice(action.value, 1)
       return Object.assign({}, state, {
-        list: state.list.splice(action.value, 1),
-        ...state
+        ...state,
+        list: newList
       })
 
     default: 
