@@ -12,3 +12,14 @@
   如：css-loader、style-loader、sass-loader、babel-loader、vue-loader
   plugin:目的在于解决loader无法实现的其他事，从打包优化和压缩 如：MiniCssExtractPlugin：剥离css文件
   HtmlWebPackPlugin：生成html文件(如果需要配置多个html时，就需要实例化该插件多次)
+
+# 京东面试题
+1.css 盒模型
+2.伪类和伪元素的区别
+3.es6新特性
+4.缓存：强缓存和协商缓存步骤 
+5.cookie有哪些字段，代表什么含义
+6.数组的方法，字符串的方法
+7.cookie和storage区别
+8.vue-cli里data为一个函数，为什么直接引入vue.js构建的data为一个对象
+9.vue数据响应式是如何实现的（2.x, 3.x）

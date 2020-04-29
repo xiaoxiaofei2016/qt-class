@@ -5,8 +5,8 @@
   ...Storage: 5MB
 
   cookie字段
-  name、value、doman:域名、 path: 路径 / /a /a/b具有包含关系，cookie设置在/a/b的话，/和/a就拿不到
-  httponly:如果设为true，不能通过js获取cookie
+  name、value、doman:域名、 path: 路径 / /a /a/b具有包含关系，cookie设置在/a/b的话，/和/a就拿不到(客户端)；
+  httponly:如果设为true，不能通过js获取cookie （客户端无法设置httponly,服务端才可以设置）
   secure: 如果设为true，只会在https协议下传输
   max-Age:生效时间
 

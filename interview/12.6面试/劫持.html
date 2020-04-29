@@ -30,8 +30,20 @@
       set: function(target, key, value, receiver) {
         console.log('set')
         return Reflect.set(target, key, value, receiver) // 恢复
+        // receiver:可选，如果指定属性部署了setter访问器，那么此访问器的this就会指向receiver
       }
     })
+
+
+    var antzone = {
+      webName: "蚂蚁部落",
+      url:"www.softwhy.com",
+      set age(val) { _age = val * this.num; }, // setter访问器，this指向receiver
+      get age(){ return _age }
+    }
+    Reflect.set(antzone, "age", 2, { num: 4 });
+    console.log(antzone.age) // 8
+
     pArr[2] = 999
   </script>
 </body>
