@@ -30,18 +30,19 @@ const root = {
   }
 }
 
-const root1 = [5,3,6,2,4,7]
-var getArray = function(root, arr) {
-  if (root) {
-    getArray(root.left, arr)
-    arr.push(root.value)
-    getArray(root.right, arr)
-  }
-}
+const root1 = [5,3,6,2,4,null,7]
+
 var findTarget = function(root, k) {
+  var getArray = function(root, arr) {
+    if (root) {
+      getArray(root.left, arr)
+      arr.push(root.value)
+      getArray(root.right, arr)
+    }
+  }
   let array = []
   getArray(root, array)
-  // console.log(array)
+  console.log(array)
   let map = new Map()
   for (let i = 0; i < array.length; i++) {
     let targetSub = k - array[i] // 5: 0, 3: 1, 2: 2, 4: 3
@@ -52,5 +53,6 @@ var findTarget = function(root, k) {
   }
   return false
 };
+
 
 console.log(findTarget(root1, 9))
