@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="https://pic.cnblogs.com/avatar/1193547/20180525104126.png" alt="" id="img">
+  <img src="" alt="" id="canvasImg">
+  <canvas id="myCanvas" width="400" height="200"></canvas>
+  <script>
+    const myCanvas = document.getElementById('myCanvas')
+    const img = document.getElementById('img')
+    const canvasImg = document.getElementById('canvasImg')
+    img.style.display = 'none'
+    let ctx = myCanvas.getContext('2d')
+    let grd = ctx.createLinearGradient(0,0,400,200) // 线性渐变
+    grd.addColorStop(0, '#E0DFB3')
+    grd.addColorStop(0.5, 'red')
+    grd.addColorStop(1, 'white')
+    ctx.fillStyle = grd
+    ctx.fillRect(0, 0, 400, 200) // 填充方式:(x,y,width,height)
+    // ctx.moveTo(0, 0) // 开始位置
+    // ctx.lineTo(400, 200) // 结束位置
+    // ctx.stroke() // 根据路径绘制线。路径只是草稿，真正绘制线必须执行stroke
+    // ctx.beginPath() // 将不同绘制的形状进行隔离
+    // ctx.arc(95, 50, 40, 0, 2*Math.PI) // (x,y,r,start,stop)
+    // ctx.stroke()
+
+    ctx.drawImage(img, 10, 10, 40, 40) // (x,y,width,height)
+    const dataUrl = myCanvas.toDataURL('image/png')
+    canvasImg.src = dataUrl
+  </script>
+</body>
+</html>
