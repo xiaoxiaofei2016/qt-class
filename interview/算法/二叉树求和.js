@@ -30,6 +30,7 @@ const root1 = {
   }
 }
 
+<<<<<<< HEAD
 const root = [5,3,6,2,4,null,7]
 
 var getArray = function(root, arr) {
@@ -38,7 +39,18 @@ var getArray = function(root, arr) {
   arr.push(root.value)
   getArray(root.right, arr)
 }
+=======
+const root1 = [5,3,6,2,4,null,7]
+
+>>>>>>> 48216db56b5e1dc28414df037456df2d5f840b98
 var findTarget = function(root, k) {
+  var getArray = function(root, arr) {
+    if (root) {
+      getArray(root.left, arr)
+      arr.push(root.value)
+      getArray(root.right, arr)
+    }
+  }
   let array = []
   getArray(root, array)
   console.log(array)
@@ -53,4 +65,9 @@ var findTarget = function(root, k) {
   return false
 };
 
+<<<<<<< HEAD
 console.log(findTarget(root, 8))
+=======
+
+console.log(findTarget(root1, 9))
+>>>>>>> 48216db56b5e1dc28414df037456df2d5f840b98

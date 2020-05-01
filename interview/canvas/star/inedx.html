@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="star"></canvas>
+  <script src="./Sky.js"></script>
+  <img src="" alt="" id="img" width="1000" height="1000">
+  <script>
+    let canvas = document.getElementById('star')
+    let ctx = canvas.getContext('2d')
+    let WIDTH = document.documentElement.clientWidth
+    let HEIGHT = 100
+    canvas.width = WIDTH
+    canvas.height = HEIGHT
+    let num = 80,
+        stars = []
+    init()
+    animate()
+    console.log(stars)
+    function init() {
+      
+        for (let i = 0; i < num; i++) {
+          stars[i] = new Sky(i, Math.random() * WIDTH, Math.random() * HEIGHT, ctx)
+          stars[i].draw()
+      }
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);//擦除上一帧,指擦除宽高为整个屏幕宽高的矩形区域
+      for (let star of stars) {
+        star.drop()
+      }
+      requestAnimationFrame(animate)
+    }
+    let img = document.getElementById('img')
+    img.style.display = 'none'
+    const dataUrl = canvas.toDataURL('img/png')
+    img.src = dataUrl
+  </script>
+</body>
+</html>

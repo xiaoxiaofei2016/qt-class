@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    #draw {
+      margin: 10px;
+      border: 1px solid #000
+    }
+  </style>
+</head>
+<body>
+  <canvas id="draw" width="400" height="300"></canvas>
+  <script>
+    const draw = document.querySelector('#draw')
+    let ctx = draw.getContext('2d')
+    let startX = 0,
+        startY = 0,
+        isDrawing = false,
+        colorNum = 0,
+        direction = false,
+        lineWidth = 30;
+    ctx.lineJoin = 'round'; //当两条线条交汇时，创建圆形边角
+    ctx.lineCap = 'round'; //绘制圆形的结束线帽
+    function print(event) {
+      // console.log(event.offsetX)
+      if (isDrawing) {
+        ctx.strokeStyle = `hsl(${colorNum}, 100%, 50%)`
+        ctx.beginPath()
+        ctx.moveTo(startX, startY)
+        ctx.lineTo(event.offsetX, event.offsetY)
+        ctx.lineWidth = lineWidth
+        ctx.stroke()
+        console.log(colorNum)
+        startX = event.offsetX
+        startY = event.offsetY
+        colorNum += 50;
+
+        if (colorNum >= 360) {
+          colorNum = 0
+        }
+        if (direction) {
+          lineWidth++
+        } else {
+          lineWidth--
+        }
+        if (lineWidth > 100 || lineWidth < 0) {
+          direction = !direction
+        }
+      }
+    }
+    draw.addEventListener('mousedown', () => {
+      isDrawing = true
+      startX = event.offsetX
+      startY = event.offsetY
+    })
+    draw.addEventListener('mousemove', print)
+    draw.addEventListener('mouseup', () => {
+      isDrawing = false
+    })
+    draw.addEventListener('mouseout', () => {
+      isDrawing = false
+    })
+  </script>
+</body>
+</html>
