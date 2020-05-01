@@ -14,3 +14,10 @@
 
   7. componentWillUnmount在组件从 DOM 中移除之前立刻被调用。( 清理操作
     定时器 全局绑定的方法)
+
+
+  react 17 打算去掉componentWillMount，componentWillReceiveProps， componentWillUpdate
+  # static getDerivedStateFromProps
+  触发时间：组件构建之后，虚拟dom之后，实际dom挂载之前，以及每次获得新的props之后，每次接受新的props都会返回一个对象作为新的state，如果null则不需要更新state
+  # getSnapshotBeforeUpdate
+  update发生的时候，在render之后，在组件dom渲染之前。
