@@ -1,6 +1,12 @@
+/****
+ * -121 -> 121- false
+ * 10 -> 01 false
+ * 121 -> 121 true
+ */
+
 var isPalindrome = function(x) {
-  let y = x.toString().split('').reverse().join('').JSON.parse()
-  console.log(y, x)
-  return x === y
+  const y = String(x).split('').reverse().join()
+  const a = String(x).split('')
+  return y == a
 }
-console.log(isPalindrome(121))
+console.log(isPalindrome(-121))
