@@ -1,0 +1,1 @@
+checkLogin:ipUrl + 'checkLogin'   //  检查用户名密码是否正确
