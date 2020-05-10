@@ -45,13 +45,14 @@ module.exports = appInfo => {
 
   // 跨域
   config.security = {
-    scrf: {
+    csrf: {
       enable: false
     },
     domainWhiteList: ['*']
   };
   config.cors = {
-    origin: '*',
+    origin: 'http://localhost:3000',
+    credentials: true, // 允许cook可以跨域
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   }
 

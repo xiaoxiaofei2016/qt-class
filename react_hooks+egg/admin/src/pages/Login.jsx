@@ -3,19 +3,25 @@ import 'antd/dist/antd.css'
 import { Card, Input, Button, Spin, message } from 'antd'
 import { UserOutlined, KeyOutlined } from '@ant-design/icons'
 import '../static/css/Login.css'
-import servicePath from '../../config/apiUrl'
+import servicePath from '../config/apiUrl'
 import axios from 'axios'
 function Login(props) {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const checkLogin = ()=> {
+  const checkLogin = () => {
     setIsLoading(true)
     if (!userName) {
       message.error('用户名不能为空')
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 1000)
       return false
     } else if (!password) {
       message.error('密码不能为空')
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 1000)
       return false
     }
     let dataProps = {
@@ -26,7 +32,7 @@ function Login(props) {
       method: 'post',
       url: servicePath.checkLogin,
       data: dataProps,
-      withCredentials: true
+      withCredentials: true // 前后端共享session
     }).then(res => {
       setIsLoading(false)
       if (res.data.data == '登录成功') {
@@ -36,9 +42,6 @@ function Login(props) {
         message.error('用户名密码错误')
       }
     })
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1000)
 
   }
   return (

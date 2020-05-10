@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, DesktopOutlined, FileOutlined, PieChartOutlined} from '@ant-design/icons'
+import { UserOutlined, DesktopOutlined, FileOutlined, PieChartOutlined } from '@ant-design/icons'
 import { Route } from "react-router-dom";
 import AddArticle from './AddArticle'
 
@@ -57,9 +57,9 @@ function AdminIndex() {
             <Breadcrumb.Item>工作台</Breadcrumb.Item>
           </Breadcrumb>
           <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-          <div>
-            <Route path="/index/" exact  component={AddArticle} />
-          </div>
+            <div>
+              <Route path="/index/" exact component={AddArticle} />
+            </div>
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>JSPang.com</Footer>
