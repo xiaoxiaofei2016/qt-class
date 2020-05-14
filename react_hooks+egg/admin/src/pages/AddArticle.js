@@ -4,12 +4,13 @@ import '../static/css/AddArticle.css'
 import { Row, Col, Input, Select, Button, DatePicker, message } from 'antd'
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
+import moment from 'moment'
 
 const { Option } = Select;
 const { TextArea } = Input
 
 
-function AddArticle() {
+function AddArticle(props) {
 
   const [articleId, setArticleId] = useState(0)  // 文章的ID，如果是0说明是新增加，如果不是0，说明是修改
   const [articleTitle, setArticleTitle] = useState('')   //文章标题
@@ -21,6 +22,16 @@ function AddArticle() {
   const [updateDate, setUpdateDate] = useState('') //修改日志的日期
   const [typeInfo, setTypeInfo] = useState([]) // 文章类别信息
   const [selectedType, setSelectType] = useState('') //选择的文章类别
+
+  let tmpId = props.match.params.id
+
+  useEffect(() => {
+    getTypeInfo()
+    if (tmpId) {
+      setArticleId(tmpId)
+      getArticleById(tmpId)
+    }
+  }, [])
 
   marked.setOptions({
     renderer: new marked.Renderer(),
@@ -100,9 +111,9 @@ function AddArticle() {
       }).then(
         res => {
           if (res.data.isScuccess) {
-            message.success('文章保存成功')
+            message.success('文章修改成功')
           } else {
-            message.error('保存失败');
+            message.error('修改失败');
           }
         }
       )
@@ -110,7 +121,7 @@ function AddArticle() {
   }
 
   //从中台得到文章类别信息
-  const getTypeInfo = (props) => {
+  const getTypeInfo = () => {
     axios({
       method: 'get',
       url: servicePath.getTypeInfo,
@@ -128,9 +139,26 @@ function AddArticle() {
     )
   }
 
-  useEffect(() => {
-    getTypeInfo()
-  }, [])
+  const getArticleById = (id) => {
+    axios(servicePath.getArticleById + id, {
+      withCredentials: true,
+      header: { 'Access-Control-Allow-Origin': '*' }
+    }).then(
+      res => {
+        console.log(res.data.data[0].addTime)
+        //let articleInfo= res.data.data[0]
+        setArticleTitle(res.data.data[0].title)
+        setArticleContent(res.data.data[0].article_content)
+        let html = marked(res.data.data[0].article_content)
+        setMarkdownContent(html)
+        setIntroducemd(res.data.data[0].introduce)
+        let tmpInt = marked(res.data.data[0].introduce)
+        setIntroducehtml(tmpInt)
+        setShowDate(res.data.data[0].addTime)
+        setSelectType(res.data.data[0].typeId)
+      }
+    )
+  }
 
   return (
     <div>
@@ -139,19 +167,30 @@ function AddArticle() {
           <Row gutter={10} >
             <Col span={20}>
               <Input
+                value={articleTitle}
                 onChange={e => { setArticleTitle(e.target.value) }}
                 placeholder="博客标题"
                 size="large" />
             </Col>
             <Col span={4}>
               &nbsp;
-              <Select placeholder="请输入类别" size="large" style={{ width: 140 }} onChange={(val) => setSelectType(val)}>
+              {
+                tmpId ? 
+                <Select size="large" value={selectedType} style={{ width: 140 }} onChange={(val) => setSelectType(val)}>
+                  {
+                    typeInfo.map((item, index) => {
+                      return (<Option key={index} value={item.id}>{item.typeName}</Option>)
+                    })
+                  }
+                </Select> :
+                <Select placeholder="请输入类别" size="large"  style={{ width: 140 }} onChange={(val) => setSelectType(val)}>
                 {
                   typeInfo.map((item, index) => {
                     return (<Option key={index} value={item.id}>{item.typeName}</Option>)
                   })
                 }
-              </Select>
+                </Select>
+              }
             </Col>
           </Row>
           <br />
@@ -188,15 +227,25 @@ function AddArticle() {
                 onPressEnter={changeIntroduce}
               />
               <br /><br />
-              <div className="introduce-html" dangerouslySetInnerHTML={{ __html: introducehtml }}></div>
+              <div className="introduce-html" dangerouslySetInnerHTML={{ __html: '文章简介' + introducehtml }}></div>
             </Col>
             <Col span={12}>
               <div className="date-select">
-                <DatePicker
-                  onChange={(date, dateString) => { setShowDate(dateString) }}
-                  placeholder="发布日期"
-                  size="large"
-                />
+                {
+                  tmpId ? 
+                  <DatePicker
+                    onChange={(date, dateString) => { setShowDate(dateString) }}
+                    placeholder="发布日期"
+                    size="large"
+                    value={moment(showDate, 'HH:mm:ss')}
+                    allowClear={false}
+                  /> : 
+                  <DatePicker
+                    onChange={(date, dateString) => { setShowDate(dateString) }}
+                    placeholder="发布日期"
+                    size="large"
+                  />
+                }
               </div>
             </Col>
           </Row>
