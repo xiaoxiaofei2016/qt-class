@@ -21,7 +21,7 @@ export default {
 <style scoped lang="less">
 @import '../styles/main.less';
 .header-wrapper {
-  height: 0.5rem;
+  height: 0.5rem; // 50px对应于宽375的设备
   background: @theme-bg-red;
   .logo {
     width: 1.3rem;

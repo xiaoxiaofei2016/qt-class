@@ -15,6 +15,6 @@ student.use(async (ctx, next) => { // 中间件 函数
 student.use(async (ctx, next) => { // 中间件 函数
   console.log('middleWare3');
 })
-student.listen(3000, () => {
+student.listen(3001, () => {
   console.log('Server is running 3000');
 })

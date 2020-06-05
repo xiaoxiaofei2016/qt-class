@@ -25,7 +25,7 @@ export default {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 0.5rem;
+  height: 0.5rem; // 
   font-size: 0.16rem;
   z-index: 99;
   background-color: #fff;

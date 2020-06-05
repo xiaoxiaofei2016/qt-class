@@ -494,7 +494,8 @@ export default {
           if (_this.nextPath) {
             _this.$router.push(_this.nextPath)
           } else {
-            _this.$router.push(_this.beforePath)
+            // _this.$router.push(_this.beforePath)
+            _this.$router.push('/')
           }
           Message({
             message: '登录成功',

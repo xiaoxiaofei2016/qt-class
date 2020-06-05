@@ -13,3 +13,8 @@
   cookie可以来自于js的设置，也可以来自于后端的ctx.cookies.set()
 
   xss攻击会窃取cookie，设置了httponly为true，可以很好地防范xss攻击
+
+# localStorage
+ 永久存储，不会随着浏览器关闭或刷新而消失，只能手动设置localstorage.removeItem()
+# sessionstorage
+ 会话存储，浏览器关闭刷新页面都会消失

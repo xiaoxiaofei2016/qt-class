@@ -299,21 +299,6 @@ router.post('/singleselect', async (ctx, next) => {
   })
 })
 
-// 订单
-router.post('/ordersTime', async (ctx, next) => {
-  let _userId = ctx.request.body.userId
-  await userService.ordersTime(_userId).then(res => {
-    ctx.body = {
-      code: '800000',
-      data: res
-    }
-  }).catch(err => {
-    ctx.body = {
-      code: '800002',
-      data: err
-    }
-  })
-})
 router.post('/orders', async (ctx, next) => {
   let _userId = ctx.request.body.userId
   let _date = ctx.request.body.date
@@ -327,6 +312,21 @@ router.post('/orders', async (ctx, next) => {
           time: _date
         }
       })
+    }
+  })
+})
+// 订单时间
+router.post('/ordersTime', async (ctx, next) => {
+  let _userId = ctx.request.body.userId
+  await userService.ordersTime(_userId).then(res => {
+    ctx.body = {
+      code: '800000',
+      data: res
+    }
+  }).catch(err => {
+    ctx.body = {
+      code: '800002',
+      data: err
     }
   })
 })

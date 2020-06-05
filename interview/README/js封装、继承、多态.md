@@ -22,6 +22,7 @@
   2. 构造继承
     function Cat(name) {
       Animal.call(this)
+      OtherParent.call(this)
     }
     特点：可以实现多继承
     缺点：只能继承父类实例的属性和方法，不能继承原型上的属性和方法。

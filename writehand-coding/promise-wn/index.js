@@ -38,3 +38,9 @@ class Promise {
     }
   }
 }
+
+let a = new Promise((resolve, reject) => {
+  resolve('123')
+}).then(res => {
+  console.log(res)
+})

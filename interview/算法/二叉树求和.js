@@ -30,21 +30,16 @@ const root1 = {
   }
 }
 
-<<<<<<< HEAD
-const root = [5,3,6,2,4,null,7]
+const root = [5, 3, 6, 2, 4, null, 7]
 
-var getArray = function(root, arr) {
+var getArray = function (root, arr) {
   if (!root) return;
   getArray(root.left, arr)
   arr.push(root.value)
   getArray(root.right, arr)
 }
-=======
-const root1 = [5,3,6,2,4,null,7]
-
->>>>>>> 48216db56b5e1dc28414df037456df2d5f840b98
-var findTarget = function(root, k) {
-  var getArray = function(root, arr) {
+var findTarget = function (root, k) {
+  var getArray = function (root, arr) {
     if (root) {
       getArray(root.left, arr)
       arr.push(root.value)
@@ -59,15 +54,12 @@ var findTarget = function(root, k) {
     let targetSub = k - array[i] // 5: 0, 3: 1, 2: 2, 4: 3
     if (map.has(targetSub)) {
       return true
-    }  
+    }
     map.set(array[i], i)
   }
   return false
 };
 
-<<<<<<< HEAD
 console.log(findTarget(root, 8))
-=======
 
-console.log(findTarget(root1, 9))
->>>>>>> 48216db56b5e1dc28414df037456df2d5f840b98
+

@@ -110,7 +110,7 @@ export default {
     return {
       phone: '',
       errType: '',
-      err: ['请输入手机号码', '手机号已经存在', '请输入正确的手机号', '请输入昵称', '含有特殊字符', '请输入邮箱', '请输入正确的邮箱', '请输入密码', '密码至少6个字符，至少1个大写字母，1个小写字母和1个数字,不能包含特殊字符'],
+      err: [ '手机号已经存在', '请输入手机号码', '请输入正确的手机号', '请输入昵称', '含有特殊字符', '请输入邮箱', '请输入正确的邮箱', '请输入密码', '密码至少6个字符，至少1个大写字母，1个小写字母和1个数字,不能包含特殊字符'],
       form: {
         nickname: '',
         mail: '',
@@ -120,10 +120,9 @@ export default {
   },
   methods: {
     toRegister () {
-      if (this.phone.trim() === '') {
+      if (this.phone.trim() == '') {
         console.log('手机号不能为空')
-        this.errType = 0
-        return
+        this.errType = 1
       } else if (this.form.nickname.trim() === '') {
         this.errType = 3
       } else if (this.form.mail.trim() === '') {
@@ -135,7 +134,7 @@ export default {
       } else if (/^1[3456789]\d{9}$/.test(this.phone) == false) {
         this.errType = 2
       } else if (/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(this.form.mail) == false) {
-        this.errType = 5
+        this.errType = 6
       } else if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(this.form.password) == false) {
         this.errType = 8
       } else {
@@ -160,7 +159,7 @@ export default {
           this.$router.push({ path: '/Login' })
             console.log('注册成功', res)
           } else if (res.data.code === '800003') { // 已经注册了
-            this.errType = 1
+            this.errType = 0
           }
           else {
             console.log('注册失败', res)

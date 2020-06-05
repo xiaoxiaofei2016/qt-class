@@ -1,15 +1,15 @@
 ## http
   # DNS 解析
-  1. 检查操作系统缓存 DNS 缓存
+  1. 浏览器寻找缓存：查找步骤为：浏览器缓存->系统缓存->路由缓存
     即如果一个域名已经解析过，那会把解析的结果缓存下来，下次处理直接走缓存，不需要经过 DNS解析
-  2. 查找本机的host文件：(域名与ip对应起来)
+  2. 查找本机的hosts文件是否有记录：(域名与ip对应起来)
     127.0.0.1	localhost
     255.255.255.255	broadcasthost
     ::1             localhost
     127.0.0.1 kubernetes.docker.internal
   3. 向DNS服务器请求域名解析 如：请求www.baidu.com
     1. .com 一级域名   root server 找.com的域名
-    2. baidu.com      TID server 
+    2. .baidu.com      TID server 
     3. www.baidu.com  返回一个ip(如：255,255,255,255)
   
   # TCP连接 (3次握手)(传输层)
@@ -54,4 +54,5 @@ UDP: 不可靠，没有经过三次握手，是无连接的即发送数据前不
   get向服务器请求数据、post向服务器发送数据
   get请求可以被缓存、post不可以
   get参数会显示在地址栏上、post不会，如果数据包含敏感数据，使用post
+  get请求在url中传递的参数是有长度限制的，而post没有
 
